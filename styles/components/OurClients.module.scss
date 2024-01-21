@@ -1,0 +1,19 @@
+// Imports
+@import "../base/fonts";
+@import "../base/colors";
+
+.ourClients {
+	h2,
+	h4 {
+		font-family: $body;
+	}
+	h3 {
+		font-family: $main;
+	}
+
+	p {
+		a {
+			@apply font-semibold underline text-blue-two hover:text-yellow-two transition-all ease-in-out duration-500;
+		}
+	}
+}
