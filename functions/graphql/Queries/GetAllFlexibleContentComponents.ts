@@ -24,7 +24,12 @@ export const getAllFlexibleContentComponents = async (
 												title
 												paragraph
 												backgroundImage {
+													altText
 													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
 												}
 											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {

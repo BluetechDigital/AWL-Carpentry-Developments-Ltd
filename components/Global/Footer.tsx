@@ -220,7 +220,7 @@ const Footer: FC = () => {
 					</motion.ul>
 				</div>
 				<div className="border-b border-orange-default opacity-50" />
-				<div className="py-4 flex flex-col-reverse items-center justify-between m-0 lg:-m-6 lg:flex-row">
+				<div className="flex flex-col-reverse items-center justify-between py-4 m-0 lg:-m-6 lg:flex-row">
 					<motion.div
 						initial={initialTwo}
 						viewport={{once: true}}

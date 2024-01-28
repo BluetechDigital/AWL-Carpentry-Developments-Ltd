@@ -31,8 +31,9 @@ const RenderFlexibleContent: FC = () => {
 								<HeroTwo
 									title={item?.title}
 									paragraph={item?.paragraph}
-									backgroundImage={item?.backgroundImage?.sourceUrl}
+									backgroundImage={item?.backgroundImage}
 								/>
+								<div className="bg-white h-[50vh]"></div>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_TitleParagraph` ? (
 							<>

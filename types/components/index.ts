@@ -43,7 +43,14 @@ export type IFAQTwo = {
 export type IHeroTwo = {
 	title: string;
 	paragraph: string;
-	backgroundImage: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 };
 export type IGallery = {
 	title: string;

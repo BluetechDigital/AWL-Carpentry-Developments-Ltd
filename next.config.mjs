@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "**",
-			},
-		],
+	reactStrictMode: true,
+	images: {
+		// remotePatterns: [
+		// 	{
+		// 		protocol: "https",
+		// 		hostname: "**",
+		// 	},
+		// ],
+		domains: ["awl-carpentry-developments-ltd.local"],
 	},
 };
 

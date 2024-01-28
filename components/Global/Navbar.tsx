@@ -76,10 +76,12 @@ const Navbar: FC = () => {
 			<nav
 				className={
 					styles.navbar +
-					` z-[999] w-full fixed group bg-transparent hover:bg-white transition-all ease-in-out duration-500 ${
-						scrollPosition > 50 || navBackgroundSublinksOpen
+					` z-[999] w-full ${
+						scrollPosition > 1 ? "fixed" : "static"
+					} group bg-transparent hover:bg-white transition-all ease-in-out duration-500 ${
+						scrollPosition > 1 || navBackgroundSublinksOpen
 							? "bg-white"
-							: "bg-transparent"
+							: "bg-blue-darker"
 					}`
 				}
 			>
@@ -96,7 +98,7 @@ const Navbar: FC = () => {
 								width={500}
 								height={500}
 								alt="BluetechDigital Logo"
-								src="/svg/logo/BluetechDigital-Logo-color.svg"
+								src="/img/logos/BluetechDigital-Logo-color.png"
 								className={`${
 									scrollPosition > 50 ? "block" : "hidden group-hover:block"
 								} object-contain object-center w-full h-[50px]`}
@@ -105,8 +107,8 @@ const Navbar: FC = () => {
 								priority
 								width={500}
 								height={500}
-								alt="BluetechDigital Logo White"
-								src="/svg/logo/BluetechDigital-Logo-white.svg"
+								alt="BluetechDigital Logo"
+								src="/img/logos/BluetechDigital-Logo-color.png"
 								className={`${
 									scrollPosition > 50 ? "hidden" : "block group-hover:hidden"
 								} object-contain object-center w-full h-[50px]`}
