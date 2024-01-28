@@ -5,13 +5,17 @@ import {usePageContext} from "@/context/pages";
 // Components
 import CTA from "../CTA";
 import Blogs from "../Blogs";
+import FAQTwo from "../FAQTwo";
 import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
-import ContactInfo from "../ContactInfo";
 import OurClients from "../OurClients";
+import ContactInfo from "../ContactInfo";
+import OurServices from "../OurServices";
 import ErrorPage from "../Global/ErrorPage";
 import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
+import BlogsThreeCards from "../BlogsThreeCards";
+import TestimonialsGrid from "../TestimonialsGrid";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -47,11 +51,32 @@ const RenderFlexibleContent: FC = () => {
 									imageGrid={item?.imageGrid}
 								/>
 							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_OurServices` ? (
+							<>
+								<OurServices
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									servicesGrid={item?.servicesGrid}
+								/>
+							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (
 							<>
 								<Gallery
 									title={item?.title}
 									gallery={item?.gallery}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									highlightText={item?.highlightText}
+									itemsDisplayedPerPage={item?.itemsDisplayedPerPage}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_TestimonialsGrid` ? (
+							<>
+								<TestimonialsGrid
+									title={item?.title}
+									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									highlightText={item?.highlightText}
 								/>
@@ -60,8 +85,31 @@ const RenderFlexibleContent: FC = () => {
 							<>
 								<Blogs
 									title={item?.title}
-									italic={item?.italic}
+									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_BlogsThreeCards` ? (
+							<>
+								<BlogsThreeCards
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_CaseStudiesGrid` ? (
+							<></>
+						) : item?.fieldGroupName === `${FlexibleContent}_Faq` ? (
+							<>
+								<FAQTwo
+									title={item?.title}
+									image={item?.image}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+									faqContent={item?.faqContent}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Cta` ? (
@@ -77,6 +125,8 @@ const RenderFlexibleContent: FC = () => {
 							<>
 								<ContactInfo title={item?.title} paragraph={item?.paragraph} />
 							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` ? (
+							<></>
 						) : item?.fieldGroupName === `${FlexibleContent}_Maintenance` ? (
 							<>
 								<Maintenance

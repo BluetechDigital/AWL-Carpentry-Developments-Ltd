@@ -1,4 +1,3 @@
-// Imports
 import {client} from "@/config/apollo";
 import {DocumentNode, gql} from "@apollo/client";
 
@@ -13,9 +12,7 @@ export const getAllTestimonialsContent = async () => {
 						node {
 							testimonialReview {
 								name
-								jobTitle
 								paragraph
-								starRating
 								image {
 									altText
 									sourceUrl

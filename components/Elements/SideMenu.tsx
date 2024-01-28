@@ -63,7 +63,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										{item?.node?.label === "Our Services" ? (
 											<li
 												onClick={displayOurServicesSublinks}
-												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-orange-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
@@ -87,13 +87,13 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 															whileInView={stagger}
 															viewport={{once: true}}
 															className={
-																styles.ourServicesLinks +
+																styles.servicesSublinks +
 																` flex flex-col my-4 z-[999]`
 															}
 														>
 															{/* Menu Link*/}
-															{globalContext?.ourServicesLinks?.length > 0 ? (
-																globalContext?.ourServicesLinks?.map(
+															{globalContext?.servicesSublinks?.length > 0 ? (
+																globalContext?.servicesSublinks?.map(
 																	(item: any, keys: any) => (
 																		<Fragment key={keys}>
 																			<Link href={`${item?.node?.url}`}>
@@ -125,7 +125,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										) : item?.node?.url === "/news-insights" ? (
 											<li
 												onClick={displayNewsInsightsSublinks}
-												className="border-b-[1px] border-yellow-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-orange-dark border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<span className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem]hover:text-blue-two transition-all ease-in-out duration-500">
@@ -165,7 +165,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 												) : null}
 											</li>
 										) : (
-											<li className="border-b-[1px] border-yellow-dark border-opacity-50">
+											<li className="border-b-[1px] border-orange-dark border-opacity-50">
 												<Link
 													href={`${item?.node?.url}`}
 													className="block py-4 text-base font-semibold text-pureBlack hover:text-blue-two"
@@ -242,7 +242,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 								</Link>
 								<Link
 									className="inline-block px-1 hover:opacity-70"
-									href={`${globalContext?.themesOptionsContent?.telegramLink}`}
+									href={`${globalContext?.themesOptionsContent?.linkedinLink}`}
 								>
 									<svg
 										height="100%"
@@ -294,7 +294,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-two"
+										className="font-medium text-base tracking-wide text-pureBlack hover:text-orange-two"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 									>
 										{globalContext?.themesOptionsContent?.email}
@@ -328,7 +328,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-yellow-two"
+										className="font-medium text-base tracking-wide text-pureBlack hover:text-orange-two"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}

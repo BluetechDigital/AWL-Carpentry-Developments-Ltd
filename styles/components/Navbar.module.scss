@@ -8,7 +8,7 @@
 	}
 
 	.aboutUsSublinks,
-	.ourServicesLinks {
+	.servicesSublinks {
 		li:nth-last-child(0) {
 			display: none;
 			@apply border-none;
@@ -38,7 +38,7 @@
 		}
 
 		::-webkit-scrollbar-track {
-			background: $darkBlue;
+			background: $blueDark;
 		}
 
 		::-webkit-scrollbar-thumb {
@@ -47,7 +47,7 @@
 
 			&:hover {
 				transition: all 0.5s;
-				background-color: $lightBlue;
+				background-color: $BlueLight;
 			}
 		}
 	}
@@ -76,7 +76,7 @@
 
 		&:hover {
 			transition: all 0.2s ease-in-out;
-			background: $purple;
+			background: $orange;
 		}
 
 		span {
@@ -175,7 +175,7 @@
 
 		&:hover {
 			transition: all 0.2s ease-in-out;
-			background: $purple;
+			background: $orange;
 		}
 	}
 }

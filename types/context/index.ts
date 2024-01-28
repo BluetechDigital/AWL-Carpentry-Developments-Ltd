@@ -56,6 +56,7 @@ export type IContent = [
 export type IPostTypes = {
 	pages: string;
 	posts: string;
+	locations: string;
 	previewPage: string;
 	previewPost: string;
 	caseStudies: string;
@@ -80,6 +81,33 @@ export type ICaseStudies = [
 			excerpt: string;
 			featuredImage: {
 				node: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		};
+	}
+];
+export type IAboutUsLinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
+export type ITestimonials = [
+	{
+		node: {
+			testimonialReview: {
+				name: string;
+				paragraph: string;
+				image: {
 					altText: string;
 					sourceUrl: string;
 					mediaDetails: {
@@ -127,57 +155,30 @@ export type IServicesSublinks = [
 		};
 	}
 ];
+export type ILocationsSublinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
 export type IThemesOptionsContent = {
 	email: string;
 	address: string;
 	emailTwo: string;
+	textarea: string;
+	businessHours: string;
 	phoneNumber: string;
 	phoneNumberTwo: string;
 	copyrightText: string;
 	facebookLink: string;
 	twitterLink: string;
-	telegramLink: string;
-	textarea: string;
-	awardsCertificationsGallery: [
-		{
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		}
-	];
+	linkedinLink: string;
+	instagramLink: string;
 	displayNoticeBanner: boolean;
 	noticeBannerTextarea: string;
-	menuColumnTwo: {
-		title: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		image: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	menuColumnThree: {
-		title: string;
-		paragraph: string;
-		buttonLink: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		backgroundImage: {
-			sourceUrl: string;
-		};
-	};
 };
 
 /* CONTEXT PROVIDERS  */
@@ -188,21 +189,29 @@ export type IPageContext = {
 };
 export type IGlobalProps = {
 	blogs: IBlogs;
+	blogsThreeCards: IBlogs;
 	caseStudies: ICaseStudies;
 	mobileLinks: IMobileLinks;
+	aboutUsLinks: IAboutUsLinks;
+	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
+	locationsLinks: ILocationsSublinks;
 	servicesSublinks: IServicesSublinks;
 	themesOptionsContent: IThemesOptionsContent;
 };
 export type IGlobalContext = {
 	blogs: IBlogs;
+	blogsThreeCards: IBlogs;
 	caseStudies: ICaseStudies;
 	mobileLinks: IMobileLinks;
+	aboutUsLinks: IAboutUsLinks;
+	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
+	locationsLinks: ILocationsSublinks;
 	servicesSublinks: IServicesSublinks;
 	themesOptionsContent: IThemesOptionsContent;
 };

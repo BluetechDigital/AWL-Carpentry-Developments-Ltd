@@ -22,11 +22,11 @@
 	padding: 10px 20px;
 	font-family: $body;
 	align-items: center;
-	background: $darkBlue;
+	background: $blueDark;
 	text-decoration: none;
 	justify-content: center;
 	transform: skewX(-15deg);
-	box-shadow: -3px 6px 0 $darkerBlue;
+	box-shadow: -3px 6px 0 $blueDarker;
 
 	&:focus {
 		outline: none;

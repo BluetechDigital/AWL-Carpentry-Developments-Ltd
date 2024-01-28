@@ -9,7 +9,7 @@ import {initial, fadeInUp, stagger} from "@/animations/animations";
 import BlogsCard from "./Cards/BlogsCard";
 import Paragraph from "./Elements/Paragraph";
 
-const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
+const Blogs: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 	const globalContext = useGlobalContext();
 
 	return (
@@ -40,7 +40,7 @@ const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
 							viewport={{once: true}}
 							className="ml-4 font-serif font-normal italic"
 						>
-							{italic}
+							{subtitle}
 						</motion.span>
 					</motion.h2>
 					<Paragraph
@@ -59,9 +59,8 @@ const Blogs: FC<IBlogs> = ({title, italic, paragraph}) => {
 							<Fragment key={keys}>
 								<BlogsCard
 									uri={item?.node?.uri}
-									date={item?.node?.date}
 									title={item?.node?.title}
-									excerpt={item?.node?.excerpt}
+									paragraph={item?.node?.paragraph}
 									featuredImage={item?.node?.featuredImage}
 								/>
 							</Fragment>

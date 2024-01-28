@@ -1,3 +1,4 @@
+// Imports
 import {gql} from "@apollo/client";
 import {client} from "@/config/apollo";
 
@@ -61,8 +62,38 @@ export const getMobileLinks = async () => {
 	}
 };
 
-// Navbar Services Sublinks
-export const getServicesSublinks = async () => {
+// Navbar About Us Sublinks
+export const getAboutUsSublinks = async () => {
+	try {
+		const content: any = gql`
+			{
+				aboutUsSublinks: menuItems(where: {location: ABOUT_US_LINKS}) {
+					edges {
+						node {
+							id
+							url
+							label
+						}
+					}
+				}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return response?.data?.aboutUsSublinks?.edges;
+	} catch (error) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch main menu links content"
+		);
+	}
+};
+
+// Navbar Our Services Sublinks
+export const getOurServicesSublinks = async () => {
 	try {
 		const content: any = gql`
 			{
@@ -89,7 +120,37 @@ export const getServicesSublinks = async () => {
 	} catch (error) {
 		console.log(error);
 		throw new Error(
-			"Something went wrong trying to fetch our services sublinks content"
+			"Something went wrong trying to fetch our Programs Sublinks content"
+		);
+	}
+};
+
+// Navbar Locations Sublinks
+export const getLocationsSublinks = async () => {
+	try {
+		const content: any = gql`
+			{
+				locationsSublinks: menuItems(where: {location: LOCATIONS_LINKS}) {
+					edges {
+						node {
+							id
+							url
+							label
+						}
+					}
+				}
+			}
+		`;
+
+		const response: any = await client.query({
+			query: content,
+		});
+
+		return response?.data?.locationsSublinks?.edges;
+	} catch (error) {
+		console.log(error);
+		throw new Error(
+			"Something went wrong trying to fetch locations links content"
 		);
 	}
 };

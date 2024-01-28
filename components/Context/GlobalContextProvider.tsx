@@ -12,11 +12,15 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 			<GlobalContext.Provider
 				value={{
 					blogs: globalProps?.blogs,
-					caseStudies: globalProps?.caseStudies,
 					mobileLinks: globalProps?.mobileLinks,
+					caseStudies: globalProps?.caseStudies,
+					testimonials: globalProps?.testimonials,
+					aboutUsLinks: globalProps?.aboutUsLinks,
 					copyrightLinks: globalProps?.copyrightLinks,
-					navbarMenuLinks: globalProps?.navbarMenuLinks,
+					locationsLinks: globalProps?.locationsLinks,
 					footerMenuLinks: globalProps?.footerMenuLinks,
+					blogsThreeCards: globalProps?.blogsThreeCards,
+					navbarMenuLinks: globalProps?.navbarMenuLinks,
 					servicesSublinks: globalProps?.servicesSublinks,
 					themesOptionsContent: globalProps?.themesOptionsContent,
 				}}

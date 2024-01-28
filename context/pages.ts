@@ -8,7 +8,9 @@ export const postType: IPostTypes = {
 	// Public pages
 	pages: "pages",
 	posts: "posts",
+	locations: "locations",
 	caseStudies: "caseStudies",
+	testimonials: "testimonials",
 
 	// Preview pages
 	previewPage: "page",

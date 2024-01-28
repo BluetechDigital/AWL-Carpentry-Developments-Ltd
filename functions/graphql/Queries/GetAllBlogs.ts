@@ -9,7 +9,7 @@ type SlugResponse = {
 interface ISlug extends Array<SlugResponse> {}
 
 /* BLOGS SLUGS (URLS) */
-export const getAllBlogsPostsSlugs = async (): Promise<ISlug> => {
+export const getAllBlogsSlugs = async (): Promise<ISlug> => {
 	try {
 		const content: DocumentNode = gql`
 			{
@@ -78,7 +78,10 @@ export const getThreeBlogsContent = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				blogsContent: posts(where: {status: PUBLISH}, first: 3) {
+				blogsContent: posts(
+					where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
+					first: 3
+				) {
 					edges {
 						node {
 							id

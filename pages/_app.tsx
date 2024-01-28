@@ -15,13 +15,19 @@ import {IGlobalProps} from "@/types/context";
 import {
 	getMobileLinks,
 	getCopyrightLinks,
-	getFooterMenuLinks,
 	getNavbarMenuLinks,
-	getServicesSublinks,
+	getFooterMenuLinks,
+	getAboutUsSublinks,
+	getOurServicesSublinks,
+	getLocationsSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
-import {getAllBlogsContent} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
+import {
+	getAllBlogsContent,
+	getThreeBlogsContent,
+} from "@/functions/graphql/Queries/GetAllBlogs";
 import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
+import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 
 // Components
 import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
@@ -65,31 +71,29 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	// PUBLIC PAGES //
 	/* Fetch all global content
 	remaining content simultaneously */
-	const [
-		blogs,
-		caseStudies,
-		mobileLinks,
-		copyrightLinks,
-		navbarMenuLinks,
-		footerMenuLinks,
-		servicesSublinks,
-		themesOptionsContent,
-	]: any = await Promise.all([
-		getAllBlogsContent(),
-		getAllCaseStudiesContent(),
-		getMobileLinks(),
-		getCopyrightLinks(),
-		getNavbarMenuLinks(),
-		getFooterMenuLinks(),
-		getServicesSublinks(),
-		getThemesOptionsContent(),
-	]);
+	const mobileLinks: any = await getMobileLinks();
+	const aboutUsLinks: any = await getAboutUsSublinks();
+	const copyrightLinks: any = await getCopyrightLinks();
+	const navbarMenuLinks: any = await getNavbarMenuLinks();
+	const footerMenuLinks: any = await getFooterMenuLinks();
+	const locationsLinks: any = await getLocationsSublinks();
+	const servicesSublinks: any = await getOurServicesSublinks();
+	const themesOptionsContent: any = await getThemesOptionsContent();
+
+	const blogs: any = await getAllBlogsContent();
+	const caseStudies: any = await getAllCaseStudiesContent();
+	const blogsThreeCards: any = await getThreeBlogsContent();
+	const testimonials: any = await getAllTestimonialsContent();
 
 	const globalProps: IGlobalProps = {
 		blogs: blogs,
-		caseStudies: caseStudies,
 		mobileLinks: mobileLinks,
+		caseStudies: caseStudies,
+		aboutUsLinks: aboutUsLinks,
+		testimonials: testimonials,
+		locationsLinks: locationsLinks,
 		copyrightLinks: copyrightLinks,
+		blogsThreeCards: blogsThreeCards,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		servicesSublinks: servicesSublinks,

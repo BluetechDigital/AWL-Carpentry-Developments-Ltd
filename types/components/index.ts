@@ -11,8 +11,34 @@ export type ICTA = {
 };
 export type IBlogs = {
 	title: string;
-	italic: string;
+	subtitle: string;
 	paragraph: string;
+};
+export type IFAQTwo = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			height: number;
+			width: number;
+		};
+	};
+	faqContent: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+			};
+		}
+	];
 };
 export type IHeroTwo = {
 	title: string;
@@ -21,8 +47,10 @@ export type IHeroTwo = {
 };
 export type IGallery = {
 	title: string;
-	highlightText: string;
+	subtitle: string;
 	paragraph: string;
+	highlightText: string;
+	itemsDisplayedPerPage: string;
 	gallery: [
 		{
 			altText: string;
@@ -30,6 +58,32 @@ export type IGallery = {
 			mediaDetails: {
 				width: number;
 				height: number;
+			};
+		}
+	];
+};
+export type IOurServices = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	servicesGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				Link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
 			};
 		}
 	];
@@ -72,32 +126,16 @@ export type IMaintenance = {
 		};
 	};
 };
-export type ITestimonials = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-	testimonialsGrid: [
-		{
-			card: {
-				title: string;
-				jobTitle: string;
-				paragraph: string;
-				image: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
-		}
-	];
-};
 export type ITitleParagraph = {
 	title: string;
 	paragraph: string;
 	displayParagraph: boolean;
+};
+export type ITestimonialsGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	highlightText: string;
 };
 
 // Global
@@ -114,13 +152,23 @@ export type IErrorPage = {
 		target: string;
 	};
 };
+export type IPagination = {
+	contentArray: any;
+	contentType: string;
+	tailwindStyling: string;
+	numberOfItemsRenderedPerPage: number;
+};
 
 // Cards
+export type IFAQCard = {
+	index: number;
+	title: string;
+	paragraph: string;
+};
 export type IBlogsCard = {
 	uri: string;
-	date: string;
 	title: string;
-	excerpt: string;
+	paragraph: string;
 	featuredImage: {
 		node: {
 			altText: string;
@@ -145,6 +193,18 @@ export type ICaseStudiesCard = {
 				width: number;
 				height: number;
 			};
+		};
+	};
+};
+export type ITestimonialsCard = {
+	name: string;
+	paragraph: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
 		};
 	};
 };

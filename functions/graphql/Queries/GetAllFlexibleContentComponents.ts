@@ -12,14 +12,13 @@ export const getAllFlexibleContentComponents = async (
 	try {
 		const content: DocumentNode = gql`
 			{
-        		mainContent: ${postType}(where: {name: "${slug}", status: PUBLISH}) {
-        		  edges {
+				mainContent: ${postType}(where: {name: "${slug}", status: PUBLISH}) {
+					edges {
 						node {
 							template {
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
-											
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName
 												title
@@ -55,18 +54,43 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_OurServices {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												servicesGrid {
+													card {
+														title
+														paragraph
+														link {
+															url
+															title
+															target
+														}
+														image {
+															altText
+															sourceUrl
+															mediaDetails {
+																height
+																width
+															}
+														}
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
 												paragraph
-												highlightText
+												itemsDisplayedPerPage
 												gallery {
-            										altText
-            										sourceUrl
-            										mediaDetails {
-            											height
-            											width
-            										}
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
 												}
 											}
 											... on ${postTypeFlexibleContent}_TestimonialsGrid {
@@ -75,9 +99,8 @@ export const getAllFlexibleContentComponents = async (
 												subtitle
 												paragraph
 												testimonialsGrid {
-													card{
-														title
-														jobTitle
+													card {
+														name
 														paragraph
 														image {
 															altText
@@ -93,14 +116,45 @@ export const getAllFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_BlogsGrid {
 												fieldGroupName
 												title
-												italic
+												subtitle
 												paragraph
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
 												fieldGroupName
 												title
-												italic
+												subtitle
 												paragraph
+											}
+											... on ${postTypeFlexibleContent}_CaseStudiesGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+											}
+											... on ${postTypeFlexibleContent}_FaqTwo {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+												buttonLink {
+													url
+													title
+													target
+												}
+												image {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												faqContent {
+													card {
+														title
+														paragraph
+													}
+												}
 											}
 											... on ${postTypeFlexibleContent}_Cta {
 												fieldGroupName
@@ -155,7 +209,7 @@ export const getAllFlexibleContentComponents = async (
 													target
 												}
 												backgroundImage {
-												sourceUrl
+													sourceUrl
 												}
 											}
 										}
@@ -164,7 +218,7 @@ export const getAllFlexibleContentComponents = async (
 							}
 						}
 					}
-        		}
+				}
 			}
 		`;
 
