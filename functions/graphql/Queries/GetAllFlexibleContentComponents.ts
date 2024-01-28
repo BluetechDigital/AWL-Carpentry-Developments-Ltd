@@ -38,6 +38,32 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 												displayParagraph
 											}
+											... on ${postTypeFlexibleContent}_AboutContentImage {
+                								fieldGroupName
+                								title
+                								subtitle
+                								paragraph
+                								image {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+                								imageTwo {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+                								bulletPointsSection {
+                									title
+                									paragraph
+                								}
+                							}
 											... on ${postTypeFlexibleContent}_OurClients {
 												fieldGroupName
 												title

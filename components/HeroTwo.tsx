@@ -1,8 +1,4 @@
 // Imports
-import {FC} from "react";
-import Image from "next/image";
-import {motion} from "framer-motion";
-import {IHeroTwo} from "@/types/components/index";
 import {
 	fadeIn,
 	initialTwo,
@@ -10,6 +6,10 @@ import {
 	slideInRightFinish,
 	slideInRightInitial,
 } from "../animations/animations";
+import {FC} from "react";
+import Image from "next/image";
+import {motion} from "framer-motion";
+import {IHeroTwo} from "@/types/components/index";
 
 // Styling
 import styles from "../styles/components/Hero.module.scss";
@@ -21,11 +21,11 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
 			<div className={styles.heroTwo}>
-				<div className="relative mt-0 lg:mt-[-50px] h-[45vh] flex flex-col lg:flex-row">
+				<div className="lg:relative mt-0 lg:mt-[-50px] h-[55vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
-							" px-4 xl:px-28 py-8 bg-blue-default w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
+							" px-4 xl:px-28 py-8 bg-blue-darkerTwo w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
 						}
 						style={{
 							backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker.svg")`,
@@ -41,7 +41,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center lg:text-left text-3xl md:text-4xl xl:text-7xl text-white font-bold leading-[3rem] lg:leading-[3.5rem]"
+								className="text-center lg:text-left uppercase text-3xl md:text-4xl xl:text-7xl text-white font-extrabold leading-[2.75rem] xl:leading-[3.5rem]"
 							>
 								{title}
 							</motion.h1>
@@ -66,7 +66,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							height={backgroundImage?.mediaDetails.height}
 							className={`${
 								backgroundImage?.sourceUrl
-									? "w-full h-full max-h-[300px] lg:max-h-[500px] object-cover object-center"
+									? "w-full h-full max-h-[300px] lg:max-h-[600px] object-cover object-center"
 									: "hidden"
 							}`}
 						/>

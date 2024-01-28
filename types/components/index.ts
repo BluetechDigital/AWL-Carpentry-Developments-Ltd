@@ -144,7 +144,33 @@ export type ITestimonialsGrid = {
 	paragraph: string;
 	highlightText: string;
 };
-
+export type IAboutContentImage = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+	imageTwo: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+	bulletPointsSection: [
+		{
+			title: string;
+			paragraph: string;
+		}
+	];
+};
 // Global
 export type ILayout = {
 	children: React.ReactNode;

@@ -14,6 +14,11 @@
 	src: url("../fonts/BebasNeue-Regular.ttf");
 }
 
+@font-face {
+	font-family: Figtree;
+	src: url("../fonts/Figtree-VariableFont_wght.ttf");
+}
+
 // Font Stack Properties
-$main: "BebasNeue", sans-serif;
+$main: "Figtree", sans-serif;
 $body: "PlusJakartaSans", "Inter", sans-serif;

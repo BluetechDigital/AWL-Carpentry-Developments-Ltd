@@ -16,6 +16,7 @@ import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
 import BlogsThreeCards from "../BlogsThreeCards";
 import TestimonialsGrid from "../TestimonialsGrid";
+import AboutContentImage from "../AboutContentImage";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -33,7 +34,6 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									backgroundImage={item?.backgroundImage}
 								/>
-								<div className="bg-white h-[50vh]"></div>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_TitleParagraph` ? (
 							<>
@@ -41,6 +41,18 @@ const RenderFlexibleContent: FC = () => {
 									title={item?.title}
 									paragraph={item?.paragraph}
 									displayParagraph={item?.displayParagraph}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_AboutContentImage` ? (
+							<>
+								<AboutContentImage
+									title={item?.title}
+									image={item?.image}
+									subtitle={item?.subtitle}
+									imageTwo={item?.imageTwo}
+									paragraph={item?.paragraph}
+									bulletPointsSection={item?.bulletPointsSection}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurClients` ? (

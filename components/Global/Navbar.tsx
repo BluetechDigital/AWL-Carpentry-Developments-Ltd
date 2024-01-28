@@ -80,13 +80,13 @@ const Navbar: FC = () => {
 								width={500}
 								height={500}
 								alt="Awl Carpentry Developments Logo"
-								src="/svg/logos/awl-carpentry-developments-logo-color.svg"
+								src="/svg/logos/awl-carpentry-developments-logo-color-blue.svg"
 								className="object-contain object-center w-full h-[85px] lg:h-[100px]"
 							/>
 						</Link>
 					</div>
 					<div
-						className="bg-blue-darker py-2 lg:pb-11 px-6 xl:px-28 w-full lg:w-[60%] flex justify-start gap-12 xl:gap-24"
+						className="bg-blue-darkerTwo py-2 lg:pb-11 px-6 xl:px-28 w-full lg:w-[60%] flex justify-start gap-12 xl:gap-24"
 						style={{
 							clipPath: `polygon(3% 0, 100% 0%, 100% 100%, 0 100%)`,
 						}}
