@@ -25,26 +25,26 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 					<div
 						className={
 							styles.leftSideContent +
-							" px-4 pt-20 pb-8 h-full bg-blue-darker w-full xl:w-1/2"
+							" px-4 xl:px-28 py-8 bg-blue-darker w-full xl:w-1/2"
 						}
 					>
 						<motion.div
 							viewport={{once: true}}
 							initial={slideInLeftInitial}
 							whileInView={slideInRightFinish}
-							className="container px-4 mx-auto"
+							className="container px-0 mx-auto flex flex-col justify-center h-full"
 						>
 							<motion.h1
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="max-w-3xl flex flex-col sm:block text-3xl md:text-4xl text-white font-bold leading-[3rem] lg:leading-[4rem]"
+								className="max-w-3xl text-center lg:text-left text-3xl md:text-4xl text-white font-bold leading-[3rem] lg:leading-[4rem]"
 							>
 								{title}
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="max-w-2xl py-2 text-white leading-[1.75rem] text-base sm:text-paragraph text-center sm:text-left"
+								tailwindStyling="lg:max-w-xl py-2 text-white leading-[1.75rem] text-base sm:text-paragraph text-center lg:text-left"
 							/>
 						</motion.div>
 					</div>
