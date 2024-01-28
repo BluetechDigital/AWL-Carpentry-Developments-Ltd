@@ -21,30 +21,33 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
 			<div className={styles.heroTwo}>
-				<div className="relative h-[40vh] flex flex-col lg:flex-row">
+				<div className="relative mt-0 lg:mt-[-50px] h-[45vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
-							" px-4 xl:px-28 py-8 bg-blue-darker w-full xl:w-1/2"
+							" px-4 xl:px-28 py-8 bg-blue-default w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
 						}
+						style={{
+							backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker.svg")`,
+						}}
 					>
 						<motion.div
 							viewport={{once: true}}
 							initial={slideInLeftInitial}
 							whileInView={slideInRightFinish}
-							className="container px-0 mx-auto flex flex-col justify-center h-full"
+							className="container px-0 mx-auto max-w-xl flex flex-col justify-center h-full"
 						>
 							<motion.h1
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="max-w-3xl text-center lg:text-left text-3xl md:text-4xl text-white font-bold leading-[3rem] lg:leading-[4rem]"
+								className="text-center lg:text-left text-3xl md:text-4xl xl:text-7xl text-white font-bold leading-[3rem] lg:leading-[3.5rem]"
 							>
 								{title}
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="lg:max-w-xl py-2 text-white leading-[1.75rem] text-base sm:text-paragraph text-center lg:text-left"
+								tailwindStyling="py-2 text-white leading-[1.75rem] text-base sm:text-paragraph text-center lg:text-left"
 							/>
 						</motion.div>
 					</div>
@@ -63,7 +66,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							height={backgroundImage?.mediaDetails.height}
 							className={`${
 								backgroundImage?.sourceUrl
-									? "w-full h-full max-h-[300px] lg:max-h-[400px] object-cover object-center"
+									? "w-full h-full max-h-[300px] lg:max-h-[500px] object-cover object-center"
 									: "hidden"
 							}`}
 						/>

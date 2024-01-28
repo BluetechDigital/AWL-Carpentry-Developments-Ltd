@@ -842,8 +842,8 @@ const Footer: FC = () => {
 									priority
 									width={500}
 									height={500}
-									alt="BluetechDigital Logo"
-									src="/img/logos/BluetechDigital-Logo-color.png"
+									alt="Awl Carpentry Developments Logo"
+									src="/svg/logos/awl-carpentry-developments-logo-color.svg"
 									className="object-contain object-center w-[25px] h-[25px]"
 								/>
 								<Paragraph

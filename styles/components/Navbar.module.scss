@@ -63,15 +63,15 @@
 		position: fixed;
 		z-index: 999;
 		right: 25px;
-		top: 15px;
+		top: 20px;
 		padding: 0px;
 		width: 50px;
 		height: 45px;
 		border: none;
 		line-height: 0.6;
-		border-radius: 5px;
+		border-radius: 0px;
 		text-align: center;
-		background: $blue;
+		background: $aqua;
 		transition: all 1s ease-in-out;
 
 		&:hover {
@@ -127,7 +127,7 @@
 		position: fixed;
 		z-index: 999;
 		right: 25px;
-		top: 15px;
+		top: 20px;
 		padding: 0;
 		width: 45px;
 		height: 45px;

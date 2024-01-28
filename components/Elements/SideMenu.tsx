@@ -45,7 +45,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 							<Image
 								width={500}
 								height={500}
-								alt="BluetechDigital Logo"
+								alt="Awl Carpentry Developments Logo"
 								src="/svg/logo/BluetechDigital-Logo-color.svg"
 								className="object-contain object-center w-full h-[50px]"
 							/>
