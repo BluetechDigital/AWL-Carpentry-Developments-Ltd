@@ -68,7 +68,7 @@ const Navbar: FC = () => {
 				className={
 					styles.navbar +
 					` z-[999] h-fit w-full ${
-						scrollPosition > 1 ? "fixed pt-[50px]" : "block mt-[0px]"
+						scrollPosition > 1 ? "fixed pt-0 lg:pt-[50px]" : "block mt-[0px]"
 					}`
 				}
 			>

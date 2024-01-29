@@ -52,7 +52,7 @@ const RenderFlexibleContent: FC = () => {
 									subtitle={item?.subtitle}
 									imageTwo={item?.imageTwo}
 									paragraph={item?.paragraph}
-									bulletPointsSection={item?.bulletPointsSection}
+									checkatrade={item?.checkatrade}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurClients` ? (

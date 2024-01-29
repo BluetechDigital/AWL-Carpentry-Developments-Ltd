@@ -2,13 +2,12 @@
 import {
 	fadeIn,
 	initial,
+	stagger,
 	initialTwo,
-	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
-	stagger,
 } from "../animations/animations";
-import {FC, Fragment} from "react";
+import {FC} from "react";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IAboutContentImage} from "@/types/components";
@@ -25,59 +24,80 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 	imageTwo,
 	subtitle,
 	paragraph,
-	bulletPointsSection,
+	checkatrade,
 }) => {
 	return (
 		<>
 			<div className={styles.aboutContentImage}>
-				<div className="flex flex-col-reverse xl:flex-row items-center justify-center">
+				<div className="flex flex-col-reverse xl:flex-row items-center justify-center gap-0 xl:gap-20">
 					<motion.div
 						viewport={{once: true}}
 						initial={slideInRightInitial}
 						whileInView={slideInRightFinish}
-						className="flex flex-row w-full h-full xl:w-1/2 gap-2 my-2"
+						className="grid grid-cols-1 sm:grid-cols-2 xl:flex xl:flex-col items-center justify-center w-full h-full xl:w-[35%]"
 					>
-						<div className="grid grid-cols-1 sm:grid-cols-2 xl:flex xl:flex-col gap-2 w-full h-full xl:w-2/3">
-							<div className="hidden xl:block w-full">
-								<div
-									className="w-full h-[800px] max-h-[300px] xl:max-h-[400px] bg-cover bg-center bg-no-repeat"
-									style={{
-										backgroundImage: `url("${image?.sourceUrl})`,
-										clipPath: `polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)`,
-									}}
-								/>
-								<div
-									className="hidden xl:block w-full h-[800px] max-h-[300px] xl:max-h-[400px] bg-cover bg-center bg-no-repeat"
-									style={{
-										backgroundImage: `url("${imageTwo?.sourceUrl})`,
-										clipPath: `polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)`,
-									}}
-								/>
-							</div>
-							<div className="block xl:hidden w-full flex flex-col sm:flex-row xl:flex-col">
-								<div
-									className="w-full h-[800px] max-h-[300px] xl:max-h-[400px] bg-cover bg-center bg-no-repeat"
-									style={{
-										backgroundImage: `url("${image?.sourceUrl})`,
-									}}
-								/>
-								<div
-									className="w-full h-[800px] max-h-[300px] xl:max-h-[400px] bg-cover bg-center bg-no-repeat"
-									style={{
-										backgroundImage: `url("${imageTwo?.sourceUrl})`,
-									}}
-								/>
-							</div>
-							<div className="hidden xl:block w-full h-full xl:w-1/3" />
+						<div className="hidden xl:flex flex-col gap-2 py-2">
+							<Image
+								alt={image?.altText}
+								src={image?.sourceUrl}
+								width={image?.mediaDetails.width}
+								height={image?.mediaDetails.height}
+								className={`${
+									image?.sourceUrl
+										? "hidden xl:block w-full h-full min-h-[350px] object-cover object-center"
+										: "hidden"
+								}`}
+								style={{
+									clipPath: `polygon(0% 0%, 80% 0, 90% 35%, 75% 100%, 0% 100%)`,
+								}}
+							/>
+							<Image
+								alt={imageTwo?.altText}
+								src={imageTwo?.sourceUrl}
+								width={imageTwo?.mediaDetails.width}
+								height={imageTwo?.mediaDetails.height}
+								className={`${
+									imageTwo?.sourceUrl
+										? "hidden xl:block w-full h-full min-h-[350px] object-cover object-center"
+										: "hidden"
+								}`}
+								style={{
+									clipPath: `polygon(0% 0%, 75% 0, 90% 65%, 80% 100%, 0% 100%)`,
+								}}
+							/>
+						</div>
+						<div className="flex xl:hidden flex-col sm:flex-row gap-2 p-2">
+							<Image
+								alt={image?.altText}
+								src={image?.sourceUrl}
+								width={image?.mediaDetails.width}
+								height={image?.mediaDetails.height}
+								className={`${
+									image?.sourceUrl
+										? "block xl:hidden w-full h-[400px] object-cover object-center"
+										: "hidden"
+								}`}
+							/>
+							<Image
+								alt={imageTwo?.altText}
+								src={imageTwo?.sourceUrl}
+								width={imageTwo?.mediaDetails.width}
+								height={imageTwo?.mediaDetails.height}
+								className={`${
+									imageTwo?.sourceUrl
+										? "block xl:hidden w-full h-[400px] object-cover object-center"
+										: "hidden"
+								}`}
+							/>
 						</div>
 					</motion.div>
-					<div className="bg-white container px-4 xl:pr-28 mx-auto flex flex-col w-full xl:w-1/2">
-						<div className="max-w-2xl mx-auto xl:mx-0 py-20">
+					<div className="bg-white flex flex-col xl:flex-row items-center justify-start gap-20 w-full xl:w-[65%]">
+						<div className=" pb-10sm:py-20 px-4 w-full">
 							<motion.h4
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center xl:text-left uppercase font-bold text-paragraph text-aqua-default"
+								className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-paragraph text-aqua-default"
 							>
 								{subtitle}
 							</motion.h4>
@@ -85,26 +105,27 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 								initial={initial}
 								whileInView={stagger}
 								viewport={{once: true}}
-								className="my-2 max-w-2xl mx-auto mb-6 uppercase text-black text-center xl:text-left font-extrabold leading-[2.75rem] text-4xl lg:text-5xl"
+								className="my-2 mb-6 max-w-2xl mx-auto xl:mx-0 uppercase text-black text-center xl:text-left font-extrabold leading-[2.75rem] text-4xl lg:text-5xl"
 							>
 								{title}
 							</motion.h3>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="text-center xl:text-left text-darkGrey text-paragraph"
+								tailwindStyling="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left text-darkGrey text-paragraph"
 							/>
-							<div className="flex flex-col">
-								{bulletPointsSection?.length > 0 ? (
-									bulletPointsSection?.map((item: any, keys: any) => (
-										<Fragment key={keys}>
-											<div>hello</div>
-										</Fragment>
-									))
-								) : (
-									<></>
-								)}
-							</div>
+							<Image
+								alt={checkatrade?.altText}
+								src={checkatrade?.sourceUrl}
+								width={checkatrade?.mediaDetails.width}
+								height={checkatrade?.mediaDetails.height}
+								className={`${
+									checkatrade?.sourceUrl
+										? "mx-auto xl:mx-0 w-fit h-[200px] object-contain object-center"
+										: "hidden"
+								}`}
+							/>
 						</div>
+						<div className="hidden xl:flex flex-col items-end justify-end gap-4 w-full xl:w-[10%] h-full min-h-[845px] bg-blue-darker" />
 					</div>
 				</div>
 			</div>

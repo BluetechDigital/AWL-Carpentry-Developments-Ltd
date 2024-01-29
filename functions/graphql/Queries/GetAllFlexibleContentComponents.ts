@@ -43,6 +43,14 @@ export const getAllFlexibleContentComponents = async (
                 								title
                 								subtitle
                 								paragraph
+                								checkatrade {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
                 								image {
                 									altText
                 									sourceUrl
@@ -58,10 +66,6 @@ export const getAllFlexibleContentComponents = async (
                 										height
                 										width
                 									}
-                								}
-                								bulletPointsSection {
-                									title
-                									paragraph
                 								}
                 							}
 											... on ${postTypeFlexibleContent}_OurClients {

@@ -21,7 +21,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
 			<div className={styles.heroTwo}>
-				<div className="lg:relative mt-0 lg:mt-[-50px] h-[55vh] flex flex-col lg:flex-row">
+				<div className="lg:relative mt-0 lg:mt-[-50px] lg:h-[55vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
@@ -41,7 +41,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center lg:text-left uppercase text-3xl md:text-4xl xl:text-7xl text-white font-extrabold leading-[2.75rem] xl:leading-[3.5rem]"
+								className="text-center lg:text-left uppercase text-3xl md:text-4xl xl:text-6xl text-white font-extrabold leading-[2.75rem] xl:leading-[3rem]"
 							>
 								{title}
 							</motion.h1>

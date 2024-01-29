@@ -148,6 +148,14 @@ export type IAboutContentImage = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
+	checkatrade: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
 	image: {
 		altText: string;
 		sourceUrl: string;
@@ -164,12 +172,6 @@ export type IAboutContentImage = {
 			height: number;
 		};
 	};
-	bulletPointsSection: [
-		{
-			title: string;
-			paragraph: string;
-		}
-	];
 };
 // Global
 export type ILayout = {
