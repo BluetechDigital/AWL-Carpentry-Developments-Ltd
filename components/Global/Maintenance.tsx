@@ -9,7 +9,7 @@ import {fadeIn, initial, initialTwo, stagger} from "@/animations/animations";
 import styles from "../../styles/components/Maintenance.module.scss";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Maintenance: FC<IMaintenance> = ({title, paragraph, backgroundImage}) => {
 	return (

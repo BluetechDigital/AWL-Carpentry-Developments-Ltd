@@ -15,7 +15,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 					mobileLinks: globalProps?.mobileLinks,
 					caseStudies: globalProps?.caseStudies,
 					testimonials: globalProps?.testimonials,
-					aboutUsLinks: globalProps?.aboutUsLinks,
+					aboutUsSublinks: globalProps?.aboutUsSublinks,
 					copyrightLinks: globalProps?.copyrightLinks,
 					locationsLinks: globalProps?.locationsLinks,
 					footerMenuLinks: globalProps?.footerMenuLinks,

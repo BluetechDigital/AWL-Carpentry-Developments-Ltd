@@ -13,7 +13,7 @@ import styles from "./../../styles/components/Navbar.module.scss";
 
 // Components
 import SideMenu from "../Elements/SideMenu";
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();

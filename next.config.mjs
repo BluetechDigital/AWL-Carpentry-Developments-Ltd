@@ -2,13 +2,11 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		// remotePatterns: [
-		// 	{
-		// 		protocol: "https",
-		// 		hostname: "**",
-		// 	},
-		// ],
-		domains: ["awl-carpentry-developments-ltd.local"],
+		domains: [
+			"vzt.nmy.mybluehost.me",
+			"awl-carpentry-developments-ltd.local",
+			"awl-carpentry-developments-cms.local",
+		],
 	},
 };
 

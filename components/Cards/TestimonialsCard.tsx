@@ -6,7 +6,7 @@ import {ITestimonialsCard} from "@/types/components";
 import {initial, stagger} from "@/animations/animations";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const TestimonialsCard: FC<ITestimonialsCard> = ({name, image, paragraph}) => {
 	return (

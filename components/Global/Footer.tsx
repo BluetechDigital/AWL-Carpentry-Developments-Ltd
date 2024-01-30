@@ -16,7 +16,7 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/styles/components/Footer.module.scss";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Footer: FC = () => {
 	const globalContext = useGlobalContext();
@@ -47,38 +47,35 @@ const Footer: FC = () => {
 							content={globalContext?.themesOptionsContent?.textarea}
 							tailwindStyling="px-4 lg:px-0 max-w-full lg:max-w-sm text-tiny text-lightGreyTwo text-center lg:text-left"
 						/>
-						<motion.ul
-							initial={initial}
-							viewport={{once: true}}
-							whileInView={stagger}
-							className="mt-2 grid grid-cols-4 gap-2"
-						>
-							{globalContext?.locationsLinks?.length > 0 ? (
-								globalContext?.locationsLinks?.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										<motion.li
-											initial={initialTwo}
-											whileInView={fadeIn}
-											viewport={{once: true}}
-										>
-											<Link
-												href={`locations/${item?.node?.url}`}
-												className="text-lightGrey transition-all duration-200 ease-in-out text-tiny hover:text-aqua-default"
-											>
-												{item?.node?.label}
-											</Link>
-										</motion.li>
-									</Fragment>
-								))
+						<div className="grid grid-cols-3 gap-4">
+							{globalContext?.themesOptionsContent?.certificationsGallery
+								?.length > 0 ? (
+								globalContext?.themesOptionsContent?.certificationsGallery?.map(
+									(item: any, keys: any) => (
+										<Fragment key={keys}>
+											<Image
+												alt={item?.altText}
+												src={item?.sourceUrl}
+												width={item?.mediaDetails.width}
+												height={item?.mediaDetails.height}
+												className={`${
+													item?.sourceUrl
+														? "w-full h-[85px] object-contain object-center"
+														: "hidden"
+												}`}
+											/>
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}
-						</motion.ul>
+						</div>
 					</motion.div>
 					<div className="flex flex-col md:flex-row items-center lg:items-start justify-center gap-6 xl:gap-16">
 						<div className="flex flex-col px-0">
 							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
-								Links
+								About
 							</h4>
 							<motion.ul
 								initial={initial}
@@ -96,7 +93,41 @@ const Footer: FC = () => {
 													viewport={{once: true}}
 												>
 													<Link
-														href={`locations/${item?.node?.url}`}
+														href={`${item?.node?.url}`}
+														className="text-lightGrey transition-all duration-200 ease-in-out text-tiny hover:text-aqua-default"
+													>
+														{item?.node?.label}
+													</Link>
+												</motion.li>
+											</Fragment>
+										)
+									)
+								) : (
+									<></>
+								)}
+							</motion.ul>
+						</div>
+						<div className="flex flex-col px-0">
+							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
+								Services
+							</h4>
+							<motion.ul
+								initial={initial}
+								viewport={{once: true}}
+								whileInView={stagger}
+								className="flex flex-col w-auto gap-2 p-2 items-center justify-center lg:items-start"
+							>
+								{globalContext?.servicesSublinks?.length > 0 ? (
+									globalContext?.servicesSublinks?.map(
+										(item: any, keys: any) => (
+											<Fragment key={keys}>
+												<motion.li
+													initial={initialTwo}
+													whileInView={fadeIn}
+													viewport={{once: true}}
+												>
+													<Link
+														href={`${item?.node?.url}`}
 														className="text-lightGrey transition-all duration-200 ease-in-out text-tiny hover:text-aqua-default"
 													>
 														{item?.node?.label}
@@ -277,6 +308,33 @@ const Footer: FC = () => {
 						</div>
 					</div>
 				</div>
+				<motion.ul
+					initial={initial}
+					whileInView={stagger}
+					viewport={{once: true}}
+					className="mt-2 flex flex-col sm:flex-row gap-2 my-4"
+				>
+					{globalContext?.locationsLinks?.length > 0 ? (
+						globalContext?.locationsLinks?.map((item: any, keys: any) => (
+							<Fragment key={keys}>
+								<motion.li
+									initial={initialTwo}
+									whileInView={fadeIn}
+									viewport={{once: true}}
+								>
+									<Link
+										href={`locations${item?.node?.url}`}
+										className="text-lightGrey transition-all duration-200 ease-in-out text-tiny hover:text-aqua-default"
+									>
+										{item?.node?.label}
+									</Link>
+								</motion.li>
+							</Fragment>
+						))
+					) : (
+						<></>
+					)}
+				</motion.ul>
 				<div className="border-b border-orange-default opacity-50" />
 				<div className="flex flex-col-reverse items-center justify-between py-4 m-0 lg:-m-6 lg:flex-row">
 					<motion.div

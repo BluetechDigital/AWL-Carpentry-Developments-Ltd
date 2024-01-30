@@ -4,6 +4,7 @@ import {usePageContext} from "@/context/pages";
 
 // Components
 import CTA from "../CTA";
+import Hero from "../Hero";
 import Blogs from "../Blogs";
 import FAQTwo from "../FAQTwo";
 import HeroTwo from "../HeroTwo";
@@ -27,7 +28,15 @@ const RenderFlexibleContent: FC = () => {
 			{content?.content?.length > 0 ? (
 				content?.content?.map((item: any, keys: any) => (
 					<section key={keys}>
-						{item?.fieldGroupName === `${FlexibleContent}_HeroTwo` ? (
+						{item?.fieldGroupName === `${FlexibleContent}_Hero` ? (
+							<>
+								<Hero
+									title={item?.title}
+									paragraph={item?.paragraph}
+									backgroundImage={item?.backgroundImage}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_HeroTwo` ? (
 							<>
 								<HeroTwo
 									title={item?.title}

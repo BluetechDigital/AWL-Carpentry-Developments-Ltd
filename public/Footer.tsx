@@ -16,35 +16,16 @@ import {useGlobalContext} from "@/context/global";
 import styles from "@/styles/components/Footer.module.scss";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const Footer: FC = () => {
 	const globalContext = useGlobalContext();
 
 	const [aboutUsSublinksOpen, setAboutUsSublinksOpen]: any = useState(false);
-	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
-		useState(false);
-	const [careersSublinksOpen, setCareersSublinksOpen]: any = useState(false);
 
 	// Hides or Display About Us Sublinks
 	const displayAboutUsSublinks = () => {
-		setCareersSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
 		setAboutUsSublinksOpen(!aboutUsSublinksOpen);
-	};
-
-	// Hides or Display Careers Sublinks
-	const displayCareersSublinks = () => {
-		setAboutUsSublinksOpen(false);
-		setNewsInsightsSublinksOpen(false);
-		setCareersSublinksOpen(!careersSublinksOpen);
-	};
-
-	// Hides or Display News & Insights Sublinks
-	const displayNewsInsightsSublinks = () => {
-		setAboutUsSublinksOpen(false);
-		setCareersSublinksOpen(false);
-		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
 	};
 
 	return (
@@ -481,154 +462,6 @@ const Footer: FC = () => {
 															) : null}
 														</div>
 													</motion.li>
-												) : item?.node?.url === "/news" ? (
-													<motion.li
-														className="px-0"
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-													>
-														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
-															<Link
-																href={`${item?.node?.url}`}
-																className="text-pureBlack group-hover:text-pureBlack group-hover:hover:text-orange-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
-															>
-																{item?.node?.label}
-															</Link>
-															<Image
-																width={550}
-																height={550}
-																alt="Black Arrow Icon"
-																onClick={displayNewsInsightsSublinks}
-																src="/svg/navigation-menu-dropdown-arrow-black.svg"
-																className={
-																	newsInsightsSublinksOpen
-																		? "hidden"
-																		: "block cursor-pointer w-[22px] h-[22px] object-contain object-center"
-																}
-															/>
-															<Image
-																width={550}
-																height={550}
-																alt="Black Arrow Icon"
-																onClick={displayNewsInsightsSublinks}
-																src="/svg/navigation-menu-dropdown-arrow-black.svg"
-																className={
-																	newsInsightsSublinksOpen
-																		? "block rotate-180 cursor-pointer w-[22px] h-[22px] object-contain object-center"
-																		: "hidden"
-																}
-															/>
-														</span>
-														<div>
-															{newsInsightsSublinksOpen ? (
-																<>
-																	<ul
-																		className={
-																			styles.newsInsightsSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start ml-2 my-2 border-l-2 border-solid border-orange-two"
-																		}
-																	>
-																		{globalContext?.newsInsightSublinks
-																			?.length > 0 ? (
-																			globalContext?.newsInsightSublinks?.map(
-																				(item: any, keys: any) => (
-																					<Fragment key={keys}>
-																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full ml-2">
-																								<Link
-																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-orange-three hover:border-b-2 hover:border-solid hover:border-orange-dark"
-																								>
-																									{item?.node?.label}
-																								</Link>
-																							</li>
-																						</Link>
-																					</Fragment>
-																				)
-																			)
-																		) : (
-																			<></>
-																		)}
-																	</ul>
-																</>
-															) : null}
-														</div>
-													</motion.li>
-												) : item?.node?.url === "/careers" ? (
-													<motion.li
-														className="px-0"
-														initial={initial}
-														whileInView={fadeInUp}
-														viewport={{once: true}}
-													>
-														<span className="flex flex-row justify-center items-center lg:justify-start gap-2 cursor-pointer">
-															<Link
-																href={`${item?.node?.url}`}
-																className="text-pureBlack group-hover:text-pureBlack group-hover:hover:text-orange-two text-base text-center lg:text-left transition-all ease-in-out duration-500"
-															>
-																{item?.node?.label}
-															</Link>
-															<Image
-																width={550}
-																height={550}
-																alt="Black Arrow Icon"
-																onClick={displayCareersSublinks}
-																src="/svg/navigation-menu-dropdown-arrow-black.svg"
-																className={
-																	careersSublinksOpen
-																		? "hidden"
-																		: "block cursor-pointer w-[22px] h-[22px] object-contain object-center"
-																}
-															/>
-															<Image
-																width={550}
-																height={550}
-																alt="Black Arrow Icon"
-																onClick={displayCareersSublinks}
-																src="/svg/navigation-menu-dropdown-arrow-black.svg"
-																className={
-																	careersSublinksOpen
-																		? "block rotate-180 cursor-pointer w-[22px] h-[22px] object-contain object-center"
-																		: "hidden"
-																}
-															/>
-														</span>
-														<div>
-															{careersSublinksOpen ? (
-																<>
-																	<ul
-																		className={
-																			styles.careersSublinks +
-																			" p-0 w-full flex flex-col gap-2 py-4 z-[999] items-center lg:items-start ml-2 my-2 border-l-2 border-solid border-orange-two"
-																		}
-																	>
-																		{globalContext?.careerSublinks?.length >
-																		0 ? (
-																			globalContext?.careerSublinks?.map(
-																				(item: any, keys: any) => (
-																					<Fragment key={keys}>
-																						<Link href={`${item?.node?.url}`}>
-																							<li className="w-full ml-2">
-																								<Link
-																									href={`${item?.node?.url}`}
-																									className="text-pureBlack text-base text-center lg:text-left hover:text-orange-three hover:border-b-2 hover:border-solid hover:border-orange-dark"
-																								>
-																									{item?.node?.label}
-																								</Link>
-																							</li>
-																						</Link>
-																					</Fragment>
-																				)
-																			)
-																		) : (
-																			<></>
-																		)}
-																	</ul>
-																</>
-															) : null}
-														</div>
-													</motion.li>
 												) : (
 													<motion.li
 														className="px-0"
@@ -661,31 +494,7 @@ const Footer: FC = () => {
 								whileInView={stagger}
 								viewport={{once: true}}
 								className="flex flex-col items-center justify-center gap-2 py-6 lg:items-baseline"
-							>
-								{globalContext?.ourProgramsLinks?.length > 0 ? (
-									globalContext?.ourProgramsLinks?.map(
-										(item: any, keys: any) => (
-											<Fragment key={keys}>
-												<motion.li
-													className="px-0"
-													initial={initial}
-													whileInView={fadeInUp}
-													viewport={{once: true}}
-												>
-													<Link
-														href={`${item?.node?.url}`}
-														className="text-pureBlack text-base text-center lg:text-left hover:text-orange-two"
-													>
-														{item?.node?.label}
-													</Link>
-												</motion.li>
-											</Fragment>
-										)
-									)
-								) : (
-									<></>
-								)}
-							</motion.ul>
+							></motion.ul>
 						</div>
 						<div className="xl:ml-16 flex flex-col sm:col-span-2 xl:col-span-1 gap-4 sm:gap-0 items-center justify-center lg:justify-between">
 							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-pureBlack uppercase md:text-left">

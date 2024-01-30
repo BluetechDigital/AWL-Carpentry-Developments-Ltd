@@ -4,7 +4,12 @@ import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurServices} from "@/types/components/index";
-import {fadeIn, initialTwo} from "../animations/animations";
+import fadeInUp, {
+	fadeIn,
+	initial,
+	initialTwo,
+	stagger,
+} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/OurServices.module.scss";
@@ -29,13 +34,18 @@ const OurServices: FC<IOurServices> = ({
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
 				}}
 			>
-				<div className="container relative m-auto flex flex-col items-center gap-6">
+				<motion.div
+					initial={initial}
+					whileInView={stagger}
+					viewport={{once: true}}
+					className="container relative m-auto flex flex-col items-center gap-6"
+				>
 					<div className="flex flex-col items-center">
 						<motion.h4
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-orange-two"
+							className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-paragraph text-aqua-default"
 						>
 							{subtitle}
 						</motion.h4>
@@ -43,7 +53,7 @@ const OurServices: FC<IOurServices> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 text-center font-semibold leading-tight lg:text-left text-4xl lg:text-5xl text-black"
+							className="my-2 mb-6 max-w-2xl mx-auto xl:mx-0 uppercase text-black text-center  font-extrabold leading-[2.75rem] text-4xl lg:text-5xl"
 						>
 							{title}
 						</motion.h3>
@@ -52,7 +62,7 @@ const OurServices: FC<IOurServices> = ({
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
 						/>
 					</div>
-					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-16 px-0 sm:px-4 gap-6 items-start justify-center">
+					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 py-6 lg:py-12 px-0 sm:px-4 gap-6 items-start justify-center">
 						{servicesGrid?.length > 0 ? (
 							servicesGrid.map((item: any, keys: any) => (
 								<Fragment key={keys}>
@@ -65,182 +75,65 @@ const OurServices: FC<IOurServices> = ({
 												boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 											}}
 										>
-											<div
-												className="flex flex-col w-full h-fit min-h-[600px] justify-between items-center bg-center bg-no-repeat bg-cover transition-all duration-500 ease-in-out md:hover:scale-105"
+											<motion.div
+												initial={initial}
+												whileInView={fadeInUp}
+												viewport={{once: true}}
+												className="group-hover:bg-orange-darker group-hover:bg-none opacity-95 group-hover:opacity-100 px-4 lg:px-10 py-6 lg:py-12 relative overflow-hidden h-full xl:min-h-[500px] max-w-md mx-auto bg-center bg-no-repeat bg-cover transition-all duration-500 ease-in-out"
 												style={{
 													backgroundImage: `linear-gradient(
 														0deg,
-														rgba(0, 128, 0, 0.70),
-														rgba(0, 128, 0, 0.85),
-														rgba(0, 128, 0, 1)
+														rgba(0, 22, 64, 0),
+														rgba(0, 22, 64, 0.25),
+														rgba(0, 22, 64, 0.75),
+														rgba(0, 22, 64, 0.85),
+														rgba(0, 22, 64, 0.95)
 													),url("${item?.card?.image?.sourceUrl}")`,
 												}}
 											>
-												<div
-													className={
-														styles.content +
-														" py-10 px-6 sm:p-10 group-hover:mt-28 sm:group-hover:mt-10 md:group-hover:mt-16 gap-4 sm:gap-8 h-[400px] bg-white group-hover:border-none border-t-4 border-orange-two flex flex-col"
-													}
+												<motion.h3
+													initial={initialTwo}
+													whileInView={fadeIn}
+													viewport={{once: true}}
+													className="text-white uppercase text-3xl mb-6 font-extrabold leading-[2.5rem]"
 												>
-													<motion.div
-														initial={initialTwo}
-														whileInView={fadeIn}
-														viewport={{once: true}}
-													>
-														<Image
-															alt={item?.card?.icon?.altText}
-															src={item?.card?.icon?.sourceUrl}
-															width={item?.card?.icon?.mediaDetails?.width}
-															height={item?.card?.icon?.mediaDetails?.height}
-															className={
-																item?.card?.icon?.sourceUrl
-																	? `block group-hover:hidden object-contain object-center w-full h-[50px] lg:h-[60px]`
-																	: `hidden`
-															}
-														/>
-													</motion.div>
-													<motion.h3
-														initial={initialTwo}
-														whileInView={fadeIn}
-														viewport={{once: true}}
-														className="text-pureBlack group-hover:text-white font-extrabold text-xl leading-tight text-center tracking-[0.10rem]"
-													>
-														{item?.card?.title}
-													</motion.h3>
-													<Paragraph
-														content={
-															item?.card?.paragraph.substring(0, 150) + "..."
-														}
-														tailwindStyling="text-darkGrey group-hover:text-white text-base text-center"
-													/>
-													<motion.button
-														initial={initialTwo}
-														whileInView={fadeIn}
-														viewport={{once: true}}
-														className={
-															item?.card?.link?.title
-																? `flex sm:hidden group-hover:hidden items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-orange-two border-orange-two hover:bg-orange-dark hover:border-orange-dark transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-orange-two hover:before:bg-orange-dark after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-orange-two hover:after:bg-orange-dark`
-																: `hidden`
-														}
-													>
-														<span>{item?.card?.link?.title}</span>
-														<span className="hidden group-hover:block">
-															<svg
-																height="35"
-																width="30.237"
-																viewBox="0 0 30.237 35"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<g transform="translate(-4906.763 143)">
-																	<path
-																		d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-																		transform="translate(4870 -143)"
-																		fill="#e4a002"
-																	></path>
-																	<g transform="translate(4890.311 -1111.861)">
-																		<path
-																			d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-																			transform="translate(0 0)"
-																			fill="#ffffff"
-																		></path>
-																	</g>
-																</g>
-															</svg>
-														</span>
-														<span className="block group-hover:hidden">
-															<svg
-																height="35"
-																width="30.237"
-																viewBox="0 0 30.237 35"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<g transform="translate(-4906.763 143)">
-																	<path
-																		d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-																		transform="translate(4870 -143)"
-																		fill="#ffffff"
-																	></path>
-																	<g transform="translate(4890.311 -1111.861)">
-																		<path
-																			d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-																			transform="translate(0 0)"
-																			fill="#ffffff"
-																		></path>
-																	</g>
-																</g>
-															</svg>
-														</span>
-													</motion.button>
-												</div>
-												<div className="py-0 group-hover:py-4 w-full h-[200px] flex flex-col items-center justify-center bg-center bg-no-repeat bg-cover">
-													<button
-														className={
-															item?.card?.link?.title
-																? `hidden group-hover:flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-transparent border-white hover:bg-orange-dark hover:border-orange-dark transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-orange-dark after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-orange-dark`
-																: `hidden`
-														}
-													>
-														<span>{item?.card?.link?.title}</span>
-														<span className="hidden group-hover:block">
-															<svg
-																height="35"
-																width="30.237"
-																viewBox="0 0 30.237 35"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<g transform="translate(-4906.763 143)">
-																	<path
-																		d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-																		transform="translate(4870 -143)"
-																		fill="#e4a002"
-																	></path>
-																	<g transform="translate(4890.311 -1111.861)">
-																		<path
-																			d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-																			transform="translate(0 0)"
-																			fill="#ffffff"
-																		></path>
-																	</g>
-																</g>
-															</svg>
-														</span>
-														<span className="block group-hover:hidden">
-															<svg
-																height="35"
-																width="30.237"
-																viewBox="0 0 30.237 35"
-																xmlns="http://www.w3.org/2000/svg"
-															>
-																<g transform="translate(-4906.763 143)">
-																	<path
-																		d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-																		transform="translate(4870 -143)"
-																		fill="#ffffff"
-																	></path>
-																	<g transform="translate(4890.311 -1111.861)">
-																		<path
-																			d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-																			transform="translate(0 0)"
-																			fill="#ffffff"
-																		></path>
-																	</g>
-																</g>
-															</svg>
-														</span>
-													</button>
-													<Image
-														alt={item?.card?.image?.altText}
-														src={item?.card?.image?.sourceUrl}
-														width={item?.card?.image?.mediaDetails?.width}
-														height={item?.card?.image?.mediaDetails?.height}
-														className={
-															item?.card?.image?.sourceUrl
-																? `block group-hover:hidden w-full h-full object-cover object-center`
-																: `hidden`
-														}
-													/>
-												</div>
-											</div>
+													{item?.card?.title}
+												</motion.h3>
+												<Paragraph
+													content={
+														item?.card?.paragraph
+															? item?.card?.paragraph?.substring(0, 125) + ""
+															: ``
+													}
+													tailwindStyling="pb-20 text-white text-base text-center"
+												/>
+												<motion.div
+													initial={initial}
+													whileInView={stagger}
+													viewport={{once: true}}
+													className="absolute -bottom-6 right-4"
+												>
+													<div className="flex justify-end gap-4 mb-4">
+														<div className="flex items-center justify-center w-12 h-12 bg-orange-default hover:bg-blue-default">
+															<Image
+																width={550}
+																height={550}
+																alt="Black Arrow Icon"
+																src="/svg/navigation-menu-dropdown-arrow-white.svg"
+																className="my-auto rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
+															/>
+														</div>
+														<div className="w-12 h-12 bg-orange-default bg-opacity-50" />
+														<div className="w-12 h-12 bg-orange-default bg-opacity-50" />
+													</div>
+													<div className="flex gap-4">
+														<div className="w-12 h-12 bg-orange-default bg-opacity-50" />
+														<div className="w-12 h-12 bg-orange-default bg-opacity-50" />
+														<div className="w-12 h-12 bg-orange-default bg-opacity-50" />
+														<div className="w-12 h-12 bg-orange-default bg-opacity-50" />
+													</div>
+												</motion.div>
+											</motion.div>
 										</Link>
 									</>
 								</Fragment>
@@ -249,7 +142,7 @@ const OurServices: FC<IOurServices> = ({
 							<></>
 						)}
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</>
 	);

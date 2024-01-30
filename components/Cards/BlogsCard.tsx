@@ -13,7 +13,7 @@ import {motion} from "framer-motion";
 import {IBlogsCard} from "@/types/components/index";
 
 // Components
-import Paragraph from "../Elements/Paragraph";
+import Paragraph from "@/components/Elements/Paragraph";
 
 const BlogsCard: FC<IBlogsCard> = ({uri, title, paragraph, featuredImage}) => {
 	return (

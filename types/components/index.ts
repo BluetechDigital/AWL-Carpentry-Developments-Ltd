@@ -9,6 +9,18 @@ export type ICTA = {
 		target: string;
 	};
 };
+export type IHero = {
+	title: string;
+	paragraph: string;
+	backgroundImage: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type IBlogs = {
 	title: string;
 	subtitle: string;

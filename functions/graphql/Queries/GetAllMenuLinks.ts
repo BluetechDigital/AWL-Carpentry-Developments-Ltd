@@ -63,7 +63,7 @@ export const getMobileLinks = async () => {
 };
 
 // Navbar About Us Sublinks
-export const getAboutUsSublinks = async () => {
+export const getaboutUsSublinks = async () => {
 	try {
 		const content: any = gql`
 			{

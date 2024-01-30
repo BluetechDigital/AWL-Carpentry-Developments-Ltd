@@ -92,15 +92,6 @@ export type ICaseStudies = [
 		};
 	}
 ];
-export type IAboutUsLinks = [
-	{
-		node: {
-			id: string;
-			url: string;
-			label: string;
-		};
-	}
-];
 export type ITestimonials = [
 	{
 		node: {
@@ -146,6 +137,15 @@ export type INavbarMenuLinks = [
 		};
 	}
 ];
+export type IAboutUsSublinks = [
+	{
+		node: {
+			id: string;
+			url: string;
+			label: string;
+		};
+	}
+];
 export type IServicesSublinks = [
 	{
 		node: {
@@ -179,6 +179,16 @@ export type IThemesOptionsContent = {
 	instagramLink: string;
 	displayNoticeBanner: boolean;
 	noticeBannerTextarea: string;
+	certificationsGallery: [
+		{
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		}
+	];
 };
 
 /* CONTEXT PROVIDERS  */
@@ -192,9 +202,9 @@ export type IGlobalProps = {
 	blogsThreeCards: IBlogs;
 	caseStudies: ICaseStudies;
 	mobileLinks: IMobileLinks;
-	aboutUsLinks: IAboutUsLinks;
 	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;
+	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	locationsLinks: ILocationsSublinks;
@@ -206,9 +216,9 @@ export type IGlobalContext = {
 	blogsThreeCards: IBlogs;
 	caseStudies: ICaseStudies;
 	mobileLinks: IMobileLinks;
-	aboutUsLinks: IAboutUsLinks;
 	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;
+	aboutUsSublinks: IAboutUsSublinks;
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	locationsLinks: ILocationsSublinks;

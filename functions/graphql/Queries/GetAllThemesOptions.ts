@@ -26,6 +26,14 @@ export const getThemesOptionsContent = async () => {
 								instagramLink
 								displayNoticeBanner
 								noticeBannerTextarea
+								certificationsGallery {
+									altText
+									sourceUrl
+									mediaDetails {
+										height
+										width
+									}
+								}
 							}
 						}
 					}
