@@ -314,6 +314,23 @@ export type ITestimonialsCard = {
 		};
 	};
 };
+export type IOurCaseStudiesCard = {
+	title: string;
+	subtitle: string;
+	link: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 
 // Elements
 export type ITitle = {

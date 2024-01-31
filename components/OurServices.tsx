@@ -22,7 +22,7 @@ const OurServices: FC<IOurServices> = ({
 			<div
 				className={
 					styles.ourServices +
-					" relative py-12 lg:py-40 sm:py-24 px-4 bg-white bg-cover bg-no-repeat bg-center"
+					" relative py-12 lg:py-20 sm:py-24 px-4 bg-white bg-cover bg-no-repeat bg-center"
 				}
 				style={{
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
