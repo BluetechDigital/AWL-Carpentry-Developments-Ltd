@@ -17,9 +17,9 @@ import {
 	getCopyrightLinks,
 	getNavbarMenuLinks,
 	getFooterMenuLinks,
-	getaboutUsSublinks,
-	getOurServicesSublinks,
+	getAboutUsSublinks,
 	getLocationsSublinks,
+	getOurServicesSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 import {
@@ -72,7 +72,7 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	/* Fetch all global content
 	remaining content simultaneously */
 	const mobileLinks: any = await getMobileLinks();
-	const aboutUsSublinks: any = await getaboutUsSublinks();
+	const aboutUsSublinks: any = await getAboutUsSublinks();
 	const copyrightLinks: any = await getCopyrightLinks();
 	const navbarMenuLinks: any = await getNavbarMenuLinks();
 	const footerMenuLinks: any = await getFooterMenuLinks();

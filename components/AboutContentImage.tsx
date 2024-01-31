@@ -31,7 +31,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 		<>
 			<div className={styles.aboutContentImage}>
 				<div className="flex flex-col-reverse xl:flex-row items-center justify-center gap-0 xl:gap-20">
-					<div className="grid grid-cols-1 sm:grid-cols-2 xl:flex xl:flex-col items-center justify-center w-full h-full xl:w-[35%]">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:flex xl:flex-col items-center justify-center w-full h-full xl:w-[35%]">
 						<motion.div
 							initial={initial}
 							whileInView={stagger}
@@ -160,7 +160,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 								}`}
 							/>
 						</motion.div>
-						<div className="hidden xl:flex flex-col items-end justify-end gap-4 w-full xl:w-[10%] h-full min-h-[845px] bg-blue-darker" />
+						<div className="hidden xl:flex flex-col items-end justify-end gap-4 w-full xl:w-[10%] h-full xl:min-h-[780px] 2xl:min-h-[845px] bg-blue-darker" />
 					</div>
 				</div>
 			</div>

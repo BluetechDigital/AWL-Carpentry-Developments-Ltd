@@ -243,6 +243,23 @@ export type ICaseStudiesCard = {
 		};
 	};
 };
+export type IOurServicesCard = {
+	title: string;
+	paragraph: string;
+	link: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 export type ITestimonialsCard = {
 	name: string;
 	paragraph: string;

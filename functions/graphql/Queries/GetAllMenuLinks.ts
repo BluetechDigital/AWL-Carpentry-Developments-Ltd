@@ -63,7 +63,7 @@ export const getMobileLinks = async () => {
 };
 
 // Navbar About Us Sublinks
-export const getaboutUsSublinks = async () => {
+export const getAboutUsSublinks = async () => {
 	try {
 		const content: any = gql`
 			{
@@ -99,7 +99,7 @@ export const getOurServicesSublinks = async () => {
 			{
 				servicesSublinks: menuItems(
 					where: {location: SERVICES_LINKS}
-					first: 10
+					first: 100
 				) {
 					edges {
 						node {
