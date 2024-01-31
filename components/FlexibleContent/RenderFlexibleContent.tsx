@@ -1,6 +1,7 @@
 // Imports
 import {FC} from "react";
 import {usePageContext} from "@/context/pages";
+import {IPostTypeFlexibleContent} from "@/types/context";
 
 // Components
 import CTA from "../CTA";
@@ -13,6 +14,7 @@ import OurClients from "../OurClients";
 import ContactInfo from "../ContactInfo";
 import OurServices from "../OurServices";
 import ErrorPage from "../Global/ErrorPage";
+import OurCaseStudies from "../OurCaseStudies";
 import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
 import BlogsThreeCards from "../BlogsThreeCards";
@@ -21,7 +23,8 @@ import AboutContentImage from "../AboutContentImage";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
-	const FlexibleContent = content?.postTypeFlexibleContent;
+	const FlexibleContent: IPostTypeFlexibleContent =
+		content?.postTypeFlexibleContent;
 
 	return (
 		<>
@@ -80,6 +83,16 @@ const RenderFlexibleContent: FC = () => {
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									servicesGrid={item?.servicesGrid}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_OurCaseStudies` ? (
+							<>
+								<OurCaseStudies
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+									mainCaseStudy={item?.mainCaseStudy}
+									caseStudiesGrid={item?.caseStudiesGrid}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (

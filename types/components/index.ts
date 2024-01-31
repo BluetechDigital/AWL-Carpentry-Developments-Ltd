@@ -81,36 +81,6 @@ export type IGallery = {
 		}
 	];
 };
-export type IOurServices = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-	servicesGrid: [
-		{
-			card: {
-				title: string;
-				paragraph: string;
-				Link: {
-					url: string;
-					title: string;
-					target: string;
-				};
-				image: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
-		}
-	];
-};
-export type IContactInfo = {
-	title: string;
-	paragraph: string;
-};
 export type IOurClients = {
 	title: string;
 	subtitle: string;
@@ -133,6 +103,32 @@ export type IOurClients = {
 		}
 	];
 };
+export type IOurServices = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	servicesGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+				link: {
+					url: string;
+					title: string;
+					target: string;
+				};
+				image: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		}
+	];
+};
 export type IMaintenance = {
 	title: string;
 	paragraph: string;
@@ -145,10 +141,55 @@ export type IMaintenance = {
 		};
 	};
 };
+export type IContactInfo = {
+	title: string;
+	paragraph: string;
+};
 export type ITitleParagraph = {
 	title: string;
 	paragraph: string;
 	displayParagraph: boolean;
+};
+export type IOurCaseStudies = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	mainCaseStudy: {
+		title: string;
+		subtitle: string;
+		link: {
+			url: string;
+			title: string;
+			target: string;
+		};
+		image: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
+	caseStudiesGrid: [
+		{
+			title: string;
+			subtitle: string;
+			link: {
+				url: string;
+				title: string;
+				target: string;
+			};
+			image: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+		}
+	];
 };
 export type ITestimonialsGrid = {
 	title: string;
@@ -185,6 +226,7 @@ export type IAboutContentImage = {
 		};
 	};
 };
+
 // Global
 export type ILayout = {
 	children: React.ReactNode;

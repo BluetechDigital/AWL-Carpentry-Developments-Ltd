@@ -127,6 +127,46 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_OurCaseStudies {
+            									fieldGroupName
+            									title
+            									subtitle
+            									paragraph
+            									mainCaseStudy {
+            										title
+            										subtitle
+            										link {
+            											url
+            											title
+            											target
+            										}
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            									caseStudiesGrid {
+            									 	title
+            									 	subtitle
+            									 	link {
+            									 		url
+            									 		title
+            									 		target
+            									 	}
+            									 	image {
+            									 	  altText
+            									 	  sourceUrl
+            									 	  mediaDetails {
+            									 		height
+            									 		width
+            									 	  }
+            									 	}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
