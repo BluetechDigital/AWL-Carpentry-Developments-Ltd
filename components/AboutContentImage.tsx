@@ -126,7 +126,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							initial={initial}
 							whileInView={stagger}
 							viewport={{once: true}}
-							className=" pb-10sm:py-20 px-4 w-full"
+							className="pb-10 py-20 px-4 w-full"
 						>
 							<motion.h4
 								initial={initialTwo}
