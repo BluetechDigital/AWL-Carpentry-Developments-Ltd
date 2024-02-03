@@ -1,11 +1,11 @@
 // Imports
 import {
 	fadeIn,
+	stagger,
 	initialTwo,
 	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
-	stagger,
 } from "../animations/animations";
 import {FC, Fragment} from "react";
 import Link from "next/link";
