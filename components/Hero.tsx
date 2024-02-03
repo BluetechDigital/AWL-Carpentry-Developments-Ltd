@@ -6,6 +6,7 @@ import {
 	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
+	initial,
 } from "../animations/animations";
 import {FC, Fragment} from "react";
 import Link from "next/link";
@@ -17,8 +18,8 @@ import {IHero} from "@/types/components/index";
 import styles from "../styles/components/Hero.module.scss";
 
 // Components
-import Paragraph from "./Elements/Paragraph";
 import Title from "./Elements/Title";
+import Paragraph from "./Elements/Paragraph";
 
 const Hero: FC<IHero> = ({
 	title,
@@ -96,7 +97,7 @@ const Hero: FC<IHero> = ({
 										target={item?.buttonLink?.target}
 									>
 										<motion.div
-											initial={initialTwo}
+											initial={initial}
 											whileInView={stagger}
 											viewport={{once: true}}
 											className={`p-2 pr-0 hover:bg-blue-two w-full sm:min-h-[14vh] lg:min-h-[14vh] transition-all ease-in-out duration-500 ${

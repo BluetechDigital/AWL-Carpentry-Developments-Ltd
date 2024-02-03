@@ -47,7 +47,7 @@ const Footer: FC = () => {
 							content={globalContext?.themesOptionsContent?.textarea}
 							tailwindStyling="px-4 lg:px-0 max-w-full lg:max-w-sm text-tiny text-lightGreyTwo text-center lg:text-left"
 						/>
-						<div className="grid grid-cols-3 gap-4">
+						<div className="grid grid-cols-1 md:grid-cols-3 px-4 md:px-0 gap-4 lg:max-w-sm">
 							{globalContext?.themesOptionsContent?.certificationsGallery
 								?.length > 0 ? (
 								globalContext?.themesOptionsContent?.certificationsGallery?.map(
@@ -60,7 +60,7 @@ const Footer: FC = () => {
 												height={item?.mediaDetails.height}
 												className={`${
 													item?.sourceUrl
-														? "w-full h-[85px] object-contain object-center"
+														? "w-[125px] h-full md:w-full md:h-full object-contain object-center"
 														: "hidden"
 												}`}
 											/>
@@ -85,40 +85,6 @@ const Footer: FC = () => {
 							>
 								{globalContext?.footerMenuLinks?.length > 0 ? (
 									globalContext?.footerMenuLinks?.map(
-										(item: any, keys: any) => (
-											<Fragment key={keys}>
-												<motion.li
-													initial={initialTwo}
-													whileInView={fadeIn}
-													viewport={{once: true}}
-												>
-													<Link
-														href={`${item?.node?.url}`}
-														className="text-lightGrey transition-all duration-200 ease-in-out text-tiny hover:text-aqua-default"
-													>
-														{item?.node?.label}
-													</Link>
-												</motion.li>
-											</Fragment>
-										)
-									)
-								) : (
-									<></>
-								)}
-							</motion.ul>
-						</div>
-						<div className="flex flex-col px-0">
-							<h4 className="mb-5 text-base font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
-								Services
-							</h4>
-							<motion.ul
-								initial={initial}
-								viewport={{once: true}}
-								whileInView={stagger}
-								className="flex flex-col w-auto gap-2 py-2 px-0 items-center justify-center lg:items-start"
-							>
-								{globalContext?.servicesSublinks?.length > 0 ? (
-									globalContext?.servicesSublinks?.map(
 										(item: any, keys: any) => (
 											<Fragment key={keys}>
 												<motion.li
@@ -312,7 +278,7 @@ const Footer: FC = () => {
 					initial={initial}
 					whileInView={stagger}
 					viewport={{once: true}}
-					className="flex flex-col sm:flex-row gap-2 py-2"
+					className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row items-center justify-center lg:justify-start gap-2 py-2"
 				>
 					{globalContext?.locationsLinks?.length > 0 ? (
 						globalContext?.locationsLinks?.map((item: any, keys: any) => (
@@ -321,6 +287,7 @@ const Footer: FC = () => {
 									initial={initialTwo}
 									whileInView={fadeIn}
 									viewport={{once: true}}
+									className="flex flex-col items-center lg:items-baseline"
 								>
 									<Link
 										href={`locations${item?.node?.url}`}
@@ -335,7 +302,7 @@ const Footer: FC = () => {
 						<></>
 					)}
 				</motion.ul>
-				<div className="border-b border-orange-default my-2 opacity-50" />
+				<div className="border-b border-aqua-default my-2 opacity-50" />
 				<div className="flex flex-col-reverse items-center justify-between py-4 m-0 lg:-my-6 lg:flex-row">
 					<motion.div
 						initial={initialTwo}

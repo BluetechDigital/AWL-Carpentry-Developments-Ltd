@@ -4,8 +4,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
+import {useState, FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
-import {useState, FC, Fragment, useEffect} from "react";
 import {fadeIn, initial, initialTwo, stagger} from "@/animations/animations";
 
 // Styling
@@ -17,22 +17,6 @@ import Paragraph from "@/components/Elements/Paragraph";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();
-
-	// Background color scroll position change
-	const [scrollPosition, setScrollPosition] = useState(0);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const currentPosition = window.scrollY;
-			setScrollPosition(currentPosition);
-		};
-
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
 
 	// Display all sublinks & Mobile Links
 	const [menuActive, setMenuActive] = useState(false);
@@ -195,22 +179,25 @@ const Navbar: FC = () => {
 				>
 					<div className="bg-white">
 						<div className="hidden lg:flex items-center gap-8">
-							<motion.ul
-								initial={initial}
-								whileInView={stagger}
-								viewport={{once: true}}
-								className="flex lg:items-center"
-							>
+							<ul className="flex lg:items-center">
 								{globalContext?.navbarMenuLinks?.length > 0 ? (
 									globalContext?.navbarMenuLinks?.map(
 										(item: any, keys: any) => (
 											<Fragment key={keys}>
 												{item?.node?.url === "/services" ? (
-													<li
+													<motion.li
+														initial={initialTwo}
+														whileInView={fadeIn}
+														viewport={{once: true}}
 														className="relative group py-6 px-8"
 														onClick={displayOurServicesSublinks}
 													>
-														<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
+														<motion.div
+															initial={initialTwo}
+															whileInView={fadeIn}
+															viewport={{once: true}}
+															className="flex flex-row justify-center items-center gap-2 cursor-pointer"
+														>
 															<Link
 																href={`${item?.node?.url}`}
 																className="font-bold text-pureBlack group-hover:text-aqua-two text-tiny text-center"
@@ -228,7 +215,7 @@ const Navbar: FC = () => {
 																		: "rotate-0"
 																} cursor-pointer w-[22px] h-[22px] object-contain object-center`}
 															/>
-														</div>
+														</motion.div>
 														{ourServicesSublinksOpen ? (
 															<>
 																<div
@@ -239,16 +226,20 @@ const Navbar: FC = () => {
 																</div>
 															</>
 														) : null}
-													</li>
+													</motion.li>
 												) : (
-													<li>
+													<motion.li
+														initial={initialTwo}
+														whileInView={fadeIn}
+														viewport={{once: true}}
+													>
 														<Link
 															href={`${item?.node?.url}`}
 															className="py-6 px-8 font-bold text-pureBlack hover:text-aqua-two text-tiny text-center"
 														>
 															{item?.node?.label}
 														</Link>
-													</li>
+													</motion.li>
 												)}
 											</Fragment>
 										)
@@ -256,13 +247,13 @@ const Navbar: FC = () => {
 								) : (
 									<></>
 								)}
-							</motion.ul>
+							</ul>
 						</div>
 						<div className="opacity-0 xl:hidden" />
 					</div>
 					<Link href="/contact" target="_blank">
-						<div className="py-6 pl-4 pr-10 cursor-pointer bg-orange-default hover:bg-aqua-default transition-all ease-in-out duration-500">
-							<h3 className="relative flex items-center justify-center pl-4 text-lightGrey text-tiny text-center font-semibold">
+						<div className="py-6 pl-4 pr-10 cursor-pointer bg-aqua-default hover:bg-orange-default transition-all ease-in-out duration-500">
+							<span className="relative flex items-center justify-center pl-4 text-lightGrey text-tiny text-center font-semibold">
 								Get a quote today
 								<Image
 									width={550}
@@ -271,7 +262,7 @@ const Navbar: FC = () => {
 									src="/svg/navigation-menu-dropdown-arrow-white.svg"
 									className="my-auto ml-2 absolute top-[-25px] right-[-40px] rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
 								/>
-							</h3>
+							</span>
 						</div>
 					</Link>
 				</div>
