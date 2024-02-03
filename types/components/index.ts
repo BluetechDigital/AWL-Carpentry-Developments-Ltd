@@ -20,6 +20,23 @@ export type IHero = {
 			height: number;
 		};
 	};
+	servicesLinks: [
+		{
+			icon: {
+				altText: string;
+				sourceUrl: string;
+				mediaDetails: {
+					width: number;
+					height: number;
+				};
+			};
+			buttonLink: {
+				url: string;
+				title: string;
+				target: string;
+			};
+		}
+	];
 };
 export type IBlogs = {
 	title: string;
@@ -150,7 +167,6 @@ export type ITitleParagraph = {
 	paragraph: string;
 	displayParagraph: boolean;
 };
-
 export type ITestimonialsGrid = {
 	title: string;
 	subtitle: string;
@@ -161,6 +177,14 @@ export type IAboutContentImage = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
+	quality: {
+		title: string;
+		paragraph: string;
+	};
+	reliability: {
+		title: string;
+		paragraph: string;
+	};
 	checkatrade: {
 		altText: string;
 		sourceUrl: string;
@@ -177,12 +201,16 @@ export type IAboutContentImage = {
 			height: number;
 		};
 	};
-	imageTwo: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
+	contentBox: {
+		text: string;
+		subtext: string;
+		icon: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
 		};
 	};
 };

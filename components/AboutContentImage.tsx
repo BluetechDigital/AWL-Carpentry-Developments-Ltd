@@ -1,7 +1,6 @@
 // Imports
 import {
 	fadeIn,
-	initial,
 	stagger,
 	initialTwo,
 	slideInRightFinish,
@@ -22,146 +21,140 @@ import Paragraph from "./Elements/Paragraph";
 const AboutContentImage: FC<IAboutContentImage> = ({
 	title,
 	image,
-	imageTwo,
+	quality,
 	subtitle,
 	paragraph,
+	contentBox,
+	reliability,
 	checkatrade,
 }) => {
 	return (
 		<>
-			<div className={styles.aboutContentImage}>
-				<div className="flex flex-col-reverse xl:flex-row items-center justify-center gap-0 xl:gap-20">
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:flex xl:flex-col items-center justify-center w-full h-full xl:w-[35%]">
+			<div
+				className={
+					styles.aboutContentImage +
+					" relative py-12 pb-4 lg:pt-24 sm:pb-10 px-4 bg-white"
+				}
+			>
+				<div className="container m-auto flex flex-col lg:flex-row gap-16 lg:gap-x-24">
+					<motion.div
+						viewport={{once: true}}
+						initial={slideInLeftInitial}
+						whileInView={slideInRightFinish}
+						className="w-full lg:w-[65%] flex flex-col items-center lg:items-baseline justify-center"
+					>
+						<motion.h4
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default"
+						>
+							{subtitle}
+						</motion.h4>
+						<motion.h3
+							initial={initialTwo}
+							whileInView={fadeIn}
+							viewport={{once: true}}
+							className="my-3 max-w-3xl mx-auto xl:mx-0 uppercase text-black text-center lg:text-left font-extrabold text-lg"
+						>
+							{title}
+						</motion.h3>
 						<motion.div
-							initial={initial}
+							initial={initialTwo}
 							whileInView={stagger}
 							viewport={{once: true}}
-							className="hidden xl:flex flex-col gap-2 py-2"
+							className="flex flex-col lg:flex-row items lg:items-start justify-between mt-8 gap-12 lg:gap-8"
 						>
-							<motion.div
-								viewport={{once: true}}
-								initial={slideInLeftInitial}
-								whileInView={slideInRightFinish}
-							>
-								<Image
-									alt={image?.altText}
-									src={image?.sourceUrl}
-									width={image?.mediaDetails.width}
-									height={image?.mediaDetails.height}
-									className={`${
-										image?.sourceUrl
-											? "hidden xl:block w-full h-full min-h-[250px]object-cover object-center"
-											: "hidden"
-									}`}
-									style={{
-										clipPath: `polygon(0% 0%, 80% 0, 90% 35%, 75% 100%, 0% 100%)`,
-									}}
+							<div className="flex flex-col w-full lg:w-[65%]">
+								<Paragraph
+									content={paragraph}
+									tailwindStyling="lg:max-w-lg text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
 								/>
-							</motion.div>
-							<motion.div
-								viewport={{once: true}}
-								initial={slideInLeftInitial}
-								whileInView={slideInRightFinish}
-							>
-								<Image
-									alt={imageTwo?.altText}
-									src={imageTwo?.sourceUrl}
-									width={imageTwo?.mediaDetails.width}
-									height={imageTwo?.mediaDetails.height}
-									className={`${
-										imageTwo?.sourceUrl
-											? "hidden xl:block w-full h-full min-h-[250px] object-cover object-center"
-											: "hidden"
-									}`}
-									style={{
-										clipPath: `polygon(0% 0%, 75% 0, 90% 65%, 80% 100%, 0% 100%)`,
-									}}
-								/>
-							</motion.div>
+							</div>
+							<div className="flex flex-col gap-6 w-full lg:w-[35%]">
+								<div>
+									<motion.h4
+										initial={initialTwo}
+										whileInView={fadeIn}
+										viewport={{once: true}}
+										className="mb-1 uppercase text-center lg:text-left font-extrabold text-base text-blue-default"
+									>
+										{quality?.title}
+									</motion.h4>
+									<Paragraph
+										content={quality?.paragraph}
+										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
+									/>
+								</div>
+								<div>
+									<motion.h4
+										initial={initialTwo}
+										whileInView={fadeIn}
+										viewport={{once: true}}
+										className="mb-1 uppercase text-center lg:text-left font-extrabold text-base text-blue-default"
+									>
+										{reliability?.title}
+									</motion.h4>
+									<Paragraph
+										content={reliability?.paragraph}
+										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
+									/>
+								</div>
+							</div>
 						</motion.div>
-						<motion.div
-							initial={initial}
-							whileInView={stagger}
-							viewport={{once: true}}
-							className="flex xl:hidden flex-col sm:flex-row gap-2 p-2"
-						>
+					</motion.div>
+					<motion.div
+						viewport={{once: true}}
+						initial={slideInRightInitial}
+						whileInView={slideInRightFinish}
+						className="w-full lg:w-[35%] relative flex flex-col items-center lg:items-baseline justify-center"
+					>
+						<Image
+							alt={image?.altText}
+							src={image?.sourceUrl}
+							width={image?.mediaDetails?.width}
+							height={image?.mediaDetails?.height}
+							className={
+								image?.sourceUrl
+									? `block object-cover object-center w-full h-[500px]`
+									: `hidden`
+							}
+							style={{
+								clipPath: `polygon(0% 0%, 100% 0%, 94.9% 88.5%, 0% 97.8%)`,
+							}}
+						/>
+						<div className="bg-blue-default absolute bottom-1/3 left-0 lg:left-[-50px] p-6 flex flex-col items-center justify-center">
 							<motion.div
+								initial={initialTwo}
+								whileInView={fadeIn}
 								viewport={{once: true}}
-								initial={slideInLeftInitial}
-								whileInView={slideInRightFinish}
 							>
 								<Image
-									alt={image?.altText}
-									src={image?.sourceUrl}
-									width={image?.mediaDetails.width}
-									height={image?.mediaDetails.height}
-									className={`${
-										image?.sourceUrl
-											? "block xl:hidden w-full h-[400px] object-cover object-center"
-											: "hidden"
-									}`}
+									alt={contentBox?.icon?.altText}
+									src={contentBox?.icon?.sourceUrl}
+									width={contentBox?.icon?.mediaDetails?.width}
+									height={contentBox?.icon?.mediaDetails?.height}
+									className={
+										contentBox?.icon?.sourceUrl
+											? `block object-contain object-center w-full h-[50px] mb-4`
+											: `hidden`
+									}
 								/>
 							</motion.div>
-							<motion.div
-								viewport={{once: true}}
-								initial={slideInRightInitial}
-								whileInView={slideInRightFinish}
-							>
-								<Image
-									alt={imageTwo?.altText}
-									src={imageTwo?.sourceUrl}
-									width={imageTwo?.mediaDetails.width}
-									height={imageTwo?.mediaDetails.height}
-									className={`${
-										imageTwo?.sourceUrl
-											? "block xl:hidden w-full h-[400px] object-cover object-center"
-											: "hidden"
-									}`}
-								/>
-							</motion.div>
-						</motion.div>
-					</div>
-					<div className="bg-white flex flex-col xl:flex-row items-center justify-start gap-20 w-full xl:w-[65%]">
-						<motion.div
-							initial={initial}
-							whileInView={stagger}
-							viewport={{once: true}}
-							className="py8 px-4 w-full"
-						>
 							<motion.h4
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="max-w-xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default"
+								className="mb-1 uppercase text-center lg:text-center font-extrabold text-2xl tracking-[0.10rem] text-white"
 							>
-								{subtitle}
+								{contentBox?.text}
 							</motion.h4>
-							<motion.h3
-								initial={initialTwo}
-								whileInView={fadeIn}
-								viewport={{once: true}}
-								className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center xl:text-left font-extrabold text-lg"
-							>
-								{title}
-							</motion.h3>
 							<Paragraph
-								content={paragraph}
-								tailwindStyling="max-w-xl mx-auto xl:mx-0 text-center xl:text-left text-black text-base"
+								content={contentBox?.subtext}
+								tailwindStyling="max-w-xl text-white text-base sm:text-paragraph text-center lg:text-left"
 							/>
-							<Image
-								alt={checkatrade?.altText}
-								src={checkatrade?.sourceUrl}
-								width={checkatrade?.mediaDetails.width}
-								height={checkatrade?.mediaDetails.height}
-								className={`${
-									checkatrade?.sourceUrl
-										? "mx-auto xl:mx-0 w-fit h-[125px] object-contain object-center"
-										: "hidden"
-								}`}
-							/>
-						</motion.div>
-						<div className="hidden xl:flex flex-col items-end justify-end gap-4 w-full xl:w-[10%] h-full xl:min-h-[780px] 2xl:min-h-[845px] bg-blue-darker" />
-					</div>
+						</div>
+					</motion.div>
 				</div>
 			</div>
 		</>

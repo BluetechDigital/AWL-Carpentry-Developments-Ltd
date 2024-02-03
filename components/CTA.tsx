@@ -41,7 +41,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 							/>
 						</div>
 						<Link
-							href={buttonLink?.url}
+							href={`${buttonLink?.url}`}
 							target={buttonLink?.target}
 							className={buttonLink?.url ? "block" : "hidden"}
 						></Link>

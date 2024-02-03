@@ -5,8 +5,10 @@ import {
 	slideInLeftInitial,
 	slideInRightFinish,
 	slideInRightInitial,
+	stagger,
 } from "../animations/animations";
-import {FC} from "react";
+import {FC, Fragment} from "react";
+import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IHero} from "@/types/components/index";
@@ -16,12 +18,18 @@ import styles from "../styles/components/Hero.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
+import Title from "./Elements/Title";
 
-const Hero: FC<IHero> = ({title, paragraph, backgroundImage}) => {
+const Hero: FC<IHero> = ({
+	title,
+	paragraph,
+	servicesLinks,
+	backgroundImage,
+}) => {
 	return (
 		<>
-			<div className={styles.heroTwo}>
-				<div className="lg:relative pt-[85px] lg:pt-[110px] h-[70vh] flex flex-col lg:flex-row">
+			<div className={styles.heroTwo + " relative z-50 flex flex-col"}>
+				<div className="lg:relative pt-[85px] lg:pt-[110px] h-[50vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
@@ -41,13 +49,13 @@ const Hero: FC<IHero> = ({title, paragraph, backgroundImage}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center lg:text-left uppercase text-3xl md:text-4xl xl:text-6xl text-white font-extrabold leading-[2.75rem] xl:leading-[3rem]"
+								className="text-center lg:text-left uppercase text-3xl text-white font-extrabold leading-[2.5rem]"
 							>
 								{title}
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="py-2 text-white leading-[1.75rem] text-base sm:text-paragraph text-center lg:text-left"
+								tailwindStyling="py-2 text-white leading-[1.75rem] text-base text-center lg:text-left"
 							/>
 						</motion.div>
 					</div>
@@ -70,6 +78,71 @@ const Hero: FC<IHero> = ({title, paragraph, backgroundImage}) => {
 									: "hidden"
 							}`}
 						/>
+					</motion.div>
+				</div>
+				<div className="relative flex flex-row py-4 justify-start items-center lg:justify-between">
+					<motion.div
+						initial={initialTwo}
+						whileInView={stagger}
+						viewport={{once: true}}
+						className="hidden sm:grid grid-cols-4 w-full lg:w-[70%] xl:w-[60%] 2xl:w-[55%] absolute mb-[180px] lg:mb-[0px] right-0 flex-row items-center justify-end"
+					>
+						{servicesLinks?.length > 0 ? (
+							servicesLinks?.map((item: any, keys: any) => (
+								<Fragment key={keys}>
+									<Link
+										key={keys}
+										href={`${item?.buttonLink?.url}`}
+										target={item?.buttonLink?.target}
+									>
+										<motion.div
+											initial={initialTwo}
+											whileInView={stagger}
+											viewport={{once: true}}
+											className={`p-2 pr-0 hover:bg-blue-two w-full sm:min-h-[14vh] lg:min-h-[14vh] transition-all ease-in-out duration-500 ${
+												keys === 0
+													? "bg-blue-default"
+													: keys === 1
+													? "bg-blue-three"
+													: keys === 2
+													? "bg-blue-dark"
+													: keys === 3
+													? "bg-blue-darker"
+													: "bg-blue-default"
+											}`}
+										>
+											<Image
+												alt={item?.icon?.altText}
+												src={item?.icon?.sourceUrl}
+												width={item?.icon?.mediaDetails?.width}
+												height={item?.icon?.mediaDetails?.height}
+												className={
+													item?.icon?.sourceUrl
+														? `block object-contain object-center w-full h-[50px] lg:h-[60px] mb-6`
+														: `hidden`
+												}
+											/>
+
+											<span className="flex items-center justify-center pl-4">
+												<Title
+													content={item?.buttonLink?.title}
+													tailwindStyling="text-white font-semibold text-base leading-[1.5rem] text-center tracking-[0.10rem]"
+												/>
+												<Image
+													width={550}
+													height={550}
+													alt="Black Arrow Icon"
+													src="/svg/navigation-menu-dropdown-arrow-white.svg"
+													className="my-auto ml-2 mb-20 rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
+												/>
+											</span>
+										</motion.div>
+									</Link>
+								</Fragment>
+							))
+						) : (
+							<></>
+						)}
 					</motion.div>
 				</div>
 			</div>
