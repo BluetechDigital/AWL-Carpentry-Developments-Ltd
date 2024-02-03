@@ -26,63 +26,62 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 }) => {
 	return (
 		<>
-			<Link
-				href={`${link?.url}`}
-				target={link?.target}
-				className={styles.card + " group overflow-hidden bg-white"}
-				style={{
-					boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
-					clipPath: `polygon(95% 0, 100% 0, 100% 97%, 96% 100%, 3% 100%, 0 97%, 0 0)`,
-				}}
-			>
-				<motion.div
-					initial={initial}
-					whileInView={fadeInUp}
-					viewport={{once: true}}
-					className="bg-blue-darkerTwo group-hover:bg-orange-darker relative px-4 py-6 lg:py-12 h-[300px] bg-center bg-no-repeat bg-cover transition-all duration-500 ease-in-out border-solid border-b-[15px] border-l-[15px] border-blue-default"
-					style={{
-						backgroundImage: `url("${image?.sourceUrl}")`,
-						clipPath: `polygon(0 6%, 7% 0, 100% 0, 100% 100%, 7% 100%, 0 94%)`,
-					}}
+			<div className="flex flex-col">
+				<Link
+					href={`${link?.url}`}
+					target={link?.target}
+					className={styles.card + " group overflow-hidden bg-white"}
 				>
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="absolute -bottom-6 right-4"
+						className="bg-blue-darkerTwo group-hover:bg-orange-darker relative px-4 py-6 lg:py-12 h-[250px] bg-center bg-no-repeat bg-cover transition-all duration-500 ease-in-out border-solid border-b-[15px] border-l-[15px] border-blue-default"
+						style={{
+							backgroundImage: `url("${image?.sourceUrl}")`,
+							clipPath: `polygon(0 6%, 7% 0, 100% 0, 100% 100%, 7% 100%, 0 94%)`,
+						}}
 					>
-						<div className="flex justify-end gap-4 mb-4">
-							<div className="flex items-center justify-center w-12 h-12 bg-orange-default hover:bg-blue-default">
-								<Image
-									width={550}
-									height={550}
-									alt="Black Arrow Icon"
-									src="/svg/navigation-menu-dropdown-arrow-white.svg"
-									className="my-auto rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
-								/>
+						<motion.div
+							initial={initial}
+							whileInView={stagger}
+							viewport={{once: true}}
+							className="absolute -bottom-6 right-4"
+						>
+							<div className="flex justify-end gap-4 mb-4">
+								<div className="flex items-center justify-center text-white text-tiny pl-4 w-fit h-12 bg-orange-default hover:bg-blue-default">
+									{link?.title}
+									<Image
+										width={550}
+										height={550}
+										alt="Black Arrow Icon"
+										src="/svg/navigation-menu-dropdown-arrow-white.svg"
+										className="my-auto ml-2 mb-6 rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
+									/>
+								</div>
 							</div>
-						</div>
+						</motion.div>
 					</motion.div>
-				</motion.div>
-				<div className="h-[300px] px-4 py-6 lg:py-12 bg-white">
+				</Link>
+				<div className="h-[225px] px-4 py-6">
 					<motion.h3
 						initial={initialTwo}
 						whileInView={fadeIn}
 						viewport={{once: true}}
-						className="text-center text-black uppercase text-xl mb-6 font-extrabold leading-[2rem]"
+						className="text-center text-black uppercase text-paragraph my-3 font-extrabold"
 					>
 						{title}
 					</motion.h3>
 					<Paragraph
 						content={
-							paragraph?.length > 200
-								? paragraph?.substring(0, 200) + "..."
+							paragraph?.length > 175
+								? paragraph?.substring(0, 175) + "..."
 								: paragraph
 						}
-						tailwindStyling="text-black text-base text-center"
+						tailwindStyling="text-black text-tiny text-center"
 					/>
 				</div>
-			</Link>
+			</div>
 		</>
 	);
 };

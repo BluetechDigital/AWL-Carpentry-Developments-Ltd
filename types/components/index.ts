@@ -150,47 +150,7 @@ export type ITitleParagraph = {
 	paragraph: string;
 	displayParagraph: boolean;
 };
-export type IOurCaseStudies = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-	mainCaseStudy: {
-		title: string;
-		subtitle: string;
-		link: {
-			url: string;
-			title: string;
-			target: string;
-		};
-		image: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-	caseStudiesGrid: [
-		{
-			title: string;
-			subtitle: string;
-			link: {
-				url: string;
-				title: string;
-				target: string;
-			};
-			image: {
-				altText: string;
-				sourceUrl: string;
-				mediaDetails: {
-					width: number;
-					height: number;
-				};
-			};
-		}
-	];
-};
+
 export type ITestimonialsGrid = {
 	title: string;
 	subtitle: string;
@@ -305,23 +265,6 @@ export type IOurServicesCard = {
 export type ITestimonialsCard = {
 	name: string;
 	paragraph: string;
-	image: {
-		altText: string;
-		sourceUrl: string;
-		mediaDetails: {
-			width: number;
-			height: number;
-		};
-	};
-};
-export type IOurCaseStudiesCard = {
-	title: string;
-	subtitle: string;
-	link: {
-		url: string;
-		title: string;
-		target: string;
-	};
 	image: {
 		altText: string;
 		sourceUrl: string;
