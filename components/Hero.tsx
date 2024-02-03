@@ -29,11 +29,11 @@ const Hero: FC<IHero> = ({
 	return (
 		<>
 			<div className={styles.heroTwo + " relative z-50 flex flex-col"}>
-				<div className="lg:relative pt-[85px] lg:pt-[110px] h-[50vh] flex flex-col lg:flex-row">
+				<div className="lg:relative pt-[85px] lg:pt-[110px] lg:h-[50vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
-							" px-4 xl:px-28 py-8 bg-blue-darkerTwo w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
+							" px-4 xl:px-28 py-16 lg:py-8 bg-blue-darkerTwo w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
 						}
 						style={{
 							backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker.svg")`,
@@ -49,7 +49,7 @@ const Hero: FC<IHero> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center lg:text-left uppercase text-3xl text-white font-extrabold leading-[2.5rem]"
+								className="text-center lg:text-left uppercase text-lg md:text-2xl lg:text-3xl text-white font-extrabold lg:leading-[2.5rem]"
 							>
 								{title}
 							</motion.h1>
@@ -74,18 +74,18 @@ const Hero: FC<IHero> = ({
 							height={backgroundImage?.mediaDetails.height}
 							className={`${
 								backgroundImage?.sourceUrl
-									? "w-full h-full max-h-[300px] lg:max-h-[600px] object-cover object-center"
+									? "w-full h-full max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-cover object-center"
 									: "hidden"
 							}`}
 						/>
 					</motion.div>
 				</div>
-				<div className="relative flex flex-row py-4 justify-start items-center lg:justify-between">
+				<div className="relative flex flex-row py-0 justify-start items-center lg:justify-between">
 					<motion.div
 						initial={initialTwo}
 						whileInView={stagger}
 						viewport={{once: true}}
-						className="hidden sm:grid grid-cols-4 w-full lg:w-[70%] xl:w-[60%] 2xl:w-[55%] absolute mb-[180px] lg:mb-[0px] right-0 flex-row items-center justify-end"
+						className="hidden md:grid grid-cols-4 w-full lg:w-[70%] xl:w-[60%] 2xl:w-[55%] absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] right-0 flex-row items-center justify-end"
 					>
 						{servicesLinks?.length > 0 ? (
 							servicesLinks?.map((item: any, keys: any) => (
