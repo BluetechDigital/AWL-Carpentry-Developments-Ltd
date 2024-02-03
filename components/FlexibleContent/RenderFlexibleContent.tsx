@@ -35,6 +35,7 @@ const RenderFlexibleContent: FC = () => {
 								<Hero
 									title={item?.title}
 									paragraph={item?.paragraph}
+									servicesLinks={item?.servicesLinks}
 									backgroundImage={item?.backgroundImage}
 								/>
 							</>
@@ -60,10 +61,12 @@ const RenderFlexibleContent: FC = () => {
 								<AboutContentImage
 									title={item?.title}
 									image={item?.image}
+									quality={item?.quality}
 									subtitle={item?.subtitle}
-									imageTwo={item?.imageTwo}
 									paragraph={item?.paragraph}
+									contentBox={item?.contentBox}
 									checkatrade={item?.checkatrade}
+									reliability={item?.reliability}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurClients` ? (

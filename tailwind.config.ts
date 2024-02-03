@@ -42,8 +42,8 @@ const config: Config = {
 			// Main colors
 			blue: {
 				default: "#116dff",
-				two: "#3978ff",
-				three: "#152635",
+				two: "#045dec",
+				three: "#0a52c5",
 				light: "#3d77f3",
 				dark: "#002e5d",
 				darker: "#0d172a",

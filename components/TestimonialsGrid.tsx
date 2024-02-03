@@ -28,7 +28,7 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 					` relative py-16 lg:py-28 px-4 bg-white bg-cover bg-no-repeat bg-center`
 				}
 				style={{
-					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
+					backgroundImage: `url("/svg/background/layeblue-peaks-haikei-white-lightgrey.svg")`,
 				}}
 			>
 				<div className="container relative m-auto flex flex-col items-center gap-6 sm:gap-12 lg:gap-20">
