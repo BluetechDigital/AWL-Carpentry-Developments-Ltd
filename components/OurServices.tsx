@@ -21,12 +21,8 @@ const OurServices: FC<IOurServices> = ({
 		<>
 			<div
 				className={
-					styles.ourServices +
-					" relative py-12 lg:py-20 sm:py-24 px-4 bg-white bg-cover bg-no-repeat bg-center"
+					styles.ourServices + " relative py-12 lg:py-20 sm:py-24 px-4 bg-white"
 				}
-				style={{
-					backgroundImage: `url("/svg/background/layered-peaks-haikei-white-lightgrey.svg")`,
-				}}
 			>
 				<motion.div
 					initial={initial}
@@ -39,7 +35,7 @@ const OurServices: FC<IOurServices> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-paragraph text-aqua-default"
+							className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default"
 						>
 							{subtitle}
 						</motion.h4>
@@ -47,16 +43,16 @@ const OurServices: FC<IOurServices> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-2 mb-6 max-w-2xl mx-auto xl:mx-0 uppercase text-black text-center  font-extrabold leading-[2.75rem] text-4xl lg:text-5xl"
+							className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg"
 						>
 							{title}
 						</motion.h3>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
+							tailwindStyling="lg:max-w-3xl mx-auto text-black text-base text-center"
 						/>
 					</div>
-					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 py-6 lg:py-12 px-0 sm:px-4 gap-6 items-start justify-center">
+					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 py-6 px-0 sm:px-4 gap-6 items-start justify-center">
 						{servicesGrid?.length > 0 ? (
 							servicesGrid.map((item: any, keys: any) => (
 								<Fragment key={keys}>
