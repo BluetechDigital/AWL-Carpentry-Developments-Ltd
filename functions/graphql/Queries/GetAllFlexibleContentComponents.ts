@@ -31,6 +31,21 @@ export const getAllFlexibleContentComponents = async (
 														width
 													}
 												}
+												servicesLinks {
+													icon {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+													buttonLink {
+														url
+														title
+														target
+													}
+												}
 											}
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName
@@ -56,6 +71,14 @@ export const getAllFlexibleContentComponents = async (
                 								title
                 								subtitle
                 								paragraph
+												quality {
+													title
+													paragraph
+												}
+												reliability {
+													title
+													paragraph
+												}
                 								checkatrade {
                 									altText
                 									sourceUrl
@@ -72,14 +95,18 @@ export const getAllFlexibleContentComponents = async (
                 										width
                 									}
                 								}
-                								imageTwo {
-                									altText
-                									sourceUrl
-                									mediaDetails {
-                										height
-                										width
-                									}
-                								}
+												contentBox {
+													text
+													subtext
+													icon {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+													}
+												}
                 							}
 											... on ${postTypeFlexibleContent}_OurClients {
 												fieldGroupName

@@ -28,7 +28,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							" px-4 xl:px-28 py-8 bg-blue-darkerTwo w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
 						}
 						style={{
-							backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker.svg")`,
+							backgroundImage: `url("/svg/background/layeblue-peaks-haikei-blue-bluedarker.svg")`,
 						}}
 					>
 						<motion.div

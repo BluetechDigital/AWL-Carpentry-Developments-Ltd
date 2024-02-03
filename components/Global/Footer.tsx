@@ -72,16 +72,16 @@ const Footer: FC = () => {
 							)}
 						</div>
 					</motion.div>
-					<div className="flex flex-col md:flex-row items-center lg:items-start justify-center gap-6 xl:gap-16">
+					<div className="flex flex-col md:flex-row items-center lg:items-start justify-center gap-6 xl:gap-20">
 						<div className="flex flex-col px-0">
-							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
+							<h4 className="mb-5 text-base font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
 								About
 							</h4>
 							<motion.ul
 								initial={initial}
 								viewport={{once: true}}
 								whileInView={stagger}
-								className="flex flex-col w-auto gap-2 p-2 items-center justify-center lg:items-start"
+								className="flex flex-col w-auto gap-2 py-2 px-0 items-center justify-center lg:items-start"
 							>
 								{globalContext?.footerMenuLinks?.length > 0 ? (
 									globalContext?.footerMenuLinks?.map(
@@ -108,14 +108,14 @@ const Footer: FC = () => {
 							</motion.ul>
 						</div>
 						<div className="flex flex-col px-0">
-							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
+							<h4 className="mb-5 text-base font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
 								Services
 							</h4>
 							<motion.ul
 								initial={initial}
 								viewport={{once: true}}
 								whileInView={stagger}
-								className="flex flex-col w-auto gap-2 p-2 items-center justify-center lg:items-start"
+								className="flex flex-col w-auto gap-2 py-2 px-0 items-center justify-center lg:items-start"
 							>
 								{globalContext?.servicesSublinks?.length > 0 ? (
 									globalContext?.servicesSublinks?.map(
@@ -142,7 +142,7 @@ const Footer: FC = () => {
 							</motion.ul>
 						</div>
 						<div className="flex flex-col px-0">
-							<h4 className="mb-5 text-paragraph font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
+							<h4 className="mb-5 text-base font-semibold tracking-normal text-center text-lightGreyTwo uppercase lg:text-left">
 								Info
 							</h4>
 							<div className="flex flex-col items-center lg:items-baseline justify-between">
@@ -312,7 +312,7 @@ const Footer: FC = () => {
 					initial={initial}
 					whileInView={stagger}
 					viewport={{once: true}}
-					className="mt-2 flex flex-col sm:flex-row gap-2 my-4"
+					className="flex flex-col sm:flex-row gap-2 py-2"
 				>
 					{globalContext?.locationsLinks?.length > 0 ? (
 						globalContext?.locationsLinks?.map((item: any, keys: any) => (
@@ -335,13 +335,13 @@ const Footer: FC = () => {
 						<></>
 					)}
 				</motion.ul>
-				<div className="border-b border-orange-default opacity-50" />
-				<div className="flex flex-col-reverse items-center justify-between py-4 m-0 lg:-m-6 lg:flex-row">
+				<div className="border-b border-orange-default my-2 opacity-50" />
+				<div className="flex flex-col-reverse items-center justify-between py-4 m-0 lg:-my-6 lg:flex-row">
 					<motion.div
 						initial={initialTwo}
 						viewport={{once: true}}
 						whileInView={fadeIn}
-						className="w-auto p-6"
+						className="w-auto py-2"
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
