@@ -1,16 +1,10 @@
 // Imports
-import {
-	fadeIn,
-	initial,
-	stagger,
-	fadeInUp,
-	initialTwo,
-} from "@/animations/animations";
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {IOurServicesCard} from "@/types/components";
+import {initial, stagger, fadeInUp} from "@/animations/animations";
 
 // Styling
 import styles from "../../styles/components/OurServices.module.scss";
@@ -49,7 +43,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 							className="absolute -bottom-6 right-4"
 						>
 							<div className="flex justify-end gap-4 mb-4">
-								<div className="flex items-center justify-center text-white text-tiny pl-4 w-fit h-12 bg-orange-default hover:bg-blue-default">
+								<div className="flex items-center justify-center text-white text-tiny pl-4 w-fit h-12 bg-aqua-default hover:bg-orange-default">
 									{link?.title}
 									<Image
 										width={550}
@@ -65,8 +59,8 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 				</Link>
 				<div className="h-[225px] px-4 py-6">
 					<motion.h3
-						initial={initialTwo}
-						whileInView={fadeIn}
+						initial={initial}
+						whileInView={fadeInUp}
 						viewport={{once: true}}
 						className="text-center text-black uppercase text-paragraph my-3 font-extrabold"
 					>

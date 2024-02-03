@@ -47,7 +47,7 @@ const config: Config = {
 				light: "#3d77f3",
 				dark: "#002e5d",
 				darker: "#0d172a",
-				darkerTwo: "#061229",
+				darkerTwo: "#09101f",
 			},
 			aqua: {
 				default: "#20ce88",

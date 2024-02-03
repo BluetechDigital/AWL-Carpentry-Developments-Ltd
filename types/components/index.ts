@@ -237,6 +237,15 @@ export type IPagination = {
 };
 
 // Cards
+export type ICTACard = {
+	title: string;
+	paragraph: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+};
 export type IFAQCard = {
 	index: number;
 	title: string;
