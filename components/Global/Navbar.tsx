@@ -193,13 +193,13 @@ const Navbar: FC = () => {
 						boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 					}}
 				>
-					<div className="py-6 px-10 bg-white">
+					<div className="bg-white">
 						<div className="hidden lg:flex items-center gap-8">
 							<motion.ul
 								initial={initial}
 								whileInView={stagger}
 								viewport={{once: true}}
-								className="flex lg:items-center lg:gap-x-12"
+								className="flex lg:items-center"
 							>
 								{globalContext?.navbarMenuLinks?.length > 0 ? (
 									globalContext?.navbarMenuLinks?.map(
@@ -207,13 +207,13 @@ const Navbar: FC = () => {
 											<Fragment key={keys}>
 												{item?.node?.url === "/services" ? (
 													<li
-														className="relative"
+														className="relative group py-6 px-8"
 														onClick={displayOurServicesSublinks}
 													>
 														<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
-																className="font-bold text-pureBlack hover:text-aqua-two text-tiny text-center transition-all ease-in-out duration-500"
+																className="font-bold text-pureBlack group-hover:text-aqua-two text-tiny text-center"
 															>
 																{item?.node?.label}
 															</Link>
@@ -244,7 +244,7 @@ const Navbar: FC = () => {
 													<li>
 														<Link
 															href={`${item?.node?.url}`}
-															className="font-bold text-pureBlack hover:text-aqua-two text-tiny text-center transition-all ease-in-out duration-500"
+															className="py-6 px-8 font-bold text-pureBlack hover:text-aqua-two text-tiny text-center"
 														>
 															{item?.node?.label}
 														</Link>
@@ -261,9 +261,16 @@ const Navbar: FC = () => {
 						<div className="opacity-0 xl:hidden" />
 					</div>
 					<Link href="/contact" target="_blank">
-						<div className="py-6 px-10 cursor-pointer bg-orange-default hover:bg-aqua-default transition-all ease-in-out duration-500">
-							<h3 className="text-lightGrey text-tiny text-center font-semibold">
+						<div className="py-6 pl-4 pr-10 cursor-pointer bg-orange-default hover:bg-aqua-default transition-all ease-in-out duration-500">
+							<h3 className="relative flex items-center justify-center pl-4 text-lightGrey text-tiny text-center font-semibold">
 								Get a quote today
+								<Image
+									width={550}
+									height={550}
+									alt="Black Arrow Icon"
+									src="/svg/navigation-menu-dropdown-arrow-white.svg"
+									className="my-auto ml-2 absolute top-[-25px] right-[-40px] rotate-[-135deg] cursor-pointer w-[35px] h-[35px] object-contain object-center"
+								/>
 							</h3>
 						</div>
 					</Link>

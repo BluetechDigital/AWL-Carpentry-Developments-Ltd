@@ -54,7 +54,7 @@ const OurServices: FC<IOurServices> = ({
 					</div>
 					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 py-6 px-0 sm:px-4 gap-6 items-start justify-center">
 						{servicesGrid?.length > 0 ? (
-							servicesGrid.map((item: any, keys: any) => (
+							servicesGrid?.map((item: any, keys: any) => (
 								<Fragment key={keys}>
 									<OurServicesCard
 										link={item?.card?.link}

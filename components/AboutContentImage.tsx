@@ -33,10 +33,13 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 			<div
 				className={
 					styles.aboutContentImage +
-					" relative py-12 pb-4 lg:pt-24 sm:pb-10 px-4 bg-white"
+					" relative py-0 px-4 bg-white bg-cover bg-center bg-no-repeat"
 				}
+				style={{
+					backgroundImage: `url("/svg/background/layered-peaks-haikei-lightgrey-white.svg")`,
+				}}
 			>
-				<div className="container m-auto flex flex-col lg:flex-row gap-16 lg:gap-x-24">
+				<div className="container m-auto flex flex-col lg:flex-row py-12 pb-4 lg:pt-28 sm:pb-10 gap-16 lg:gap-x-24">
 					<motion.div
 						viewport={{once: true}}
 						initial={slideInLeftInitial}
@@ -100,6 +103,17 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
 									/>
 								</div>
+								<Image
+									alt={checkatrade?.altText}
+									src={checkatrade?.sourceUrl}
+									width={checkatrade?.mediaDetails.width}
+									height={checkatrade?.mediaDetails.height}
+									className={`${
+										checkatrade?.sourceUrl
+											? "mx-auto xl:mx-0 w-fit h-[125px] object-contain object-center"
+											: "hidden"
+									}`}
+								/>
 							</div>
 						</motion.div>
 					</motion.div>
