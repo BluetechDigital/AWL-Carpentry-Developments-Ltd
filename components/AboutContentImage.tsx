@@ -50,7 +50,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 									height={image?.mediaDetails.height}
 									className={`${
 										image?.sourceUrl
-											? "hidden xl:block w-full h-full min-h-[350px] object-cover object-center"
+											? "hidden xl:block w-full h-full min-h-[250px]object-cover object-center"
 											: "hidden"
 									}`}
 									style={{
@@ -70,7 +70,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 									height={imageTwo?.mediaDetails.height}
 									className={`${
 										imageTwo?.sourceUrl
-											? "hidden xl:block w-full h-full min-h-[350px] object-cover object-center"
+											? "hidden xl:block w-full h-full min-h-[250px] object-cover object-center"
 											: "hidden"
 									}`}
 									style={{
@@ -126,13 +126,13 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							initial={initial}
 							whileInView={stagger}
 							viewport={{once: true}}
-							className="pb-10 py-20 px-4 w-full"
+							className="py8 px-4 w-full"
 						>
 							<motion.h4
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-paragraph text-aqua-default"
+								className="max-w-xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default"
 							>
 								{subtitle}
 							</motion.h4>
@@ -140,13 +140,13 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="my-2 mb-6 max-w-2xl mx-auto xl:mx-0 uppercase text-black text-center xl:text-left font-extrabold leading-[2.75rem] text-4xl lg:text-5xl"
+								className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center xl:text-left font-extrabold text-lg"
 							>
 								{title}
 							</motion.h3>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left text-darkGrey text-paragraph"
+								tailwindStyling="max-w-xl mx-auto xl:mx-0 text-center xl:text-left text-black text-base"
 							/>
 							<Image
 								alt={checkatrade?.altText}
@@ -155,7 +155,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 								height={checkatrade?.mediaDetails.height}
 								className={`${
 									checkatrade?.sourceUrl
-										? "mx-auto xl:mx-0 w-fit h-[200px] object-contain object-center"
+										? "mx-auto xl:mx-0 w-fit h-[125px] object-contain object-center"
 										: "hidden"
 								}`}
 							/>
