@@ -3,10 +3,6 @@
 @import "../base/colors";
 
 .gallery {
-	h4 {
-		font-family: $body;
-	}
-
 	p {
 		a {
 			@apply font-semibold underline text-orange-two hover:text-orange-two transition-all ease-in-out duration-500;

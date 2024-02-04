@@ -3,14 +3,6 @@
 @import "../base/colors";
 
 .ourServices {
-	h2,
-	h4 {
-		font-family: $body;
-	}
-	h3 {
-		font-family: $main;
-	}
-
 	p {
 		a {
 			@apply font-semibold underline text-orange-two hover:text-orange-two transition-all ease-in-out duration-500;

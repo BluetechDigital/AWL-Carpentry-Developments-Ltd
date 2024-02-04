@@ -5,6 +5,7 @@ import {
 	initial,
 	fadeInUp,
 	initialTwo,
+	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
@@ -79,8 +80,9 @@ const Footer: FC = () => {
 							</h4>
 							<motion.ul
 								initial={initial}
+								variants={stagger}
+								whileInView="animate"
 								viewport={{once: true}}
-								whileInView={stagger}
 								className="flex flex-col w-auto gap-2 py-2 px-0 items-center justify-center lg:items-start"
 							>
 								{globalContext?.footerMenuLinks?.length > 0 ? (
@@ -88,9 +90,11 @@ const Footer: FC = () => {
 										(item: any, keys: any) => (
 											<Fragment key={keys}>
 												<motion.li
-													initial={initialTwo}
-													whileInView={fadeIn}
+													custom={keys}
+													initial={initial}
+													whileInView="animate"
 													viewport={{once: true}}
+													variants={arrayLoopStaggerChildren}
 												>
 													<Link
 														href={`${item?.node?.url}`}
@@ -116,11 +120,14 @@ const Footer: FC = () => {
 									content={globalContext?.themesOptionsContent?.businessHours}
 									tailwindStyling="block px-4 lg:px-0 max-w-full lg:max-w-xl text-tiny text-lightGreyTwo text-center lg:text-left"
 								/>
-								<div className="flex flex-col items-center justify-between w-auto gap-2 py-4 lg:items-baseline">
-									<motion.div
-										initial={initialTwo}
-										whileInView={fadeIn}
-										viewport={{once: true}}
+								<motion.div
+									initial={initial}
+									variants={stagger}
+									whileInView="animate"
+									viewport={{once: true}}
+									className="flex flex-col items-center justify-between w-auto gap-2 py-4 lg:items-baseline"
+								>
+									<div
 										className={
 											globalContext?.themesOptionsContent?.email
 												? "flex items-center justify-center gap-2"
@@ -150,11 +157,8 @@ const Footer: FC = () => {
 										>
 											{globalContext?.themesOptionsContent?.email}
 										</Link>
-									</motion.div>
-									<motion.div
-										initial={initialTwo}
-										whileInView={fadeIn}
-										viewport={{once: true}}
+									</div>
+									<div
 										className={
 											globalContext?.themesOptionsContent?.emailTwo
 												? "flex items-center justify-center gap-2"
@@ -184,11 +188,8 @@ const Footer: FC = () => {
 										>
 											{globalContext?.themesOptionsContent?.emailTwo}
 										</Link>
-									</motion.div>
-									<motion.div
-										initial={initialTwo}
-										whileInView={fadeIn}
-										viewport={{once: true}}
+									</div>
+									<div
 										className={
 											globalContext?.themesOptionsContent?.phoneNumber
 												? "flex items-center justify-center gap-2"
@@ -226,11 +227,8 @@ const Footer: FC = () => {
 										>
 											{globalContext?.themesOptionsContent?.phoneNumber}
 										</Link>
-									</motion.div>
-									<motion.div
-										initial={initialTwo}
-										whileInView={fadeIn}
-										viewport={{once: true}}
+									</div>
+									<div
 										className={
 											globalContext?.themesOptionsContent?.phoneNumberTwo
 												? "flex items-center justify-center gap-2"
@@ -268,25 +266,22 @@ const Footer: FC = () => {
 										>
 											{globalContext?.themesOptionsContent?.phoneNumberTwo}
 										</Link>
-									</motion.div>
-								</div>
+									</div>
+								</motion.div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<motion.ul
-					initial={initial}
-					whileInView={stagger}
-					viewport={{once: true}}
-					className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row items-center justify-center lg:justify-start gap-2 py-2"
-				>
+				<ul className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-row items-center justify-center lg:justify-start gap-2 py-2">
 					{globalContext?.locationsLinks?.length > 0 ? (
 						globalContext?.locationsLinks?.map((item: any, keys: any) => (
 							<Fragment key={keys}>
 								<motion.li
-									initial={initialTwo}
-									whileInView={fadeIn}
+									custom={keys}
+									initial={initial}
+									whileInView="animate"
 									viewport={{once: true}}
+									variants={arrayLoopStaggerChildren}
 									className="flex flex-col items-center lg:items-baseline"
 								>
 									<Link
@@ -301,13 +296,14 @@ const Footer: FC = () => {
 					) : (
 						<></>
 					)}
-				</motion.ul>
+				</ul>
 				<div className="border-b border-aqua-default my-2 opacity-50" />
 				<div className="flex flex-col-reverse items-center justify-between py-4 m-0 lg:-my-6 lg:flex-row">
 					<motion.div
-						initial={initialTwo}
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
-						whileInView={fadeIn}
 						className="w-auto py-2"
 					>
 						<Paragraph
@@ -335,19 +331,16 @@ const Footer: FC = () => {
 							</span>
 						</Link>
 					</motion.div>
-					<motion.ul
-						initial={initial}
-						viewport={{once: true}}
-						whileInView={stagger}
-						className="flex flex-col sm:flex-row -m-6 w-auto gap-2 sm:gap-6 p-6"
-					>
+					<ul className="flex flex-col sm:flex-row -m-6 w-auto gap-2 sm:gap-6 p-6">
 						{globalContext?.copyrightLinks?.length > 0 ? (
 							globalContext?.copyrightLinks?.map((item: any, keys: any) => (
 								<Fragment key={keys}>
 									<motion.li
-										initial={initialTwo}
-										whileInView={fadeIn}
+										custom={keys}
+										initial={initial}
+										whileInView="animate"
 										viewport={{once: true}}
+										variants={arrayLoopStaggerChildren}
 									>
 										<Link
 											href={`${item?.node?.url}`}
@@ -361,7 +354,7 @@ const Footer: FC = () => {
 						) : (
 							<></>
 						)}
-					</motion.ul>
+					</ul>
 				</div>
 			</div>
 		</footer>

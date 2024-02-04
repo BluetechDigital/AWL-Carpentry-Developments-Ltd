@@ -13,7 +13,8 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({name, image, paragraph}) => {
 		<>
 			<motion.div
 				initial={initial}
-				whileInView={stagger}
+				variants={stagger}
+				whileInView="animate"
 				viewport={{once: true}}
 				className="p-6 mb-6 overflow-hidden bg-white border-[5px] border-solid border-lightGrey flex flex-col justify-between"
 				style={{
@@ -27,7 +28,8 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({name, image, paragraph}) => {
 					/>
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="flex items-center justify-center"
 					>
@@ -122,7 +124,8 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({name, image, paragraph}) => {
 					/>
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="ml-4"
 					>

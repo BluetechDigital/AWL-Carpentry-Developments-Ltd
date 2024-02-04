@@ -6,7 +6,13 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import {useState, FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
-import {fadeIn, initial, initialTwo, stagger} from "@/animations/animations";
+import {
+	arrayLoopStaggerChildren,
+	fadeIn,
+	initial,
+	initialTwo,
+	stagger,
+} from "@/animations/animations";
 
 // Styling
 import styles from "./../../styles/components/Navbar.module.scss";
@@ -186,18 +192,15 @@ const Navbar: FC = () => {
 											<Fragment key={keys}>
 												{item?.node?.url === "/services" ? (
 													<motion.li
-														initial={initialTwo}
-														whileInView={fadeIn}
+														custom={keys}
+														initial={initial}
+														whileInView="animate"
 														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
 														className="relative group py-6 px-8"
 														onClick={displayOurServicesSublinks}
 													>
-														<motion.div
-															initial={initialTwo}
-															whileInView={fadeIn}
-															viewport={{once: true}}
-															className="flex flex-row justify-center items-center gap-2 cursor-pointer"
-														>
+														<div className="flex flex-row justify-center items-center gap-2 cursor-pointer">
 															<Link
 																href={`${item?.node?.url}`}
 																className="font-bold text-pureBlack group-hover:text-aqua-two text-tiny text-center"
@@ -215,7 +218,7 @@ const Navbar: FC = () => {
 																		: "rotate-0"
 																} cursor-pointer w-[22px] h-[22px] object-contain object-center`}
 															/>
-														</motion.div>
+														</div>
 														{ourServicesSublinksOpen ? (
 															<>
 																<div
@@ -229,9 +232,11 @@ const Navbar: FC = () => {
 													</motion.li>
 												) : (
 													<motion.li
-														initial={initialTwo}
-														whileInView={fadeIn}
+														custom={keys}
+														initial={initial}
+														whileInView="animate"
 														viewport={{once: true}}
+														variants={arrayLoopStaggerChildren}
 													>
 														<Link
 															href={`${item?.node?.url}`}
