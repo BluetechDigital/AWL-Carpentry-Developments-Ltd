@@ -41,7 +41,7 @@ const Footer: FC = () => {
 								height={500}
 								alt="Awl Carpentry Developments Logo"
 								src="/svg/logos/awl-carpentry-developments-logo-white.svg"
-								className="object-contain object-center w-full h-[100px]"
+								className="object-contain object-center mx-auto lg:mx-0 w-fit h-[100px]"
 							/>
 						</Link>
 						<Paragraph
