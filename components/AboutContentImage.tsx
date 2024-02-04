@@ -42,16 +42,17 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 			>
 				<div className="container m-auto flex flex-col lg:flex-row py-12 pb-4 lg:pt-28 sm:pb-10 gap-16 lg:gap-x-24">
 					<motion.div
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
-						initial={slideInLeftInitial}
-						whileInView={slideInRightFinish}
 						className="w-full lg:w-[65%] flex flex-col items-center lg:items-baseline justify-center"
 					>
 						<motion.h4
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="max-w-2xl mx-auto xl:mx-0 text-center lg:text-left uppercase font-bold text-base text-aqua-default"
+							className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left uppercase font-bold text-base text-aqua-default"
 						>
 							{subtitle}
 						</motion.h4>
@@ -59,7 +60,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="my-3 max-w-3xl mx-auto xl:mx-0 uppercase text-black text-center lg:text-left font-extrabold text-lg"
+							className="my-3 max-w-3xl mx-auto lg:mx-0 uppercase text-black text-center lg:text-left font-extrabold text-xl"
 						>
 							{title}
 						</motion.h3>

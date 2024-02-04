@@ -41,7 +41,7 @@ const OurServices: FC<IOurServices> = ({
 						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
 							{subtitle}
 						</h4>
-						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg">
+						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-xl">
 							{title}
 						</h3>
 						<Paragraph
