@@ -92,9 +92,7 @@ const RenderFlexibleContent: FC = () => {
 								<Gallery
 									title={item?.title}
 									gallery={item?.gallery}
-									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
-									highlightText={item?.highlightText}
 									itemsDisplayedPerPage={item?.itemsDisplayedPerPage}
 								/>
 							</>

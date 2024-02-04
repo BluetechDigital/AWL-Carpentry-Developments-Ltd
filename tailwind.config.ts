@@ -46,7 +46,7 @@ const config: Config = {
 				three: "#0a52c5",
 				light: "#3d77f3",
 				dark: "#002e5d",
-				darker: "#0d172a",
+				darker: "#001640",
 				darkerTwo: "#09101f",
 			},
 			aqua: {

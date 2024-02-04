@@ -2,7 +2,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {IGallery} from "@/types/components";
-import {fadeIn, initial, stagger, initialTwo} from "@/animations/animations";
+import {initial, stagger} from "@/animations/animations";
 
 // Styling
 import styles from "../styles/components/Gallery.module.scss";
@@ -14,15 +14,15 @@ import Pagination from "./Elements/Pagination";
 const Gallery: FC<IGallery> = ({
 	title,
 	gallery,
-	subtitle,
 	paragraph,
-	highlightText,
 	itemsDisplayedPerPage,
 }) => {
 	return (
 		<>
 			<div
-				className={styles.gallery + ` py-16 bg-white container px-4 mx-auto`}
+				className={
+					styles.gallery + ` py-12 sm:py-16 bg-white container px-4 mx-auto`
+				}
 			>
 				<motion.div
 					initial={initial}
@@ -30,34 +30,17 @@ const Gallery: FC<IGallery> = ({
 					whileInView="animate"
 					viewport={{once: true}}
 					className={
-						title && highlightText
-							? "max-w-2xl mx-auto mb-24 text-center flex flex-col items-center lg:max-w-5xl"
+						title
+							? "max-w-2xl mx-auto mb-16 text-center flex flex-col items-center lg:max-w-5xl"
 							: "hidden"
 					}
 				>
-					<motion.h4
-						initial={initialTwo}
-						whileInView={fadeIn}
-						viewport={{once: true}}
-						className="mb-1 text-center lg:text-center text-lg text-orange-two"
-					>
-						{subtitle}
-					</motion.h4>
-					<motion.h2
-						initial={initial}
-						variants={stagger}
-						whileInView="animate"
-						viewport={{once: true}}
-						className="max-w-2xl mx-auto text-center font-bold leading-normal text-4xl lg:text-5xl p-4 pl-0 text-black"
-					>
+					<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-xl">
 						{title}
-						<span className="p-2 ml-3 bg-orange-two text-white">
-							{highlightText}
-						</span>
-					</motion.h2>
+					</h3>
 					<Paragraph
 						content={paragraph}
-						tailwindStyling="max-w-3xl mx-auto text-black text-paragraph"
+						tailwindStyling="max-w-3xl mx-auto text-black text-base"
 					/>
 				</motion.div>
 				<Pagination

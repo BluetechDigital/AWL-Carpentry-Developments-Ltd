@@ -27,7 +27,7 @@ const OurServices: FC<IOurServices> = ({
 		<>
 			<div
 				className={
-					styles.ourServices + " relative py-12 lg:py-20 sm:py-24 px-4 bg-white"
+					styles.ourServices + " relative py-12 sm:py-16 px-4 bg-white"
 				}
 			>
 				<motion.div
