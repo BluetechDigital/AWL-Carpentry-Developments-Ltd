@@ -9,16 +9,6 @@
 	src: url("../fonts/PlusJakartaSans-VariableFont_wght.ttf");
 }
 
-@font-face {
-	font-family: BebasNeue;
-	src: url("../fonts/BebasNeue-Regular.ttf");
-}
-
-@font-face {
-	font-family: Figtree;
-	src: url("../fonts/Figtree-VariableFont_wght.ttf");
-}
-
 // Font Stack Properties
-$main: "Figtree", sans-serif;
+$main: "Inter", sans-serif;
 $body: "PlusJakartaSans", "Inter", sans-serif;

@@ -6,10 +6,12 @@ import {ICTA} from "@/types/components/index";
 import CTACard from "./Cards/CTACard";
 
 const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
+	const tailwindStyling = "bg-center bg-no-repeat bg-cover lg:px-0";
+
 	return (
 		<>
 			<div
-				className="hidden lg:block bg-center bg-no-repeat bg-cover lg:px-0"
+				className={tailwindStyling + " hidden lg:block"}
 				style={{
 					backgroundImage: `url("${backgroundImage}")`,
 				}}
@@ -17,7 +19,7 @@ const CTA: FC<ICTA> = ({title, paragraph, buttonLink, backgroundImage}) => {
 				<CTACard title={title} paragraph={paragraph} buttonLink={buttonLink} />
 			</div>
 			<div
-				className="block lg:hidden bg-center bg-no-repeat bg-cover lg:px-0"
+				className={tailwindStyling + " block lg:hidden"}
 				style={{
 					backgroundImage: `linear-gradient(
 							0deg,

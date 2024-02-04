@@ -37,14 +37,16 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 				</div>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="flex flex-col w-full gap-8 px-4 w-full lg:w-1/2"
 				>
 					<motion.div
 						initial={initial}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
-						whileInView={stagger}
 					>
 						<motion.h3
 							initial={initial}
@@ -80,8 +82,9 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 					</motion.div>
 					<motion.div
 						initial={initial}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
-						whileInView={stagger}
 					>
 						<motion.h3
 							initial={initial}
@@ -93,7 +96,8 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 						</motion.h3>
 						<motion.div
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="flex flex-col items-center lg:items-start gap-3 text-center lg:text-left"
 						>

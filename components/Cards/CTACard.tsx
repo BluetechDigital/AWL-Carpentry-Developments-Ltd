@@ -7,7 +7,6 @@ import {ICTACard} from "@/types/components/index";
 import {initial, stagger} from "../../animations/animations";
 
 // Components
-import Title from "./../Elements/Title";
 import Paragraph from "./../Elements/Paragraph";
 
 const CTACard: FC<ICTACard> = ({title, paragraph, buttonLink}) => {
@@ -19,21 +18,21 @@ const CTACard: FC<ICTACard> = ({title, paragraph, buttonLink}) => {
 					backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker-two.svg")`,
 				}}
 			>
-				<div className="container px-4 py-10 mx-auto">
+				<div className="container px-4 py-12 mx-auto">
 					<motion.div
 						initial={initial}
-						whileInView={stagger}
+						variants={stagger}
+						whileInView="animate"
 						viewport={{once: true}}
 						className="flex flex-col items-center justify-between gap-10 px-0 lg:px-4 lg:flex-row"
 					>
 						<div className="flex flex-col justify-between gap-4">
-							<Title
-								content={title}
-								tailwindStyling="my-3 max-w-xl lg:max-w-sm xl:max-w-xl mx-auto xl:mx-0 uppercase text-white text-center lg:text-left font-extrabold text-lg"
-							/>
+							<h3 className="mb-3 max-w-xl lg:max-w-sm xl:max-w-xl mx-auto xl:mx-0 uppercase text-white text-center lg:text-left font-extrabold text-lg">
+								{title}
+							</h3>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="max-w-xl lg:max-w-sm xl:max-w-xl text-white leading-[1.75rem] text-base text-center lg:text-left"
+								tailwindStyling="max-w-xl text-white text-base text-center lg:text-left"
 							/>
 						</div>
 						<Link

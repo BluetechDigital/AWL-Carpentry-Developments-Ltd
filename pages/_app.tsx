@@ -33,6 +33,7 @@ import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTesti
 import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
 import GlobalContextProvider from "@/components/Context/GlobalContextProvider";
 import PostHogContextProvider from "@/components/Context/PostHogProviderContext";
+import {initial} from "@/animations/animations";
 
 export default function App({
 	Component,

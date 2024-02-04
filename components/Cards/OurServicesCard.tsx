@@ -38,7 +38,8 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 					>
 						<motion.div
 							initial={initial}
-							whileInView={stagger}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="absolute -bottom-6 right-4"
 						>

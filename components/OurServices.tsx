@@ -1,8 +1,14 @@
 // Imports
+import {
+	fadeIn,
+	initial,
+	stagger,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "../animations/animations";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurServices} from "@/types/components/index";
-import {fadeIn, initial, initialTwo, stagger} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/OurServices.module.scss";
@@ -26,27 +32,18 @@ const OurServices: FC<IOurServices> = ({
 			>
 				<motion.div
 					initial={initial}
-					whileInView={stagger}
+					variants={stagger}
+					whileInView="animate"
 					viewport={{once: true}}
 					className="container relative m-auto flex flex-col items-center gap-6"
 				>
 					<div className="flex flex-col items-center">
-						<motion.h4
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default"
-						>
+						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
 							{subtitle}
-						</motion.h4>
-						<motion.h3
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg"
-						>
+						</h4>
+						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg">
 							{title}
-						</motion.h3>
+						</h3>
 						<Paragraph
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black text-base text-center"
@@ -56,12 +53,20 @@ const OurServices: FC<IOurServices> = ({
 						{servicesGrid?.length > 0 ? (
 							servicesGrid?.map((item: any, keys: any) => (
 								<Fragment key={keys}>
-									<OurServicesCard
-										link={item?.card?.link}
-										image={item?.card?.image}
-										title={item?.card?.title}
-										paragraph={item?.card?.paragraph}
-									/>
+									<motion.div
+										custom={keys}
+										initial={initial}
+										whileInView="animate"
+										viewport={{once: true}}
+										variants={arrayLoopStaggerChildren}
+									>
+										<OurServicesCard
+											link={item?.card?.link}
+											image={item?.card?.image}
+											title={item?.card?.title}
+											paragraph={item?.card?.paragraph}
+										/>
+									</motion.div>
 								</Fragment>
 							))
 						) : (

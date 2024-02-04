@@ -2,6 +2,7 @@
 import {
 	fadeIn,
 	stagger,
+	initial,
 	initialTwo,
 	slideInRightFinish,
 	slideInLeftInitial,
@@ -50,7 +51,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default"
+							className="max-w-2xl mx-auto xl:mx-0 text-center lg:text-left uppercase font-bold text-base text-aqua-default"
 						>
 							{subtitle}
 						</motion.h4>
@@ -63,8 +64,9 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							{title}
 						</motion.h3>
 						<motion.div
-							initial={initialTwo}
-							whileInView={stagger}
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="flex flex-col lg:flex-row items lg:items-start justify-between mt-8 gap-12 lg:gap-8"
 						>
@@ -76,28 +78,28 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							</div>
 							<div className="flex flex-col gap-6 w-full lg:w-[35%]">
 								<div>
-									<motion.h4
+									<motion.h3
 										initial={initialTwo}
 										whileInView={fadeIn}
 										viewport={{once: true}}
 										className="mb-1 uppercase text-center lg:text-left font-extrabold text-base text-blue-default"
 									>
 										{quality?.title}
-									</motion.h4>
+									</motion.h3>
 									<Paragraph
 										content={quality?.paragraph}
 										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
 									/>
 								</div>
 								<div>
-									<motion.h4
+									<motion.h3
 										initial={initialTwo}
 										whileInView={fadeIn}
 										viewport={{once: true}}
 										className="mb-1 uppercase text-center lg:text-left font-extrabold text-base text-blue-default"
 									>
 										{reliability?.title}
-									</motion.h4>
+									</motion.h3>
 									<Paragraph
 										content={reliability?.paragraph}
 										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
@@ -155,14 +157,14 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 									}
 								/>
 							</motion.div>
-							<motion.h4
+							<motion.h3
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
 								className="mb-1 uppercase text-center lg:text-center font-extrabold text-2xl tracking-[0.10rem] text-white"
 							>
 								{contentBox?.text}
-							</motion.h4>
+							</motion.h3>
 							<Paragraph
 								content={contentBox?.subtext}
 								tailwindStyling="max-w-xl text-white text-base sm:text-paragraph text-center lg:text-left"
