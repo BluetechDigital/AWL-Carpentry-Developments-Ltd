@@ -14,6 +14,11 @@
 	src: url("../fonts/BROmega-Black.woff");
 }
 
+@font-face {
+	font-family: ObjectSans;
+	src: url("../fonts/ObjectSans-Heavy.woff");
+}
+
 // Font Stack Properties
-$main: "BROmegaBlack", sans-serif;
+$main: "ObjectSans", sans-serif;
 $body: "PlusJakartaSans", "Inter", sans-serif;
