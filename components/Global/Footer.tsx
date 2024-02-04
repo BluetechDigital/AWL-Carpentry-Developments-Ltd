@@ -24,7 +24,13 @@ const Footer: FC = () => {
 
 	return (
 		<footer
-			className={styles.footer + " py-4 px-0 overflow-hidden bg-blue-darker"}
+			className={
+				styles.footer +
+				" py-4 px-0 overflow-hidden bg-blue-darker bg-cover bg-center bg-no-repeat"
+			}
+			style={{
+				backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker.svg")`,
+			}}
 		>
 			<div className="container px-4 mx-auto">
 				<div className="flex flex-col lg:flex-row items-center lg:items-start justify-between py-4 gap-16 lg:gap-4">
@@ -285,7 +291,7 @@ const Footer: FC = () => {
 									className="flex flex-col items-center lg:items-baseline"
 								>
 									<Link
-										href={`locations${item?.node?.url}`}
+										href={`${item?.node?.url}`}
 										className="text-lightGrey transition-all duration-200 ease-in-out text-tiny hover:text-aqua-default"
 									>
 										{item?.node?.label}

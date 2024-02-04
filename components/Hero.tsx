@@ -99,7 +99,7 @@ const Hero: FC<IHero> = ({
 											target={item?.buttonLink?.target}
 										>
 											<div
-												className={`p-2 pr-0 hover:bg-blue-two w-full sm:min-h-[14vh] lg:min-h-[14vh] transition-all ease-in-out duration-500 ${
+												className={`p-2 pr-0 hover:bg-blue-two w-full sm:min-h-[14vh] lg:min-h-[14vh] sm:max-h-[20vh] lg:max-h-[20vh] transition-all ease-in-out duration-500 ${
 													keys === 0
 														? "bg-blue-default"
 														: keys === 1

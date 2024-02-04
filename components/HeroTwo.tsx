@@ -21,14 +21,14 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
 			<div className={styles.heroTwo}>
-				<div className="lg:relative mt-0 lg:mt-[-50px] lg:h-[55vh] flex flex-col lg:flex-row">
+				<div className="lg:relative pt-[85px] lg:pt-[110px] lg:h-[60vh] xl:h-[50vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
-							" px-4 xl:px-28 py-8 bg-blue-darkerTwo w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
+							" px-4 xl:px-28 py-16 lg:py-8 bg-blue-darkerTwo w-full xl:w-1/2 bg-cover bg-center bg-no-repeat"
 						}
 						style={{
-							backgroundImage: `url("/svg/background/layeblue-peaks-haikei-blue-bluedarker.svg")`,
+							backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker.svg")`,
 						}}
 					>
 						<motion.div
@@ -41,13 +41,13 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-center lg:text-left uppercase text-3xl md:text-4xl xl:text-6xl text-white font-extrabold leading-[2.75rem] xl:leading-[3rem]"
+								className="text-center lg:text-left uppercase text-lg md:text-xl xl:text-3xl text-white font-extrabold xl:leading-[2.5rem]"
 							>
 								{title}
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="py-2 text-white leading-[1.75rem] text-base sm:text-paragraph text-center lg:text-left"
+								tailwindStyling="py-2 text-white leading-[1.75rem] text-base text-center lg:text-left"
 							/>
 						</motion.div>
 					</div>
@@ -66,7 +66,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							height={backgroundImage?.mediaDetails.height}
 							className={`${
 								backgroundImage?.sourceUrl
-									? "w-full h-full max-h-[300px] lg:max-h-[600px] object-cover object-center"
+									? "w-full h-full max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-cover object-center"
 									: "hidden"
 							}`}
 						/>
