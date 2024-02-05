@@ -35,7 +35,7 @@ const Gallery: FC<IGallery> = ({
 							: "hidden"
 					}
 				>
-					<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-xl">
+					<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
 						{title}
 					</h3>
 					<Paragraph

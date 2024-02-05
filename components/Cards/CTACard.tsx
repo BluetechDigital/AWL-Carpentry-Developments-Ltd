@@ -27,7 +27,7 @@ const CTACard: FC<ICTACard> = ({title, paragraph, buttonLink}) => {
 						className="flex flex-col items-center justify-between gap-10 px-0 lg:px-4 lg:flex-row"
 					>
 						<div className="flex flex-col justify-between gap-4">
-							<h3 className="max-w-xl lg:max-w-sm xl:max-w-xl mx-auto lg:mx-0 uppercase text-white text-center lg:text-left font-extrabold text-xl">
+							<h3 className="max-w-xl lg:max-w-sm xl:max-w-xl mx-auto lg:mx-0 uppercase text-white text-center lg:text-left font-extrabold text-lg md:text-xl">
 								{title}
 							</h3>
 							<Paragraph

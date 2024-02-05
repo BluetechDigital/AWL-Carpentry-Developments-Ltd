@@ -21,28 +21,24 @@ const OurClients: FC<IOurClients> = ({
 		<>
 			<div className={styles.ourClients + ` py-16 px-4 lg:px-0 bg-white`}>
 				<div className="container px-0 mx-auto">
-					<div className="flex flex-col items-center">
-						<motion.h4
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="text-center text-paragraph text-orange-two"
-						>
+					<motion.div
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
+						viewport={{once: true}}
+						className="flex flex-col items-center"
+					>
+						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
 							{subtitle}
-						</motion.h4>
-						<motion.h2
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="my-2 max-w-2xl mx-auto mb-6 text-center font-semibold leading-tight text-4xl lg:text-5xl"
-						>
+						</h4>
+						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
 							{title}
-						</motion.h2>
+						</h3>
 						<Paragraph
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
 						/>
-					</div>
+					</motion.div>
 					<div className="max-w-6xl mx-auto">
 						<motion.div
 							initial={initial}
