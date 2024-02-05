@@ -209,7 +209,6 @@ export type ITestimonialsGrid = {
 	title: string;
 	subtitle: string;
 	paragraph: string;
-	highlightText: string;
 };
 export type IAboutContentImage = {
 	title: string;
@@ -251,6 +250,11 @@ export type IAboutContentImage = {
 			};
 		};
 	};
+};
+export type ITestimonialsSlider = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
 };
 
 // Global

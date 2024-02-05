@@ -20,6 +20,7 @@ import Maintenance from "../Global/Maintenance";
 import BlogsThreeCards from "../BlogsThreeCards";
 import TestimonialsGrid from "../TestimonialsGrid";
 import AboutContentImage from "../AboutContentImage";
+import TestimonialsSlider from "../TestimonialsSlider";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -108,13 +109,21 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_TestimonialsSlider` ? (
+							<>
+								<TestimonialsSlider
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+								/>
+							</>
+						) : item?.fieldGroupName ===
 						  `${FlexibleContent}_TestimonialsGrid` ? (
 							<>
 								<TestimonialsGrid
 									title={item?.title}
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
-									highlightText={item?.highlightText}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_BlogsGrid` ? (

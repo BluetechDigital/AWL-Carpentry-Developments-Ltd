@@ -2,7 +2,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {useGlobalContext} from "@/context/global";
-import {ITestimonialsGrid} from "@/types/components/index";
+import {ITestimonialsSlider} from "@/types/components/index";
 import {fadeInUp, initial, stagger} from "../animations/animations";
 
 // Styling
@@ -12,7 +12,7 @@ import styles from "../styles/components/Testimonials.module.scss";
 import Paragraph from "./Elements/Paragraph";
 import Pagination from "./Elements/Pagination";
 
-const TestimonialsGrid: FC<ITestimonialsGrid> = ({
+const TestimonialsSlider: FC<ITestimonialsSlider> = ({
 	title,
 	subtitle,
 	paragraph,
@@ -71,4 +71,4 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 	);
 };
 
-export default TestimonialsGrid;
+export default TestimonialsSlider;

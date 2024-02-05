@@ -209,6 +209,12 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_TestimonialsSlider {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+											}
 											... on ${postTypeFlexibleContent}_TestimonialsGrid {
 												fieldGroupName
 												title
