@@ -3,7 +3,7 @@ import Image from "next/image";
 import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {IOurClients} from "@/types/components/index";
-import {fadeIn, initial, stagger, initialTwo} from "../animations/animations";
+import {initial, stagger, fadeInUp} from "../animations/animations";
 
 // Styling
 import styles from "../styles/components/OurClients.module.scss";
@@ -28,12 +28,22 @@ const OurClients: FC<IOurClients> = ({
 						viewport={{once: true}}
 						className="flex flex-col items-center"
 					>
-						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
+						<motion.h4
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="max-w-sm mx-auto xl:mx-0 text-center xl:text-left text-base text-aqua-default"
+						>
 							{subtitle}
-						</h4>
-						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
+						</motion.h4>
+						<motion.h3
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl"
+						>
 							{title}
-						</h3>
+						</motion.h3>
 						<Paragraph
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"

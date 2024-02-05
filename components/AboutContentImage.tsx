@@ -5,7 +5,6 @@ import {
 	initial,
 	initialTwo,
 	slideInRightFinish,
-	slideInLeftInitial,
 	slideInRightInitial,
 } from "../animations/animations";
 import {FC} from "react";
@@ -52,7 +51,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							initial={initialTwo}
 							whileInView={fadeIn}
 							viewport={{once: true}}
-							className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left uppercase font-bold text-base text-aqua-default"
+							className="max-w-sm mx-auto xl:mx-0 text-center xl:text-left text-base text-aqua-default"
 						>
 							{subtitle}
 						</motion.h4>
