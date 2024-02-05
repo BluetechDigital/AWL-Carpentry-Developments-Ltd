@@ -1,18 +1,17 @@
 "use client";
 
 // Imports
+import {
+	fadeIn,
+	initial,
+	initialTwo,
+	arrayLoopStaggerChildren,
+} from "@/animations/animations";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import {useState, FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
-import {
-	arrayLoopStaggerChildren,
-	fadeIn,
-	initial,
-	initialTwo,
-	stagger,
-} from "@/animations/animations";
 
 // Styling
 import styles from "./../../styles/components/Navbar.module.scss";

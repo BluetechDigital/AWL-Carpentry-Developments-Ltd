@@ -154,6 +154,47 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
 											}
+											... on ${postTypeFlexibleContent}_GettingStarted {
+            									fieldGroupName
+            									title
+												subtitle
+            									stepOne {
+            										title
+            										paragraph
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            									stepTwo {
+            										title
+            										paragraph
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            									stepThree {
+            										title
+            										paragraph
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title

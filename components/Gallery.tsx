@@ -2,7 +2,7 @@
 import {FC} from "react";
 import {motion} from "framer-motion";
 import {IGallery} from "@/types/components";
-import {initial, stagger} from "@/animations/animations";
+import fadeInUp, {initial, stagger} from "@/animations/animations";
 
 // Styling
 import styles from "../styles/components/Gallery.module.scss";
@@ -35,9 +35,14 @@ const Gallery: FC<IGallery> = ({
 							: "hidden"
 					}
 				>
-					<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
+					<motion.h3
+						initial={initial}
+						whileInView={fadeInUp}
+						viewport={{once: true}}
+						className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl"
+					>
 						{title}
-					</h3>
+					</motion.h3>
 					<Paragraph
 						content={paragraph}
 						tailwindStyling="max-w-3xl mx-auto text-black text-base"

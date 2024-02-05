@@ -14,6 +14,7 @@ import OurClients from "../OurClients";
 import ContactInfo from "../ContactInfo";
 import OurServices from "../OurServices";
 import ErrorPage from "../Global/ErrorPage";
+import GettingStarted from "../GettingStarted";
 import TitleParagraph from "../TitleParagraph";
 import Maintenance from "../Global/Maintenance";
 import BlogsThreeCards from "../BlogsThreeCards";
@@ -85,6 +86,16 @@ const RenderFlexibleContent: FC = () => {
 									subtitle={item?.subtitle}
 									paragraph={item?.paragraph}
 									servicesGrid={item?.servicesGrid}
+								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_GettingStarted` ? (
+							<>
+								<GettingStarted
+									title={item?.title}
+									subtitle={item?.subtitle}
+									stepOne={item?.stepOne}
+									stepTwo={item?.stepTwo}
+									stepThree={item?.stepThree}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (

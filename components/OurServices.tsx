@@ -1,9 +1,8 @@
 // Imports
 import {
-	fadeIn,
 	initial,
 	stagger,
-	initialTwo,
+	fadeInUp,
 	arrayLoopStaggerChildren,
 } from "../animations/animations";
 import {FC, Fragment} from "react";
@@ -38,12 +37,22 @@ const OurServices: FC<IOurServices> = ({
 					className="container relative m-auto flex flex-col items-center gap-6"
 				>
 					<div className="flex flex-col items-center">
-						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
+						<motion.h4
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="max-w-sm mx-auto xl:mx-0 text-center xl:text-left text-base text-aqua-default"
+						>
 							{subtitle}
-						</h4>
-						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
+						</motion.h4>
+						<motion.h3
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl"
+						>
 							{title}
-						</h3>
+						</motion.h3>
 						<Paragraph
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black text-base text-center"
