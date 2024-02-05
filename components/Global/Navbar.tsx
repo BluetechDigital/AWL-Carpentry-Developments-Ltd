@@ -256,7 +256,7 @@ const Navbar: FC = () => {
 						</div>
 						<div className="opacity-0 xl:hidden" />
 					</div>
-					<Link href="/contact" target="_blank">
+					<Link href="/contact" target="">
 						<div className="py-6 pl-4 pr-10 cursor-pointer bg-aqua-default hover:bg-orange-default transition-all ease-in-out duration-500">
 							<span className="relative flex items-center justify-center pl-4 text-lightGrey text-tiny text-center font-semibold">
 								Get a quote today
