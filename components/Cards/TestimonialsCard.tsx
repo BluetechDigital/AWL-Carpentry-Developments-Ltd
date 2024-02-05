@@ -1,6 +1,6 @@
 // Imports
+import {FC} from "react";
 import Image from "next/image";
-import {FC, Fragment} from "react";
 import {motion} from "framer-motion";
 import {ITestimonialsCard} from "@/types/components";
 import {initial, stagger} from "@/animations/animations";
@@ -23,7 +23,7 @@ const TestimonialsCard: FC<ITestimonialsCard> = ({name, image, paragraph}) => {
 			>
 				<div className="pb-6">
 					<Paragraph
-						content={paragraph.substring(0, 250) + "..."}
+						content={paragraph?.substring(0, 250) + "..."}
 						tailwindStyling="mb-3 text-center lg:text-left text-black text-base leading-relaxed"
 					/>
 					<motion.div
