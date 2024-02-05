@@ -45,6 +45,10 @@ const Pagination: FC<IPagination> = ({
 		}
 	};
 
+	const buttonClipPath = "polygon(94% 0, 100% 15%, 100% 100%, 0 100%, 0 0)";
+	const tailwindButtonStyling =
+		"relative px-6 py-2 text-pureBlack hover:text-white font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-blue-two hover:bg-blue-three hover:border-blue-three transition-all ease-in-out duration-500 before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-blue-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-blue-three";
+
 	return (
 		<>
 			<motion.div
@@ -73,6 +77,9 @@ const Pagination: FC<IPagination> = ({
 												  }`
 												: `hidden`
 										}
+										style={{
+											clipPath: `polygon(94% 0, 100% 6%, 100% 100%, 0 100%, 0 0)`,
+										}}
 									/>
 								</>
 							) : contentType === `BlogsCard` ? (
@@ -100,7 +107,7 @@ const Pagination: FC<IPagination> = ({
 				) : (
 					<>
 						<div
-							className="bg-orange-darkTwo"
+							className="bg-blue-darker"
 							style={{
 								boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 							}}
@@ -145,114 +152,28 @@ const Pagination: FC<IPagination> = ({
 								viewport={{once: true}}
 								onClick={handlePrevPage}
 								disabled={currentPage === 1}
-								className="flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-orange-two hover:bg-orange-three hover:border-orange-three transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-orange-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-orange-three"
+								className={tailwindButtonStyling}
+								style={{
+									clipPath: `${buttonClipPath}`,
+								}}
 							>
-								<span className="hidden group-hover:block">
-									<svg
-										height="35"
-										width="30.237"
-										viewBox="0 0 30.237 35"
-										xmlns="http://www.w3.org/2000/svg"
-										className="rotate-180"
-									>
-										<g transform="translate(-4906.763 143)">
-											<path
-												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-												transform="translate(4870 -143)"
-												fill="#ffffff"
-											></path>
-											<g transform="translate(4890.311 -1111.861)">
-												<path
-													d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-													transform="translate(0 0)"
-													fill="#ffffff"
-												></path>
-											</g>
-										</g>
-									</svg>
-								</span>
-								<span className="block group-hover:hidden">
-									<svg
-										height="35"
-										width="30.237"
-										className="rotate-180"
-										viewBox="0 0 30.237 35"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<g transform="translate(-4906.763 143)">
-											<path
-												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-												transform="translate(4870 -143)"
-												fill="#f6ad37"
-											></path>
-											<g transform="translate(4890.311 -1111.861)">
-												<path
-													d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-													transform="translate(0 0)"
-													fill="#000"
-												></path>
-											</g>
-										</g>
-									</svg>
-								</span>
-								<span>Previous</span>
+								Previous
 							</motion.button>
-							<span className="text-center text-tiny font-semibold leading-tight text-black">{`Page ${currentPage} of ${totalPages}`}</span>
+							<span className="text-center text-tiny font-semibold leading-tight text-black">
+								{`Page ${currentPage} of ${totalPages}`}
+							</span>
 							<motion.button
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
 								onClick={handleNextPage}
 								disabled={currentPage === totalPages}
-								className="flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-2 font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-orange-two hover:bg-orange-three hover:border-orange-three transition-all ease-in-out duration-500 text-pureBlack hover:text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-orange-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-orange-three"
+								className={tailwindButtonStyling}
+								style={{
+									clipPath: `${buttonClipPath}`,
+								}}
 							>
-								<span>Next</span>
-								<span className="hidden group-hover:block">
-									<svg
-										height="35"
-										width="30.237"
-										viewBox="0 0 30.237 35"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<g transform="translate(-4906.763 143)">
-											<path
-												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-												transform="translate(4870 -143)"
-												fill="#ffffff"
-											></path>
-											<g transform="translate(4890.311 -1111.861)">
-												<path
-													d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-													transform="translate(0 0)"
-													fill="#ffffff"
-												></path>
-											</g>
-										</g>
-									</svg>
-								</span>
-								<span className="block group-hover:hidden">
-									<svg
-										height="35"
-										width="30.237"
-										viewBox="0 0 30.237 35"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<g transform="translate(-4906.763 143)">
-											<path
-												d="M49.5,35a17.45,17.45,0,0,1-12.737-5.5h2.153a16,16,0,0,0,21.9-23.314,15.971,15.971,0,0,0-21.9-.687H36.763A17.5,17.5,0,1,1,49.5,35Z"
-												transform="translate(4870 -143)"
-												fill="#f6ad37"
-											></path>
-											<g transform="translate(4890.311 -1111.861)">
-												<path
-													d="M36.2,985.886,32.392,981.6a.714.714,0,1,0-1.064.952l2.753,3.1H24.714a.714.714,0,1,0,0,1.428h9.367l-2.753,3.1a.731.731,0,0,0,.056,1.015.722.722,0,0,0,1.007-.063l3.809-4.286A.722.722,0,0,0,36.2,985.886Z"
-													transform="translate(0 0)"
-													fill="#000"
-												></path>
-											</g>
-										</g>
-									</svg>
-								</span>
+								Next
 							</motion.button>
 						</div>
 					</>
