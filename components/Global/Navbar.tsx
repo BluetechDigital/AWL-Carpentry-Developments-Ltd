@@ -69,7 +69,7 @@ const Navbar: FC = () => {
 						</Link>
 					</div>
 					<div
-						className="bg-blue-darkerTwo py-2 lg:pb-11 px-6 xl:px-28 w-full lg:w-[60%] flex justify-start gap-12 xl:gap-24"
+						className="bg-blue-darker py-2 lg:pb-11 px-6 xl:px-28 w-full lg:w-[60%] flex justify-start gap-12 xl:gap-24"
 						style={{
 							clipPath: `polygon(3% 0, 100% 0%, 100% 100%, 0 100%)`,
 						}}
