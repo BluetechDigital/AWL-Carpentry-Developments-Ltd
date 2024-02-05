@@ -39,26 +39,12 @@ const TestimonialsGrid: FC<ITestimonialsGrid> = ({
 						viewport={{once: true}}
 						className="flex flex-col items-center"
 					>
-						<motion.h4
-							initial={initialTwo}
-							whileInView={fadeIn}
-							viewport={{once: true}}
-							className="mb-1 text-center lg:text-center text-lg text-orange-two"
-						>
+						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
 							{subtitle}
-						</motion.h4>
-						<motion.h3
-							initial={initial}
-							variants={stagger}
-							whileInView="animate"
-							viewport={{once: true}}
-							className="max-w-none lg:max-w-3xl mx-auto text-center font-bold leading-loose text-4xl lg:text-5xl p-4 pl-0 text-black"
-						>
+						</h4>
+						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
 							{title}
-							<span className="p-2 ml-3 bg-orange-two text-white">
-								{highlightText}
-							</span>
-						</motion.h3>
+						</h3>
 						<Paragraph
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
