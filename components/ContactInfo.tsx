@@ -26,7 +26,7 @@ const ContactInfo: FC<IContactInfo> = ({title, paragraph}) => {
 						initial={initial}
 						whileInView={fadeInUp}
 						viewport={{once: true}}
-						className="lg:max-w-lg mb-6 text-center lg:text-left font-semibold leading-tight text-4xl lg:text-5xl text-black"
+						className="lg:max-w-lg mb-6 text-center lg:text-left font-semibold leading-tight text-lg md:text-xl text-black"
 					>
 						{title}
 					</motion.h2>
