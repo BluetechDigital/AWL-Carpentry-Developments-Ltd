@@ -117,7 +117,7 @@ const TestimonialsSlider: FC = () => {
 															}
 														/>
 														<div
-															className={`w-full md:w-auto ${
+															className={`w-full lg:w-auto ${
 																item?.node?.testimonialReview?.image?.sourceUrl
 																	? "md:ml-10"
 																	: "md:ml-0"
@@ -147,7 +147,7 @@ const TestimonialsSlider: FC = () => {
 													</div>
 												</div>
 												<div
-													className={`w-full ${
+													className={`w-full ml-0 lg:ml-12 ${
 														item?.node?.testimonialReview?.image?.sourceUrl
 															? "lg:w-2/5"
 															: "lg:w-3/5"
