@@ -251,11 +251,6 @@ export type IAboutContentImage = {
 		};
 	};
 };
-export type ITestimonialsSlider = {
-	title: string;
-	subtitle: string;
-	paragraph: string;
-};
 
 // Global
 export type ILayout = {

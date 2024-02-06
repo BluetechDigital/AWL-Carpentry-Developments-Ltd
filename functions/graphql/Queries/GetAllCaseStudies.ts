@@ -41,7 +41,7 @@ export const getAllCaseStudiesContent = async () => {
 		const content: DocumentNode = gql`
 			{
 				caseStudiesContent: caseStudies(
-					where: {status: PUBLISH, orderby: {field: DATE, order: ASC}}
+					where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
 					first: 100
 				) {
 					edges {
