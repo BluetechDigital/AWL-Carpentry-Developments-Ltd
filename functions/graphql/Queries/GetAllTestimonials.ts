@@ -7,11 +7,15 @@ export const getAllTestimonialsContent = async () => {
 	try {
 		const content: DocumentNode = gql`
 			{
-				testimonialsContent: testimonials(where: {status: PUBLISH}, last: 100) {
+				testimonialsContent: testimonials(
+					where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
+					last: 100
+				) {
 					edges {
 						node {
 							testimonialReview {
 								name
+								position
 								paragraph
 								image {
 									altText

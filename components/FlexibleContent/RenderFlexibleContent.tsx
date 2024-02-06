@@ -111,11 +111,7 @@ const RenderFlexibleContent: FC = () => {
 						) : item?.fieldGroupName ===
 						  `${FlexibleContent}_TestimonialsSlider` ? (
 							<>
-								<TestimonialsSlider
-									title={item?.title}
-									subtitle={item?.subtitle}
-									paragraph={item?.paragraph}
-								/>
+								<TestimonialsSlider />
 							</>
 						) : item?.fieldGroupName ===
 						  `${FlexibleContent}_TestimonialsGrid` ? (
