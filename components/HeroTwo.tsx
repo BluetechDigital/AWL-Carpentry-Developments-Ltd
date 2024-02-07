@@ -35,7 +35,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							viewport={{once: true}}
 							initial={slideInLeftInitial}
 							whileInView={slideInRightFinish}
-							className="container px-4 lg:px-0 mx-auto max-w-xl flex flex-col justify-center h-full"
+							className="container px-4 lg:px-10 xl:px-0 mx-auto max-w-xl flex flex-col justify-center h-full"
 						>
 							<motion.h1
 								initial={initialTwo}
@@ -47,7 +47,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 							</motion.h1>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling="py-2 text-white leading-[1.75rem] text-base text-center lg:text-left"
+								tailwindStyling="py-2 lg:max-w-sm xl:max-w-xl mx-auto lg:mx-0 text-white leading-[1.75rem] text-base text-center lg:text-left"
 							/>
 						</motion.div>
 					</div>

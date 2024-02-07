@@ -177,7 +177,7 @@ const Navbar: FC = () => {
 					</div>
 				</div>
 				<div
-					className="relative mt-[-35px] z-10 w-fit mx-auto hidden lg:flex items-center justify-center"
+					className="relative lg:mt-[-25px] 2xl:mt-[-35px] z-10 w-fit mx-auto hidden lg:flex items-center justify-center"
 					style={{
 						boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 					}}
