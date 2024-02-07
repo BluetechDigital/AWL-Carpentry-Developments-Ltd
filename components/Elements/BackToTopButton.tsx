@@ -41,9 +41,9 @@ const BackToTopButton: FC<IBackHoverButton> = ({link}) => {
 							<Image
 								width={550}
 								height={550}
-								alt="Black Arrow Icon"
-								src="/svg/navigation-menu-dropdown-arrow-black.svg"
-								className={`cursor-pointer w-[22px] h-[22px] object-contain object-center`}
+								alt="White Arrow Icon"
+								src="/svg/navigation-menu-dropdown-arrow-white.svg"
+								className={`cursor-pointer w-[22px] h-[22px] rotate-180 object-contain object-center`}
 							/>
 						</span>
 					</Link>
