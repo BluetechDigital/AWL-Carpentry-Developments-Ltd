@@ -9,7 +9,6 @@ import {
 	slideInRightInitial,
 } from "../animations/animations";
 import {FC} from "react";
-import Image from "next/image";
 import {motion} from "framer-motion";
 import {ITitleContentImage} from "@/types/components";
 
@@ -111,7 +110,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 								content={paragraph}
 								tailwindStyling={`lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left ${textareaColor}`}
 							/>
-							<div className="flex mt-6">
+							<div className={buttonLink?.title ? "flex mt-6" : "hidden"}>
 								<Link
 									href={`${buttonLink?.url}`}
 									target={buttonLink?.target}
