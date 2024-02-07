@@ -108,6 +108,26 @@ export const getAllFlexibleContentComponents = async (
 													}
 												}
                 							}
+											... on ${postTypeFlexibleContent}_TitleContentImage {
+            									fieldGroupName
+            									title
+            									paragraph
+            									buttonLink {
+            										url
+            										title
+            										target
+            									}
+            									image {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+            									displayContentOption
+            									displayBackgroundColor
+            								}
 											... on ${postTypeFlexibleContent}_OurClients {
 												fieldGroupName
 												title

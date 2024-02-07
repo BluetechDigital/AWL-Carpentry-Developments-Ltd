@@ -251,6 +251,25 @@ export type IAboutContentImage = {
 		};
 	};
 };
+export type ITitleContentImage = {
+	title: string;
+	paragraph: string;
+	displayContentOption: string;
+	displayBackgroundColor: string;
+	buttonLink: {
+		url: string;
+		title: string;
+		target: string;
+	};
+	image: {
+		altText: string;
+		sourceUrl: string;
+		mediaDetails: {
+			width: number;
+			height: number;
+		};
+	};
+};
 
 // Global
 export type ILayout = {

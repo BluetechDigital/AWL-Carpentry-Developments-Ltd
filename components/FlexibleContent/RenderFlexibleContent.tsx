@@ -20,6 +20,7 @@ import Maintenance from "../Global/Maintenance";
 import BlogsThreeCards from "../BlogsThreeCards";
 import TestimonialsGrid from "../TestimonialsGrid";
 import AboutContentImage from "../AboutContentImage";
+import TitleContentImage from "../TitleContentImage";
 import TestimonialsSlider from "../TestimonialsSlider";
 
 const RenderFlexibleContent: FC = () => {
@@ -69,6 +70,18 @@ const RenderFlexibleContent: FC = () => {
 									contentBox={item?.contentBox}
 									checkatrade={item?.checkatrade}
 									reliability={item?.reliability}
+								/>
+							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_TitleContentImage` ? (
+							<>
+								<TitleContentImage
+									title={item?.title}
+									image={item?.image}
+									paragraph={item?.paragraph}
+									buttonLink={item?.buttonLink}
+									displayContentOption={item?.displayContentOption}
+									displayBackgroundColor={item?.displayBackgroundColor}
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_OurClients` ? (
