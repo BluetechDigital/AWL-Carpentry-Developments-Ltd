@@ -1,16 +1,9 @@
 // Imports
-import {
-	initial,
-	stagger,
-	fadeInUp,
-	slideInLeftInitial,
-	slideInRightFinish,
-	slideInRightInitial,
-} from "../animations/animations";
 import Image from "next/image";
 import {motion} from "framer-motion";
 import React, {FC, Fragment} from "react";
 import {useGlobalContext} from "@/context/global";
+import {initial, fadeInUp} from "../animations/animations";
 
 // Swiper.js Slider
 import "swiper/css";
@@ -49,7 +42,7 @@ const TestimonialsSlider: FC = () => {
 											<div
 												className={
 													item?.node?.testimonialReview?.paragraph
-														? `mx-auto flex flex-col lg:flex-row items-center justify-center ${
+														? `mx-auto px-4 lg:px-0 flex flex-col lg:flex-row items-center justify-center ${
 																item?.node?.testimonialReview?.image?.sourceUrl
 																	? "max-w-4xl"
 																	: "max-w-6xl gap-lg:gap-12"
@@ -123,18 +116,10 @@ const TestimonialsSlider: FC = () => {
 																	: "md:ml-0"
 															}`}
 														>
-															<motion.h3
-																initial={initial}
-																whileInView={fadeInUp}
-																viewport={{once: true}}
-																className="mb-2 max-w-sm lg:max-w-xl text-lg lg:text-xl font-semibold font-heading text-blue-default"
-															>
+															<h3 className="mb-2 max-w-sm lg:max-w-xl text-lg lg:text-xl font-semibold font-heading text-blue-default">
 																{item?.node?.testimonialReview?.name}
-															</motion.h3>
-															<motion.h4
-																initial={initial}
-																whileInView={fadeInUp}
-																viewport={{once: true}}
+															</h3>
+															<h4
 																className={
 																	item?.node?.testimonialReview?.position
 																		? "text-darkGrey"
@@ -142,7 +127,7 @@ const TestimonialsSlider: FC = () => {
 																}
 															>
 																{item?.node?.testimonialReview?.position}
-															</motion.h4>
+															</h4>
 														</div>
 													</div>
 												</div>
@@ -155,7 +140,7 @@ const TestimonialsSlider: FC = () => {
 												>
 													<Paragraph
 														content={item?.node?.testimonialReview?.paragraph}
-														tailwindStyling="max-w-md lg:max-w-xl mx-auto lg:mx-0 text-base text-darkGrey leading-relaxed text-center lg:text-left"
+														tailwindStyling="max-w-md xl:max-w-xl mx-auto lg:mx-0 text-base text-darkGrey leading-relaxed text-center lg:text-left"
 													/>
 												</div>
 											</div>
