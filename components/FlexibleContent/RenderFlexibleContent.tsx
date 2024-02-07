@@ -12,6 +12,7 @@ import HeroTwo from "../HeroTwo";
 import Gallery from "../Gallery";
 import OurClients from "../OurClients";
 import ContactInfo from "../ContactInfo";
+import OurLocation from "../OurLocation";
 import OurServices from "../OurServices";
 import ErrorPage from "../Global/ErrorPage";
 import GettingStarted from "../GettingStarted";
@@ -101,6 +102,10 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									servicesGrid={item?.servicesGrid}
 								/>
+							</>
+						) : item?.fieldGroupName === `${FlexibleContent}_OurLocation` ? (
+							<>
+								<OurLocation title={item?.title} paragraph={item?.paragraph} />
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_GettingStarted` ? (
 							<>

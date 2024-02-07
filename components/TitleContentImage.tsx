@@ -109,7 +109,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							</motion.h3>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling={`lg:max-w-lg text-darkGrey leading-[1.75rem] text-base text-center lg:text-left ${textareaColor}`}
+								tailwindStyling={`lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left ${textareaColor}`}
 							/>
 							<div className="flex mt-6">
 								<Link

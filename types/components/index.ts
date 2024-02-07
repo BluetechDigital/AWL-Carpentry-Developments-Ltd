@@ -144,6 +144,10 @@ export type IOurServices = {
 		}
 	];
 };
+export type IOurLocation = {
+	title: string;
+	paragraph: string;
+};
 export type IMaintenance = {
 	title: string;
 	paragraph: string;
