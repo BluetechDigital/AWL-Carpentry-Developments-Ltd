@@ -4,11 +4,15 @@
 
 .paragraph {
 	h2,
-	h3,
 	h4,
 	h5 {
 		font-family: $body;
-		@apply text-xl font-extrabold py-4;
+		@apply text-lg font-semibold py-4;
+	}
+
+	h3 {
+		font-family: $main;
+		@apply text-lg font-semibold py-4 uppercase;
 	}
 
 	h2 {
@@ -19,7 +23,7 @@
 
 	ul,
 	ol {
-		@apply p-4 flex gap-2 sm:px-6 flex flex-col items-baseline justify-center border-l-2 border-blue-two;
+		@apply p-4 flex gap-2 sm:px-6 flex-col items-baseline justify-center border-l-2 border-blue-two;
 
 		li {
 			@apply px-2 list-disc text-left ml-4;
@@ -29,14 +33,14 @@
 			}
 
 			a {
-				@apply font-semibold underline text-blue-two hover:text-orange-two transition-all ease-in-out duration-500;
+				@apply font-semibold underline text-blue-two hover:text-aqua-two transition-all ease-in-out duration-500;
 			}
 		}
 	}
 
 	p {
 		a {
-			@apply font-semibold underline text-blue-two hover:text-orange-two transition-all ease-in-out duration-500;
+			@apply font-semibold underline text-blue-two hover:text-aqua-two transition-all ease-in-out duration-500;
 		}
 
 		img {
