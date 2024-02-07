@@ -20,23 +20,23 @@ const TitleParagraph: FC<ITitleParagraph> = ({
 				viewport={{once: true}}
 				className="py-10 px-4"
 			>
-				<motion.h2
+				<motion.h3
 					initial={initial}
 					whileInView={fadeInUp}
 					viewport={{once: true}}
 					className={
 						title
-							? "mb-10 text-center font-semibold leading-tight text-4xl lg:text-5xl text-black"
+							? "my-3 max-w-xl mx-auto uppercase text-black text-center font-extrabold text-lg md:text-xl"
 							: "hidden"
 					}
 				>
 					{title}
-				</motion.h2>
+				</motion.h3>
 				<Paragraph
 					content={paragraph}
 					tailwindStyling={
 						paragraph
-							? `lg:max-w-6xl mx-auto mb-10 text-black leading-[1.75rem] text-paragraph text-center ${
+							? `lg:max-w-6xl mx-auto mb-10 text-black leading-[1.75rem] text-base text-center ${
 									displayParagraph ? "lg:text-center" : "lg:text-left"
 							  }`
 							: "hidden"
