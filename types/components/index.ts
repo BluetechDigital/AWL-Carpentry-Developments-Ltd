@@ -361,6 +361,7 @@ export type IOurServicesCard = {
 };
 export type ITestimonialsCard = {
 	name: string;
+	position: string;
 	paragraph: string;
 	image: {
 		altText: string;

@@ -29,7 +29,7 @@ const Pagination: FC<IPagination> = ({
 
 	const startIndex = (currentPage - 1) * itemsPerPage;
 	const endIndex = startIndex + itemsPerPage;
-	const currentImages = contentArray?.slice(startIndex, endIndex);
+	const currentContent = contentArray?.slice(startIndex, endIndex);
 
 	const totalPages = Math.ceil(contentArray?.length / itemsPerPage);
 
@@ -45,7 +45,7 @@ const Pagination: FC<IPagination> = ({
 		}
 	};
 
-	const buttonClipPath = "polygon(94% 0, 100% 15%, 100% 100%, 0 100%, 0 0)";
+	const buttonClipPath = "polygon(95% 0, 100% 15%, 100% 100%, 0 100%, 0 0)";
 	const tailwindButtonStyling =
 		"relative px-6 py-2 text-pureBlack hover:text-white font-semibold tracking-widest text-tiny w-fit border-2 border-solid border-blue-two hover:bg-blue-three hover:border-blue-three transition-all ease-in-out duration-500 before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-white hover:before:bg-blue-three after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-white hover:after:bg-blue-three";
 
@@ -58,8 +58,8 @@ const Pagination: FC<IPagination> = ({
 				viewport={{once: true}}
 				className={`${tailwindStyling}`}
 			>
-				{currentImages.length > 0 ? (
-					currentImages.map((item: any, keys: any) => (
+				{currentContent?.length > 0 ? (
+					currentContent?.map((item: any, keys: any) => (
 						<Fragment key={keys}>
 							{contentType === `Gallery` ? (
 								<>
@@ -96,6 +96,7 @@ const Pagination: FC<IPagination> = ({
 									<TestimonialsCard
 										name={item?.node?.testimonialReview?.name}
 										image={item?.node?.testimonialReview?.image}
+										position={item?.node?.testimonialReview?.position}
 										paragraph={item?.node?.testimonialReview?.paragraph}
 									/>
 								</>
