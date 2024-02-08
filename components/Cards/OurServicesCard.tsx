@@ -73,7 +73,7 @@ const OurServicesCard: FC<IOurServicesCard> = ({
 								? paragraph?.substring(0, 175) + "..."
 								: paragraph
 						}
-						tailwindStyling="text-black text-tiny text-center"
+						tailwindStyling="text-black text-base sm:text-tiny text-center"
 					/>
 				</div>
 			</div>

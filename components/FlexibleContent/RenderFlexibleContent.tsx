@@ -161,6 +161,8 @@ const RenderFlexibleContent: FC = () => {
 						  `${FlexibleContent}_CaseStudiesGrid` ? (
 							<></>
 						) : item?.fieldGroupName === `${FlexibleContent}_Faq` ? (
+							<></>
+						) : item?.fieldGroupName === `${FlexibleContent}_FaqTwo` ? (
 							<>
 								<FAQTwo
 									title={item?.title}
