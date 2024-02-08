@@ -29,14 +29,14 @@ const OurServices: FC<IOurServices> = ({
 					styles.ourServices + " relative py-12 sm:py-16 px-4 bg-white"
 				}
 			>
-				<motion.div
-					initial={initial}
-					variants={stagger}
-					whileInView="animate"
-					viewport={{once: true}}
-					className="container relative m-auto flex flex-col items-center gap-6"
-				>
-					<div className="flex flex-col items-center">
+				<div className="container relative m-auto flex flex-col items-center gap-6">
+					<motion.div
+						initial={initial}
+						variants={stagger}
+						whileInView="animate"
+						viewport={{once: true}}
+						className="flex flex-col items-center"
+					>
 						<motion.h4
 							initial={initial}
 							whileInView={fadeInUp}
@@ -57,7 +57,7 @@ const OurServices: FC<IOurServices> = ({
 							content={paragraph}
 							tailwindStyling="lg:max-w-3xl mx-auto text-black text-base text-center"
 						/>
-					</div>
+					</motion.div>
 					<div className="w-full relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 py-6 px-0 sm:px-4 gap-6 items-start justify-center">
 						{servicesGrid?.length > 0 ? (
 							servicesGrid?.map((item: any, keys: any) => (
@@ -82,7 +82,7 @@ const OurServices: FC<IOurServices> = ({
 							<></>
 						)}
 					</div>
-				</motion.div>
+				</div>
 			</div>
 		</>
 	);

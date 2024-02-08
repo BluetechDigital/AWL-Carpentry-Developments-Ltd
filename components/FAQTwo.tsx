@@ -1,10 +1,10 @@
 // Imports
-import {
+import fadeInUp, {
 	fadeIn,
 	initial,
 	stagger,
 	initialTwo,
-	slideInLeftInitial,
+	slideInRightInitial,
 	slideInRightFinish,
 } from "../animations/animations";
 import Link from "next/link";
@@ -34,25 +34,58 @@ const FAQTwo: FC<IFAQTwo> = ({
 						variants={stagger}
 						whileInView="animate"
 						viewport={{once: true}}
-						className="mb-10"
+						className="flex flex-col items-center mb-10"
 					>
-						<h4 className="max-w-2xl mx-auto xl:mx-0 text-center xl:text-left uppercase font-bold text-base text-aqua-default">
+						<motion.h4
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="max-w-sm mx-auto xl:mx-0 text-center xl:text-left text-base text-aqua-default"
+						>
 							{subtitle}
-						</h4>
-						<h3 className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl">
+						</motion.h4>
+						<motion.h3
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className="my-3 max-w-xl mx-auto xl:mx-0 uppercase text-black text-center font-extrabold text-lg md:text-xl"
+						>
 							{title}
-						</h3>
+						</motion.h3>
 						<Paragraph
 							content={paragraph}
-							tailwindStyling="lg:max-w-3xl mx-auto text-black leading-[1.75rem] text-paragraph text-center"
+							tailwindStyling="lg:max-w-3xl mx-auto text-black text-base text-center"
 						/>
 					</motion.div>
 
-					<div className="flex flex-col-reverse lg:flex-row gap-4 xl:gap-10">
+					<div className="flex flex-col lg:flex-row gap-4 xl:gap-10">
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className={`w-full flex flex-col items-center justify-center gap-4 ${
+								image?.sourceUrl ? "lg:w-1/2" : `w-full`
+							}`}
+						>
+							{faqContent?.length > 0 ? (
+								faqContent.map((item: any, keys: any) => (
+									<Fragment key={keys}>
+										<FAQCard
+											index={keys}
+											title={item?.card?.title}
+											paragraph={item?.card?.paragraph}
+										/>
+									</Fragment>
+								))
+							) : (
+								<></>
+							)}
+						</motion.div>
 						<div className={image?.sourceUrl ? "w-full lg:w-1/2" : `hidden`}>
 							<motion.div
 								viewport={{once: true}}
-								initial={slideInLeftInitial}
+								initial={slideInRightInitial}
 								whileInView={slideInRightFinish}
 								className="relative"
 							>
@@ -85,7 +118,7 @@ const FAQTwo: FC<IFAQTwo> = ({
 										viewport={{once: true}}
 										className={
 											buttonLink?.title
-												? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit border-2 border-solid bg-orange-two border-orange-two hover:bg-orange-two hover:border-orange-two transition-all ease-in-out duration-500 text-white before:left-[15%] before:bottom-[-2px] before:block before:h-[2px] before:absolute before:w-[45%] before:content-[''] before:bg-orange-two hover:before:bg-orange-two after:right-[15%] after:top-[-2px] after:block after:h-[2px] after:absolute after:w-[45%] after:content-[''] after:bg-orange-two hover:after:bg-orange-two`
+												? `flex items-center justify-center mx-auto lg:mx-0 group relative gap-3 px-6 py-3 font-semibold tracking-widest text-base w-fit bg-blue-default hover:bg-aqua-default transition-all ease-in-out duration-500 text-white`
 												: `hidden`
 										}
 									>
@@ -140,29 +173,6 @@ const FAQTwo: FC<IFAQTwo> = ({
 								</Link>
 							</motion.div>
 						</div>
-						<motion.div
-							initial={initial}
-							variants={stagger}
-							whileInView="animate"
-							viewport={{once: true}}
-							className={`w-full flex flex-col items-center justify-center gap-4 ${
-								image?.sourceUrl ? "lg:w-1/2" : `w-full`
-							}`}
-						>
-							{faqContent?.length > 0 ? (
-								faqContent.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										<FAQCard
-											index={keys}
-											title={item?.card?.title}
-											paragraph={item?.card?.paragraph}
-										/>
-									</Fragment>
-								))
-							) : (
-								<></>
-							)}
-						</motion.div>
 					</div>
 				</div>
 			</div>
