@@ -120,21 +120,21 @@ const Pagination: FC<IPagination> = ({
 								viewport={{once: true}}
 								className="flex flex-col gap-4 p-10"
 							>
-								<motion.h2
+								<motion.h3
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
 									className="mb-2 text-center text-lg leading-tight tracking-[0.05rem] uppercase font-extrabold text-white transition-all ease-in-out duration-200 hover:text-white"
 								>
 									Oops Sorry!
-								</motion.h2>
+								</motion.h3>
 								<motion.div
 									initial={initial}
 									whileInView={fadeInUp}
 									viewport={{once: true}}
 								>
 									<Paragraph
-										content="No images to display"
+										content="Nothing to display"
 										tailwindStyling="px-0 text-base text-white"
 									/>
 								</motion.div>
