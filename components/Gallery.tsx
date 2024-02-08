@@ -53,7 +53,7 @@ const Gallery: FC<IGallery> = ({
 					contentArray={gallery}
 					numberOfItemsRenderedPerPage={12}
 					tailwindStyling={`${
-						gallery.length > 0
+						gallery?.length > 0
 							? `grid gap-4 grid-cols-2 ${
 									parseInt(itemsDisplayedPerPage) === 12
 										? "lg:grid-cols-4"

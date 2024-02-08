@@ -9,6 +9,7 @@ import {
 	slideInRightInitial,
 } from "../animations/animations";
 import {FC} from "react";
+import Link from "next/link";
 import {motion} from "framer-motion";
 import {ITitleContentImage} from "@/types/components";
 
@@ -17,7 +18,6 @@ import styles from "../styles/components/AboutContentImage.module.scss";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
-import Link from "next/link";
 
 const TitleContentImage: FC<ITitleContentImage> = ({
 	title,
@@ -84,7 +84,10 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							backgroundImage: `url(${image?.sourceUrl})`,
 						}}
 					/>
-					<div
+					<motion.div
+						viewport={{once: true}}
+						initial={slideInLeftInitial}
+						whileInView={slideInRightFinish}
 						className={`${
 							displayContentOption == "Left" ? "lg:items-end" : "lg:items-start"
 						} lg:px-8 lg:w-1/2`}
@@ -108,7 +111,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							</motion.h3>
 							<Paragraph
 								content={paragraph}
-								tailwindStyling={`lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left ${textareaColor}`}
+								tailwindStyling={`lg:max-w-xl leading-[1.75rem] text-base text-center lg:text-left ${textareaColor}`}
 							/>
 							<div className={buttonLink?.title ? "flex mt-6" : "hidden"}>
 								<Link
@@ -123,7 +126,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 								</Link>
 							</div>
 						</motion.div>
-					</div>
+					</motion.div>
 					<motion.div
 						viewport={{once: true}}
 						initial={slideInRightInitial}
