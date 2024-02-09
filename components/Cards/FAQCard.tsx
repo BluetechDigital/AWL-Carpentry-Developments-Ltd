@@ -38,21 +38,19 @@ const FAQCard: FC<IFAQCard> = ({title, paragraph}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="text-left text-tiny text-black uppercase"
+								className="w-[90%] text-left text-tiny text-black uppercase"
 							>
 								{title}
 							</motion.h3>
-							<div>
-								<Image
-									width={500}
-									height={500}
-									alt="Black Arrow Icon"
-									src="/svg/navigation-menu-dropdown-arrow-black.svg"
-									className={`transition-opacity duration-200 ease-in-out w-full h-[30px] hover:opacity-70 ${
-										accordionOpen ? "rotate-[180deg]" : "rotate-0"
-									}`}
-								/>
-							</div>
+							<Image
+								width={500}
+								height={500}
+								alt="Black Arrow Icon"
+								src="/svg/navigation-menu-dropdown-arrow-black.svg"
+								className={`transition-opacity duration-200 ease-in-out w-[10%] h-[30px] hover:opacity-70 ${
+									accordionOpen ? "rotate-[180deg]" : "rotate-0"
+								}`}
+							/>
 						</button>
 						{accordionOpen ? (
 							<Paragraph
