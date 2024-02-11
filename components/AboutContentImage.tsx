@@ -73,7 +73,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 							<div className="flex flex-col w-full lg:w-[65%]">
 								<Paragraph
 									content={paragraph}
-									tailwindStyling="lg:max-w-lg text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
+									tailwindStyling="lg:max-w-lg text-black leading-[1.75rem] text-base text-center lg:text-left"
 								/>
 							</div>
 							<div className="flex flex-col gap-6 w-full lg:w-[35%]">
@@ -88,7 +88,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 									</motion.h3>
 									<Paragraph
 										content={quality?.paragraph}
-										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
+										tailwindStyling="lg:max-w-xl text-black leading-[1.75rem] text-base text-center lg:text-left"
 									/>
 								</div>
 								<div>
@@ -102,7 +102,7 @@ const AboutContentImage: FC<IAboutContentImage> = ({
 									</motion.h3>
 									<Paragraph
 										content={reliability?.paragraph}
-										tailwindStyling="lg:max-w-xl text-darkGrey leading-[1.75rem] text-base text-center lg:text-left"
+										tailwindStyling="lg:max-w-xl text-black leading-[1.75rem] text-base text-center lg:text-left"
 									/>
 								</div>
 								<Image

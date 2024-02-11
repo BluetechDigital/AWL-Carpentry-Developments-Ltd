@@ -87,6 +87,7 @@ const Pagination: FC<IPagination> = ({
 								<>
 									<BlogsCard
 										uri={item?.node?.uri}
+										date={item?.node?.date}
 										title={item?.node?.title}
 										excerpt={item?.node?.excerpt}
 										featuredImage={item?.node?.featuredImage}
@@ -105,6 +106,7 @@ const Pagination: FC<IPagination> = ({
 								<>
 									<FeaturedProjectsCard
 										slug={item?.node?.slug}
+										date={item?.node?.date}
 										title={item?.node?.title}
 										excerpt={item?.node?.excerpt}
 										featuredImage={item?.node?.featuredImage}

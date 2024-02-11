@@ -318,6 +318,7 @@ export type IFAQCard = {
 };
 export type IBlogsCard = {
 	uri: string;
+	date: string;
 	title: string;
 	excerpt: string;
 	featuredImage: {
@@ -363,6 +364,7 @@ export type ITestimonialsCard = {
 };
 export type IFeaturedProjectsCard = {
 	slug: string;
+	date: string;
 	title: string;
 	excerpt: string;
 	featuredImage: {

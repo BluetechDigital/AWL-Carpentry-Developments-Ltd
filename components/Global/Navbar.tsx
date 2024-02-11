@@ -171,8 +171,6 @@ const Navbar: FC = () => {
 							>
 								<span aria-hidden="true"></span>
 							</button>
-							{/* Hidden Side Menu */}
-							<SideMenu menuActive={menuActive} />
 						</motion.div>
 					</div>
 				</div>
@@ -269,6 +267,18 @@ const Navbar: FC = () => {
 							</span>
 						</div>
 					</Link>
+				</div>
+
+				{/* Hidden Tablet & Mobile  Side Menu */}
+				<div className="flex flex-col lg:hidden">
+					<button
+						type="button"
+						onClick={toggleMenu}
+						aria-label="toggle menu"
+						className={menuActive ? styles.navToggleOpen : styles.navToggle}
+					>
+						<SideMenu menuActive={menuActive} />
+					</button>
 				</div>
 			</nav>
 		</>

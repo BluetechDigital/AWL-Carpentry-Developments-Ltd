@@ -9,13 +9,20 @@ import {
 import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dateFormat from "dateformat";
 import {motion} from "framer-motion";
 import {IBlogsCard} from "@/types/components/index";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
+const BlogsCard: FC<IBlogsCard> = ({
+	uri,
+	date,
+	title,
+	excerpt,
+	featuredImage,
+}) => {
 	return (
 		<>
 			<div
@@ -46,6 +53,9 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-6 py-4"
 				>
+					<span className="mb-2 text-darkGrey text-sm">
+						{dateFormat(date, "dddd, mmmm d, yyyy")}
+					</span>
 					<Link target="" href={uri ? `blogs${uri}` : `/`}>
 						<motion.h3
 							initial={initial}
@@ -85,7 +95,7 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="relative px-6 py-2 text-white text-tiny w-fit bg-blue-three hover:bg-aqua-default transition-all ease-in-out duration-500 before:left-[15%]"
+								className="relative px-6 py-2 text-white text-tiny w-fit bg-blue-default hover:bg-aqua-default transition-all ease-in-out duration-500 before:left-[15%]"
 								style={{
 									clipPath: `polygon(95% 0, 100% 15%, 100% 100%, 0 100%, 0 0)`,
 								}}

@@ -10,6 +10,7 @@ import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
+import dateFormat from "dateformat";
 import {IFeaturedProjectsCard} from "@/types/components/index";
 
 // Components
@@ -17,6 +18,7 @@ import Paragraph from "@/components/Elements/Paragraph";
 
 const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
 	slug,
+	date,
 	title,
 	excerpt,
 	featuredImage,
@@ -51,6 +53,9 @@ const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-6 py-4"
 				>
+					<span className="mb-2 text-darkGrey text-sm">
+						{dateFormat(date, "dddd, mmmm d, yyyy")}
+					</span>
 					<Link target="" href={slug ? `projects/${slug}` : `/`}>
 						<motion.h3
 							initial={initial}
@@ -90,7 +95,7 @@ const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
 								initial={initialTwo}
 								whileInView={fadeIn}
 								viewport={{once: true}}
-								className="relative px-6 py-2 text-white text-tiny w-fit bg-blue-three hover:bg-aqua-default transition-all ease-in-out duration-500 before:left-[15%]"
+								className="relative px-6 py-2 text-white text-tiny w-fit bg-blue-default hover:bg-aqua-default transition-all ease-in-out duration-500 before:left-[15%]"
 								style={{
 									clipPath: `polygon(95% 0, 100% 15%, 100% 100%, 0 100%, 0 0)`,
 								}}

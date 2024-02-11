@@ -8,6 +8,7 @@ import {initial, fadeInUp, stagger} from "@/animations/animations";
 // Components
 import BlogsCard from "./Cards/BlogsCard";
 import Paragraph from "./Elements/Paragraph";
+import Pagination from "./Elements/Pagination";
 
 const BlogsThreeCards: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 	const globalContext = useGlobalContext();
@@ -37,28 +38,12 @@ const BlogsThreeCards: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 						tailwindStyling="max-w-3xl mx-auto text-black text-paragraph"
 					/>
 				</motion.div>
-				<motion.div
-					initial={initial}
-					variants={stagger}
-					whileInView="animate"
-					viewport={{once: true}}
-					className="grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3"
-				>
-					{globalContext?.blogsThreeCards?.length > 0 ? (
-						globalContext?.blogsThreeCards?.map((item: any, keys: any) => (
-							<Fragment key={keys}>
-								<BlogsCard
-									uri={item?.node?.uri}
-									title={item?.node?.title}
-									excerpt={item?.node?.excerpt}
-									featuredImage={item?.node?.featuredImage}
-								/>
-							</Fragment>
-						))
-					) : (
-						<></>
-					)}
-				</motion.div>
+				<Pagination
+					contentType="BlogsCard"
+					numberOfItemsRenderedPerPage={12}
+					contentArray={globalContext?.blogs}
+					tailwindStyling={`grid px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-3`}
+				/>
 			</div>
 		</>
 	);
