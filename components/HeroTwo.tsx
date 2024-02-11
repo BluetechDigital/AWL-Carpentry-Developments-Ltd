@@ -21,7 +21,7 @@ const HeroTwo: FC<IHeroTwo> = ({title, paragraph, backgroundImage}) => {
 	return (
 		<>
 			<div className={styles.heroTwo}>
-				<div className="lg:relative pt-[85px] lg:pt-[110px] lg:h-[60vh] xl:h-[50vh] flex flex-col lg:flex-row">
+				<div className="lg:relative z-50 pt-[85px] lg:pt-[110px] lg:h-[60vh] xl:h-[50vh] flex flex-col lg:flex-row">
 					<div
 						className={
 							styles.leftSideContent +
