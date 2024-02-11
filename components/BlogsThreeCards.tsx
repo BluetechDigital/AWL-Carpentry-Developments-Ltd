@@ -1,12 +1,11 @@
 // Imports
-import {FC, Fragment} from "react";
+import {FC} from "react";
 import {motion} from "framer-motion";
 import {IBlogs} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
-import {initial, fadeInUp, stagger} from "@/animations/animations";
+import {initial, stagger} from "@/animations/animations";
 
 // Components
-import BlogsCard from "./Cards/BlogsCard";
 import Paragraph from "./Elements/Paragraph";
 import Pagination from "./Elements/Pagination";
 
