@@ -13,7 +13,6 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 				value={{
 					blogs: globalProps?.blogs,
 					mobileLinks: globalProps?.mobileLinks,
-					caseStudies: globalProps?.caseStudies,
 					testimonials: globalProps?.testimonials,
 					aboutUsSublinks: globalProps?.aboutUsSublinks,
 					copyrightLinks: globalProps?.copyrightLinks,
@@ -21,6 +20,7 @@ const GlobalContextProvider: FC<IGlobalContextProvider> = ({
 					footerMenuLinks: globalProps?.footerMenuLinks,
 					blogsThreeCards: globalProps?.blogsThreeCards,
 					navbarMenuLinks: globalProps?.navbarMenuLinks,
+					featuredProjects: globalProps?.featuredProjects,
 					servicesSublinks: globalProps?.servicesSublinks,
 					themesOptionsContent: globalProps?.themesOptionsContent,
 				}}

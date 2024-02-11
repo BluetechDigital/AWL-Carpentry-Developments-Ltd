@@ -59,8 +59,8 @@ export type IPostTypes = {
 	locations: string;
 	previewPage: string;
 	previewPost: string;
-	caseStudies: string;
 	testimonials: string;
+	featuredProjects: string;
 };
 export type IMobileLinks = [
 	{
@@ -68,27 +68,6 @@ export type IMobileLinks = [
 			id: string;
 			url: string;
 			label: string;
-		};
-	}
-];
-export type ICaseStudies = [
-	{
-		node: {
-			id: string;
-			uri: string;
-			date: string;
-			title: string;
-			excerpt: string;
-			featuredImage: {
-				node: {
-					altText: string;
-					sourceUrl: string;
-					mediaDetails: {
-						width: number;
-						height: number;
-					};
-				};
-			};
 		};
 	}
 ];
@@ -156,6 +135,27 @@ export type IServicesSublinks = [
 		};
 	}
 ];
+export type IFeaturedProjects = [
+	{
+		node: {
+			id: string;
+			slug: string;
+			date: string;
+			title: string;
+			excerpt: string;
+			featuredImage: {
+				node: {
+					altText: string;
+					sourceUrl: string;
+					mediaDetails: {
+						width: number;
+						height: number;
+					};
+				};
+			};
+		};
+	}
+];
 export type ILocationsSublinks = [
 	{
 		node: {
@@ -201,7 +201,6 @@ export type IPageContext = {
 export type IGlobalProps = {
 	blogs: IBlogs;
 	blogsThreeCards: IBlogs;
-	caseStudies: ICaseStudies;
 	mobileLinks: IMobileLinks;
 	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;
@@ -210,12 +209,12 @@ export type IGlobalProps = {
 	footerMenuLinks: IFooterMenuLinks;
 	locationsLinks: ILocationsSublinks;
 	servicesSublinks: IServicesSublinks;
+	featuredProjects: IFeaturedProjects;
 	themesOptionsContent: IThemesOptionsContent;
 };
 export type IGlobalContext = {
 	blogs: IBlogs;
 	blogsThreeCards: IBlogs;
-	caseStudies: ICaseStudies;
 	mobileLinks: IMobileLinks;
 	testimonials: ITestimonials;
 	copyrightLinks: ICopyrightLinks;
@@ -223,6 +222,7 @@ export type IGlobalContext = {
 	navbarMenuLinks: INavbarMenuLinks;
 	footerMenuLinks: IFooterMenuLinks;
 	locationsLinks: ILocationsSublinks;
+	featuredProjects: IFeaturedProjects;
 	servicesSublinks: IServicesSublinks;
 	themesOptionsContent: IThemesOptionsContent;
 };

@@ -23,6 +23,7 @@ import TestimonialsGrid from "../TestimonialsGrid";
 import AboutContentImage from "../AboutContentImage";
 import TitleContentImage from "../TitleContentImage";
 import TestimonialsSlider from "../TestimonialsSlider";
+import FeaturedProjectsGrid from "../FeaturedProjectsGrid";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
@@ -117,6 +118,15 @@ const RenderFlexibleContent: FC = () => {
 									stepThree={item?.stepThree}
 								/>
 							</>
+						) : item?.fieldGroupName ===
+						  `${FlexibleContent}_FeaturedProjectsGrid` ? (
+							<>
+								<FeaturedProjectsGrid
+									title={item?.title}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+								/>
+							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Gallery` ? (
 							<>
 								<Gallery
@@ -157,9 +167,6 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 								/>
 							</>
-						) : item?.fieldGroupName ===
-						  `${FlexibleContent}_CaseStudiesGrid` ? (
-							<></>
 						) : item?.fieldGroupName === `${FlexibleContent}_Faq` ? (
 							<></>
 						) : item?.fieldGroupName === `${FlexibleContent}_FaqTwo` ? (

@@ -274,6 +274,11 @@ export type ITitleContentImage = {
 		};
 	};
 };
+export type IFeaturedProjectsGrid = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+};
 
 // Global
 export type ILayout = {
@@ -314,22 +319,6 @@ export type IFAQCard = {
 export type IBlogsCard = {
 	uri: string;
 	title: string;
-	paragraph: string;
-	featuredImage: {
-		node: {
-			altText: string;
-			sourceUrl: string;
-			mediaDetails: {
-				width: number;
-				height: number;
-			};
-		};
-	};
-};
-export type ICaseStudiesCard = {
-	uri: string;
-	date: string;
-	title: string;
 	excerpt: string;
 	featuredImage: {
 		node: {
@@ -369,6 +358,21 @@ export type ITestimonialsCard = {
 		mediaDetails: {
 			width: number;
 			height: number;
+		};
+	};
+};
+export type IFeaturedProjectsCard = {
+	slug: string;
+	title: string;
+	excerpt: string;
+	featuredImage: {
+		node: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
 		};
 	};
 };

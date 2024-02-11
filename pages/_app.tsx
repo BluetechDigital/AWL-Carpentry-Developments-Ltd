@@ -26,14 +26,13 @@ import {
 	getAllBlogsContent,
 	getThreeBlogsContent,
 } from "@/functions/graphql/Queries/GetAllBlogs";
-import {getAllCaseStudiesContent} from "@/functions/graphql/Queries/GetAllCaseStudies";
 import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 
 // Components
 import PageLoadingSquares from "@/components/Global/PageLoadingSquares";
 import GlobalContextProvider from "@/components/Context/GlobalContextProvider";
 import PostHogContextProvider from "@/components/Context/PostHogProviderContext";
-import {initial} from "@/animations/animations";
+import {getAllFeaturedProjectsContent} from "@/functions/graphql/Queries/GetAllFeaturedProjects";
 
 export default function App({
 	Component,
@@ -82,22 +81,22 @@ App.getInitialProps = async ({Component, ctx}: any) => {
 	const themesOptionsContent: any = await getThemesOptionsContent();
 
 	const blogs: any = await getAllBlogsContent();
-	const caseStudies: any = await getAllCaseStudiesContent();
 	const blogsThreeCards: any = await getThreeBlogsContent();
 	const testimonials: any = await getAllTestimonialsContent();
+	const featuredProjects: any = await getAllFeaturedProjectsContent();
 
 	const globalProps: IGlobalProps = {
 		blogs: blogs,
 		mobileLinks: mobileLinks,
-		caseStudies: caseStudies,
-		aboutUsSublinks: aboutUsSublinks,
 		testimonials: testimonials,
 		locationsLinks: locationsLinks,
 		copyrightLinks: copyrightLinks,
 		blogsThreeCards: blogsThreeCards,
+		aboutUsSublinks: aboutUsSublinks,
 		navbarMenuLinks: navbarMenuLinks,
 		footerMenuLinks: footerMenuLinks,
 		servicesSublinks: servicesSublinks,
+		featuredProjects: featuredProjects,
 		themesOptionsContent: themesOptionsContent,
 	};
 

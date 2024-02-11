@@ -50,7 +50,7 @@ const BlogsThreeCards: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 								<BlogsCard
 									uri={item?.node?.uri}
 									title={item?.node?.title}
-									paragraph={item?.node?.excerpt}
+									excerpt={item?.node?.excerpt}
 									featuredImage={item?.node?.featuredImage}
 								/>
 							</Fragment>

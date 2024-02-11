@@ -10,12 +10,17 @@ import {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {motion} from "framer-motion";
-import {IBlogsCard} from "@/types/components/index";
+import {IFeaturedProjectsCard} from "@/types/components/index";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph";
 
-const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
+const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
+	slug,
+	title,
+	excerpt,
+	featuredImage,
+}) => {
 	return (
 		<>
 			<div
@@ -25,7 +30,7 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
 				}}
 			>
 				<div className="relative px-0 h-[225px] border-r-[5px] border-t-[5px] border-b-0 border-blue-darkerTwo">
-					<Link target="" href={uri ? `blogs${uri}` : `/`}>
+					<Link target="" href={slug ? `projects/${slug}` : `/`}>
 						<Image
 							alt={featuredImage?.node?.altText}
 							src={featuredImage?.node?.sourceUrl}
@@ -46,7 +51,7 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
 					viewport={{once: true}}
 					className="flex flex-col items-baseline justify-between px-6 py-4"
 				>
-					<Link target="" href={uri ? `blogs${uri}` : `/`}>
+					<Link target="" href={slug ? `projects/${slug}` : `/`}>
 						<motion.h3
 							initial={initial}
 							whileInView={fadeInUp}
@@ -78,8 +83,8 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
 					>
 						<Link
 							target=""
-							href={uri ? `blogs${uri}` : `/`}
-							className={uri ? "block" : "hidden"}
+							href={slug ? `projects/${slug}` : `/`}
+							className={slug ? "block" : "hidden"}
 						>
 							<motion.button
 								initial={initialTwo}
@@ -100,4 +105,4 @@ const BlogsCard: FC<IBlogsCard> = ({uri, title, excerpt, featuredImage}) => {
 	);
 };
 
-export default BlogsCard;
+export default FeaturedProjectsCard;

@@ -22,12 +22,45 @@ export const getAllPreviewFlexibleContentComponents = async (
 								... on DefaultTemplate {
 									flexibleContent {
 										flexibleContent {
+											... on ${postTypeFlexibleContent}_Hero {
+												fieldGroupName
+												title
+												paragraph
+												backgroundImage {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+												}
+												servicesLinks {
+													icon {
+														altText
+														sourceUrl
+														mediaDetails {
+															height
+															width
+														}
+													}
+													buttonLink {
+														url
+														title
+														target
+													}
+												}
+											}
 											... on ${postTypeFlexibleContent}_HeroTwo {
 												fieldGroupName
 												title
 												paragraph
 												backgroundImage {
+													altText
 													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
 												}
 											}
 											... on ${postTypeFlexibleContent}_TitleParagraph {
@@ -36,6 +69,68 @@ export const getAllPreviewFlexibleContentComponents = async (
 												paragraph
 												displayParagraph
 											}
+											... on ${postTypeFlexibleContent}_AboutContentImage {
+                								fieldGroupName
+                								title
+                								subtitle
+                								paragraph
+												quality {
+													title
+													paragraph
+												}
+												reliability {
+													title
+													paragraph
+												}
+                								checkatrade {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+                								image {
+                									altText
+                									sourceUrl
+                									mediaDetails {
+                										height
+                										width
+                									}
+                								}
+												contentBox {
+													text
+													subtext
+													icon {
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
+													}
+												}
+                							}
+											... on ${postTypeFlexibleContent}_TitleContentImage {
+            									fieldGroupName
+            									title
+            									paragraph
+            									buttonLink {
+            										url
+            										title
+            										target
+            									}
+            									image {
+            										altText
+            										sourceUrl
+            										mediaDetails {
+            											height
+            											width
+            										}
+            									}
+            									displayContentOption
+            									displayBackgroundColor
+            								}
 											... on ${postTypeFlexibleContent}_OurClients {
 												fieldGroupName
 												title
@@ -81,42 +176,74 @@ export const getAllPreviewFlexibleContentComponents = async (
 														}
 													}
 												}
+											}... on ${postTypeFlexibleContent}_OurLocation {
+												fieldGroupName
+												title
+												paragraph
 											}
+											... on ${postTypeFlexibleContent}_GettingStarted {
+            									fieldGroupName
+            									title
+												subtitle
+            									stepOne {
+            										title
+            										paragraph
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            									stepTwo {
+            										title
+            										paragraph
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            									stepThree {
+            										title
+            										paragraph
+            										image {
+            											altText
+            											sourceUrl
+            											mediaDetails {
+            												height
+            												width
+            											}
+            										}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
-												subtitle
 												paragraph
-												highlightText
 												itemsDisplayedPerPage
 												gallery {
-            										altText
-            										sourceUrl
-            										mediaDetails {
-            											height
-            											width
-            										}
+													altText
+													sourceUrl
+													mediaDetails {
+														height
+														width
+													}
 												}
+											}
+											... on ${postTypeFlexibleContent}_TestimonialsSlider {
+												fieldGroupName
 											}
 											... on ${postTypeFlexibleContent}_TestimonialsGrid {
 												fieldGroupName
 												title
 												subtitle
 												paragraph
-												testimonialsGrid {
-													card{
-														title
-														paragraph
-														image {
-															altText
-															sourceUrl
-															mediaDetails {
-																height
-																width
-															}
-														}
-													}
-												}
 											}
 											... on ${postTypeFlexibleContent}_BlogsGrid {
 												fieldGroupName
@@ -125,12 +252,6 @@ export const getAllPreviewFlexibleContentComponents = async (
 												paragraph
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
-												fieldGroupName
-												title
-												subtitle
-												paragraph
-											}
-											... on ${postTypeFlexibleContent}_CaseStudiesGrid {
 												fieldGroupName
 												title
 												subtitle
@@ -214,7 +335,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 													target
 												}
 												backgroundImage {
-												sourceUrl
+													sourceUrl
 												}
 											}
 										}
