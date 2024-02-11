@@ -17,6 +17,7 @@ import {IPagination} from "@/types/components/index";
 import Paragraph from "./Paragraph";
 import BlogsCard from "../Cards/BlogsCard";
 import TestimonialsCard from "../Cards/TestimonialsCard";
+import FeaturedProjectsCard from "../Cards/FeaturedProjectsCard";
 
 const Pagination: FC<IPagination> = ({
 	contentType,
@@ -87,7 +88,7 @@ const Pagination: FC<IPagination> = ({
 									<BlogsCard
 										uri={item?.node?.uri}
 										title={item?.node?.title}
-										paragraph={item?.node?.excerpt}
+										excerpt={item?.node?.excerpt}
 										featuredImage={item?.node?.featuredImage}
 									/>
 								</>
@@ -98,6 +99,15 @@ const Pagination: FC<IPagination> = ({
 										image={item?.node?.testimonialReview?.image}
 										position={item?.node?.testimonialReview?.position}
 										paragraph={item?.node?.testimonialReview?.paragraph}
+									/>
+								</>
+							) : contentType === `FeaturedProjectsCard` ? (
+								<>
+									<FeaturedProjectsCard
+										slug={item?.node?.slug}
+										title={item?.node?.title}
+										excerpt={item?.node?.excerpt}
+										featuredImage={item?.node?.featuredImage}
 									/>
 								</>
 							) : (

@@ -1,15 +1,19 @@
 // Imports
 import {FC} from "react";
 import {motion} from "framer-motion";
-import {IBlogs} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
+import {IFeaturedProjectsGrid} from "@/types/components";
 import {initial, fadeInUp, stagger} from "@/animations/animations";
 
 // Components
 import Paragraph from "./Elements/Paragraph";
 import Pagination from "./Elements/Pagination";
 
-const Blogs: FC<IBlogs> = ({title, subtitle, paragraph}) => {
+const FeaturedProjectsGrid: FC<IFeaturedProjectsGrid> = ({
+	title,
+	subtitle,
+	paragraph,
+}) => {
 	const globalContext = useGlobalContext();
 
 	return (
@@ -45,9 +49,9 @@ const Blogs: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 						/>
 					</motion.div>
 					<Pagination
-						contentType="BlogsCard"
+						contentType="FeaturedProjectsCard"
 						numberOfItemsRenderedPerPage={12}
-						contentArray={globalContext?.blogs}
+						contentArray={globalContext?.featuredProjects}
 						tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-4`}
 					/>
 				</div>
@@ -56,4 +60,4 @@ const Blogs: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 	);
 };
 
-export default Blogs;
+export default FeaturedProjectsGrid;

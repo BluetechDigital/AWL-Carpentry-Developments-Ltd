@@ -219,6 +219,12 @@ export const getAllFlexibleContentComponents = async (
             										}
             									}
             								}
+											... on ${postTypeFlexibleContent}_FeaturedProjectsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
@@ -249,12 +255,6 @@ export const getAllFlexibleContentComponents = async (
 												paragraph
 											}
 											... on ${postTypeFlexibleContent}_BlogsThreeCards {
-												fieldGroupName
-												title
-												subtitle
-												paragraph
-											}
-											... on ${postTypeFlexibleContent}_CaseStudiesGrid {
 												fieldGroupName
 												title
 												subtitle
