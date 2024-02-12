@@ -26,12 +26,12 @@ const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
 	return (
 		<>
 			<div
-				className="w-full h-full p-0 border-l-[5px] border-b-[5px] border-blue-darkerTwo"
+				className="w-full h-full flex items-center justify-center p-0 border-l-[5px] border-b-[5px] border-blue-darkerTwo"
 				style={{
 					boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 				}}
 			>
-				<div className="relative px-0 h-[225px] border-r-[5px] border-t-[5px] border-b-0 border-blue-darkerTwo">
+				<div className="relative px-0 h-[325px] border-r-[5px] border-t-[5px] border-b-0 border-blue-darkerTwo w-full xl:w-1/2">
 					<Link target="" href={slug ? `projects/${slug}` : `/`}>
 						<Image
 							alt={featuredImage?.node?.altText}
@@ -51,7 +51,7 @@ const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
 					variants={stagger}
 					whileInView="animate"
 					viewport={{once: true}}
-					className="flex flex-col items-baseline justify-between px-6 py-4"
+					className="flex flex-col items-baseline justify-between px-6 py-4 w-full xl:w-1/2"
 				>
 					<span className="mb-2 text-darkGrey text-sm">
 						{dateFormat(date, "dddd, mmmm d, yyyy")}

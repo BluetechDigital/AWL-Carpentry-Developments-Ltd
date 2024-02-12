@@ -48,7 +48,7 @@ const Blogs: FC<IBlogs> = ({title, subtitle, paragraph}) => {
 						contentType="BlogsCard"
 						numberOfItemsRenderedPerPage={12}
 						contentArray={globalContext?.blogs}
-						tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-col md:grid-cols-2 lg:grid-cols-4`}
+						tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4`}
 					/>
 				</div>
 			</div>
