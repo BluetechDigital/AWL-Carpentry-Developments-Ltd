@@ -19,6 +19,7 @@ import styles from "./../../styles/components/Navbar.module.scss";
 // Components
 import SideMenu from "../Elements/SideMenu";
 import Paragraph from "@/components/Elements/Paragraph";
+import SubMegaMenuLinks from "../Elements/SubMegaMenuLinks";
 
 const Navbar: FC = () => {
 	const globalContext = useGlobalContext();
@@ -222,7 +223,7 @@ const Navbar: FC = () => {
 																	onMouseLeave={resetNavbarStyling}
 																	onMouseEnter={displayNavBackgroundColor}
 																>
-																	<></>
+																	<SubMegaMenuLinks />
 																</div>
 															</>
 														) : null}

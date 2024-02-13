@@ -190,6 +190,25 @@ export type IThemesOptionsContent = {
 			};
 		}
 	];
+	menuColumnThree: {
+		text: string;
+		checkatrade: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+		mainImage: {
+			altText: string;
+			sourceUrl: string;
+			mediaDetails: {
+				width: number;
+				height: number;
+			};
+		};
+	};
 };
 
 /* CONTEXT PROVIDERS  */
