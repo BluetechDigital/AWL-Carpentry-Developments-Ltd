@@ -150,8 +150,9 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 				<div className="container mx-auto flex flex-col lg:flex-row items-baseline ">
 					<div className="w-full lg:w-1/2 sm:p-6 flex flex-col">
 						<motion.div
-							initial={initialTwo}
-							whileInView={fadeIn}
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
 							viewport={{once: true}}
 							className="mb-12"
 						>
@@ -169,7 +170,13 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								tailwindStyling="max-w-xl mx-auto xl:mx-0 text-black text-base text-center lg:text-left"
 							/>
 						</motion.div>
-						<div className="flex mb-6 items-center">
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className="flex mb-6 items-center"
+						>
 							<div className="hidden sm:flex flex-shrink-0 mr-5 sm:mr-8 items-center justify-center p-1 w-10 h-10 rounded-full bg-aqua-default">
 								<svg
 									viewBox="0 0 24 24"
@@ -195,10 +202,21 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									</g>
 								</svg>
 							</div>
-							<div className="max-w-xl mx-auto sm:mx-0">
-								<h3 className="mb-2 uppercase text-black text-center sm:text-left font-extrabold text-base">
+							<motion.div
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="max-w-xl mx-auto sm:mx-0"
+							>
+								<motion.h3
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="mb-2 uppercase text-black text-center sm:text-left font-extrabold text-base"
+								>
 									Phone
-								</h3>
+								</motion.h3>
 								<Link
 									className="block text-tiny sm:text-base text-black text-center sm:text-left hover:text-aqua-default"
 									href={`tel:${globalContext?.themesOptionsContent?.phoneNumber}`}
@@ -211,9 +229,15 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								>
 									{globalContext?.themesOptionsContent?.phoneNumberTwo}
 								</Link>
-							</div>
-						</div>
-						<div className="flex mb-6 items-center">
+							</motion.div>
+						</motion.div>
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className="flex mb-6 items-center"
+						>
 							<div className="hidden sm:flex flex-shrink-0 mr-5 sm:mr-8 items-center justify-center p-1 w-10 h-10 rounded-full bg-aqua-default">
 								<svg
 									width="20"
@@ -232,10 +256,21 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									></path>
 								</svg>
 							</div>
-							<div className="max-w-xl mx-auto sm:mx-0">
-								<h3 className="mb-2 uppercase text-black text-center sm:text-left font-extrabold text-base">
+							<motion.div
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="max-w-xl mx-auto sm:mx-0"
+							>
+								<motion.h3
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="mb-2 uppercase text-black text-center sm:text-left font-extrabold text-base"
+								>
 									Email
-								</h3>
+								</motion.h3>
 								<Link
 									className={
 										globalContext?.themesOptionsContent?.email
@@ -256,9 +291,15 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								>
 									{globalContext?.themesOptionsContent?.emailTwo}
 								</Link>
-							</div>
-						</div>
-						<div className="flex items-center">
+							</motion.div>
+						</motion.div>
+						<motion.div
+							initial={initial}
+							variants={stagger}
+							whileInView="animate"
+							viewport={{once: true}}
+							className="flex items-center"
+						>
 							<div className="hidden sm:flex flex-shrink-0 mr-5 sm:mr-8 items-center justify-center p-1 w-10 h-10  rounded-full bg-aqua-default">
 								<svg
 									fill="#000000"
@@ -266,11 +307,11 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									viewBox="0 0 512 512"
 									xmlns="http://www.w3.org/2000/svg"
 								>
-									<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 									<g
 										id="SVGRepo_tracerCarrier"
-										stroke-linecap="round"
-										stroke-linejoin="round"
+										strokeLinecap="round"
+										strokeLinejoin="round"
 									></g>
 									<g id="SVGRepo_iconCarrier">
 										{" "}
@@ -285,16 +326,27 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									</g>
 								</svg>
 							</div>
-							<div className="max-w-xl mx-auto sm:mx-0">
-								<h3 className="mb-2 uppercase text-black text-center sm:text-left font-extrabold text-base">
+							<motion.div
+								initial={initial}
+								variants={stagger}
+								whileInView="animate"
+								viewport={{once: true}}
+								className="max-w-xl mx-auto sm:mx-0"
+							>
+								<motion.h3
+									initial={initial}
+									whileInView={fadeInUp}
+									viewport={{once: true}}
+									className="mb-2 uppercase text-black text-center sm:text-left font-extrabold text-base"
+								>
 									Address
-								</h3>
+								</motion.h3>
 								<Paragraph
 									content={globalContext?.themesOptionsContent?.address}
 									tailwindStyling="max-w-xl mx-auto xl:mx-0 text-tiny sm:text-base text-black text-center sm:text-left"
 								/>
-							</div>
-						</div>
+							</motion.div>
+						</motion.div>
 					</div>
 					<Formik
 						onSubmit={formik?.onSubmit}

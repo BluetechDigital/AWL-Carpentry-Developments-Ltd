@@ -6,8 +6,7 @@ const email: any = process.env.EMAIL_USER;
 const pass: any = process.env.EMAIL_PASS;
 
 export const transporter: any = nodemailer.createTransport({
-	host: "gmail",
-	service: "gmail",
+	host: "smtp.office365.com",
 	port: 587,
 	secure: false,
 	auth: {
