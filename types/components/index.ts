@@ -144,6 +144,10 @@ export type IOurServices = {
 		}
 	];
 };
+export type IContactForm = {
+	title: string;
+	paragraph: string;
+};
 export type IOurLocation = {
 	title: string;
 	paragraph: string;

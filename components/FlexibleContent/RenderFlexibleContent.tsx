@@ -14,6 +14,7 @@ import OurClients from "../OurClients";
 import ContactInfo from "../ContactInfo";
 import OurLocation from "../OurLocation";
 import OurServices from "../OurServices";
+import ContactForm from "../ContactForm";
 import ErrorPage from "../Global/ErrorPage";
 import GettingStarted from "../GettingStarted";
 import TitleParagraph from "../TitleParagraph";
@@ -194,7 +195,9 @@ const RenderFlexibleContent: FC = () => {
 								<ContactInfo title={item?.title} paragraph={item?.paragraph} />
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` ? (
-							<></>
+							<>
+								<ContactForm title={item?.title} paragraph={item?.paragraph} />
+							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Maintenance` ? (
 							<>
 								<Maintenance

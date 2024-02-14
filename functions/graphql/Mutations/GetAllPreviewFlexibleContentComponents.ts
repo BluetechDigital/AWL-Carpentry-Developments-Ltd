@@ -222,6 +222,12 @@ export const getAllPreviewFlexibleContentComponents = async (
             										}
             									}
             								}
+											... on ${postTypeFlexibleContent}_FeaturedProjectsGrid {
+												fieldGroupName
+												title
+												subtitle
+												paragraph
+											}
 											... on ${postTypeFlexibleContent}_Gallery {
 												fieldGroupName
 												title
@@ -303,14 +309,7 @@ export const getAllPreviewFlexibleContentComponents = async (
 											... on ${postTypeFlexibleContent}_ContactForm {
 												fieldGroupName
 												title
-												image {
-													altText
-													sourceUrl
-													mediaDetails {
-														height
-														width
-													}
-												}
+												paragraph
 											}
 											... on ${postTypeFlexibleContent}_Maintenance {
 												fieldGroupName
