@@ -264,6 +264,7 @@ export type ITitleContentImage = {
 	paragraph: string;
 	displayContentOption: string;
 	displayBackgroundColor: string;
+	displayBackgroundIcon: boolean;
 	buttonLink: {
 		url: string;
 		title: string;

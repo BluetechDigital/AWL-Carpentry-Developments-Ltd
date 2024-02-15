@@ -25,6 +25,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 	paragraph,
 	buttonLink,
 	displayContentOption,
+	displayBackgroundIcon,
 	displayBackgroundColor,
 }) => {
 	let titleColor;
@@ -90,7 +91,18 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 						whileInView={slideInRightFinish}
 						className={`${
 							displayContentOption == "Left" ? "lg:items-end" : "lg:items-start"
-						} lg:px-8 lg:w-1/2`}
+						} lg:px-8 lg:w-1/2 h-full bg-contain bg-right bg-no-repeat`}
+						style={{
+							backgroundImage: `url("/svg/background/${
+								displayBackgroundIcon && displayBackgroundColor == "DarkBlue"
+									? "Off-site-Civil"
+									: displayBackgroundIcon && displayBackgroundColor == "Grey"
+									? "Infrastructure-design"
+									: displayBackgroundIcon && displayBackgroundColor == "White"
+									? "Design-Install"
+									: "none"
+							}.svg")`,
+						}}
 					>
 						<motion.div
 							initial={initial}
@@ -98,7 +110,7 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 							whileInView="animate"
 							viewport={{once: true}}
 							className={`flex flex-col items-center py-10 px-4 lg:items-baseline ${
-								displayContentOption == "Left" ? "xl:pl-12" : "xl:px-4"
+								displayContentOption == "Left" ? "xl:pl-12" : "xl:px-"
 							}`}
 						>
 							<motion.h3

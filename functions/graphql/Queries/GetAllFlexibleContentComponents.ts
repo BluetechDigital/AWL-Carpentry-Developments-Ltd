@@ -126,6 +126,7 @@ export const getAllFlexibleContentComponents = async (
             										}
             									}
             									displayContentOption
+												displayBackgroundIcon
             									displayBackgroundColor
             								}
 											... on ${postTypeFlexibleContent}_OurClients {

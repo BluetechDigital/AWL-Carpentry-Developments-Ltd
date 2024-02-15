@@ -84,6 +84,7 @@ const RenderFlexibleContent: FC = () => {
 									paragraph={item?.paragraph}
 									buttonLink={item?.buttonLink}
 									displayContentOption={item?.displayContentOption}
+									displayBackgroundIcon={item?.displayBackgroundIcon}
 									displayBackgroundColor={item?.displayBackgroundColor}
 								/>
 							</>
