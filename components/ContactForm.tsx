@@ -569,7 +569,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 												: `${styles.submitButton}`
 										}
 									>
-										<h3 className="tracking-widest text-white uppercase tracking-wider text-sm">
+										<h3 className="tracking-widest text-white uppercase text-sm">
 											{loading
 												? "Sending Message..."
 												: messageSent

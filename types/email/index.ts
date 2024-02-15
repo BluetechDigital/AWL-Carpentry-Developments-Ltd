@@ -15,3 +15,8 @@ export type IGenerateEmailContent = {
 	text: string;
 	html: string;
 };
+
+export type TwitchResetPasswordEmailProps = {
+	username?: string;
+	updatedDate?: Date;
+};
