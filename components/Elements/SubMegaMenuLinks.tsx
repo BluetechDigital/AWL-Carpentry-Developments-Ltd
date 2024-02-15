@@ -19,7 +19,7 @@ const SubMegaMenuLinks: FC = () => {
 		<>
 			<div className="fixed mt-[1.5rem] w-full left-0 flex justify-end">
 				<div
-					className="w-[80%] mx-auto grid grid-cols-3 bg-white"
+					className="w-[95%] xl:w-[80%] mx-auto grid grid-cols-3 bg-white"
 					style={{
 						boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 					}}

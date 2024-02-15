@@ -144,7 +144,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 			<div
 				className="px-4 py-10 bg-cover bg-center bg-no-repeat"
 				style={{
-					backgroundImage: `url("/svg/background/layered-peaks-haikei-lightgrey-white.svg")`,
+					backgroundImage: `url("/svg/background/layered-peaks-haikei-lightgrey-grey-one.svg")`,
 				}}
 			>
 				<div className="container mx-auto flex flex-col lg:flex-row items-baseline ">
@@ -383,7 +383,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									viewport={{once: true}}
 									className="flex items-center justify-center my-4 mb-8 gap-x-2"
 								>
-									<h4 className="text-xl font-semibold text-center uppercase text-darkBlue">
+									<h4 className="text-xl font-semibold text-center uppercase text-blue-darker">
 										Error Message: Something went wrong with sending your
 										message. Please try again.
 									</h4>
@@ -422,7 +422,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.touched?.firstName && formik?.errors?.firstName ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-darkBlue font-[400]">
+												<p className="py-1 text-left text-tiny text-blue-darker font-[400]">
 													{formik?.errors?.firstName}
 												</p>
 											</div>
@@ -434,7 +434,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.firstName}
-											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-50 outline-none border-[1px] border-darkGrey active:border-darkBlue focus:border-darkBlue focus:ring-[1px] focus:ring-darkBlue"
+											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
 										/>
 									</motion.div>
 									<motion.div
@@ -445,7 +445,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.touched?.lastName && formik?.errors?.lastName ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-darkBlue font-[400]">
+												<p className="py-1 text-left text-tiny text-blue-darker font-[400]">
 													{formik?.errors?.lastName}
 												</p>
 											</div>
@@ -457,7 +457,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.lastName}
-											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-50 outline-none border-[1px] border-darkGrey active:border-darkBlue focus:border-darkBlue focus:ring-[1px] focus:ring-darkBlue"
+											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
 										/>
 									</motion.div>
 								</div>
@@ -470,7 +470,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.errors?.email ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-darkBlue font-[400]">
+												<p className="py-1 text-left text-tiny text-blue-darker font-[400]">
 													{formik?.errors?.email}
 												</p>
 											</div>
@@ -483,7 +483,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.email}
-											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-50 outline-none border-[1px] border-darkGrey active:border-darkBlue focus:border-darkBlue focus:ring-[1px] focus:ring-darkBlue"
+											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
 										/>
 									</motion.div>
 									<motion.div
@@ -494,7 +494,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{formik?.touched?.subject && formik?.errors?.subject ? (
 											<div>
-												<p className="py-1 text-left text-tiny text-darkBlue font-[400]">
+												<p className="py-1 text-left text-tiny text-blue-darker font-[400]">
 													{formik?.errors?.subject}
 												</p>
 											</div>
@@ -507,7 +507,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 											onBlur={formik?.handleBlur}
 											onChange={formik?.handleChange}
 											value={formik?.values?.subject}
-											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-50 outline-none border-[1px] border-darkGrey active:border-darkBlue focus:border-darkBlue focus:ring-[1px] focus:ring-darkBlue"
+											className="px-4 py-3 w-full text-darkGrey font-[400] placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
 										/>
 									</motion.div>
 								</div>
@@ -519,7 +519,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 								>
 									{formik?.touched?.message && formik?.errors?.message ? (
 										<div>
-											<p className="py-1 text-left text-tiny text-darkBlue font-[400]">
+											<p className="py-1 text-left text-tiny text-blue-darker font-[400]">
 												{formik?.errors?.message}
 											</p>
 										</div>
@@ -532,7 +532,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
 										value={formik?.values?.message}
-										className="p-4 w-full h-48 font-[400] text-darkGrey placeholder-darkGrey bg-white bg-opacity-50 outline-none border-[1px] border-darkGrey active:border-darkBlue focus:border-darkBlue resize-none focus:ring-[1px] focus:ring-darkBlue"
+										className="p-4 w-full h-48 font-[400] text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker resize-none focus:ring-[1px] focus:ring-blue-darker"
 									/>
 								</motion.div>
 								<motion.div
