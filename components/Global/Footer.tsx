@@ -1,10 +1,8 @@
 // Imports
 import {
-	fadeIn,
 	stagger,
 	initial,
 	fadeInUp,
-	initialTwo,
 	arrayLoopStaggerChildren,
 } from "@/animations/animations";
 import Link from "next/link";
