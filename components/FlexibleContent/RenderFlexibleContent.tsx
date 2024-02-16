@@ -25,8 +25,8 @@ import AboutContentImage from "../AboutContentImage";
 import TitleContentImage from "../TitleContentImage";
 import TestimonialsSlider from "../TestimonialsSlider";
 import FeaturedProjectsGrid from "../FeaturedProjectsGrid";
-import CustomerEnquiryConfirmationEmail from "@/public/emails/CustomerEnquiryConfirmationEmail";
-import BusinessCustomerEnquiryConfirmationEmail from "@/public/emails/BusinessCustomerEnquiryConfirmationEmail";
+// import CustomerEnquiryConfirmationEmail from "@/public/emails/CustomerEnquiryConfirmationEmail";
+// import BusinessCustomerEnquiryConfirmationEmail from "@/public/emails/BusinessCustomerEnquiryConfirmationEmail";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
