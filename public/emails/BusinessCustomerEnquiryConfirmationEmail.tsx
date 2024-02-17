@@ -18,7 +18,22 @@ import EmailHeader from "./Layout/EmailHeader";
 
 export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 	IBusinessEmail.IBusinessConfirmationEmail
-> = ({email, subject, message, lastName, firstName, updatedDate}) => {
+> = ({
+	email,
+	subject,
+	message,
+	lastName,
+	firstName,
+	updatedDate,
+	phoneNumber,
+	selectedServices,
+	themesOptionsContent,
+}) => {
+	const formattedDate = new Intl.DateTimeFormat("en", {
+		dateStyle: "medium",
+		timeStyle: "medium",
+	}).format(updatedDate);
+
 	const imagesDirUrl: string =
 		"https://vzt.nmy.mybluehost.me/.website_a8dc575f/wp-content/uploads/2024/02";
 	// const imagesDirUrl: string = process.env.IMAGE_DIR_URL
@@ -37,8 +52,10 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
 						<Text style={paragraph}>
-							We've just received a new inquiry through our website's regarding{" "}
-							{subject} and our general carpentry & developments services.
+							We&apos;ve just received a new inquiry through our website&apos;s
+							regarding {subject} and our general carpentry & developments
+							services. The customer as contacted us on {formattedDate} their
+							details are below.
 						</Text>
 						<Text style={detailsParagraph}>Inquiry Details:</Text>
 						<Text style={paragraph}>
@@ -51,13 +68,20 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 								{email}
 							</Link>
 							<br />
-							<strong>Subject:</strong> {subject} Services
+							<strong>Phone Number:</strong>{" "}
+							<Link href={`tel:${phoneNumber}`} style={link}>
+								{phoneNumber}
+							</Link>
+							<br />
+							<strong>Our Services:</strong> {selectedServices} Services
 						</Text>
 						<Text style={paragraph}>
+							<strong>Subject:</strong> {subject}
+							<br />
 							<strong>Message:</strong> "{message}"
 						</Text>
 						<Text style={paragraph}>
-							Can we begin reviewing the details of {firstName}'s inquiry
+							Can we begin reviewing the details of {firstName}&apos;s inquiry
 							shortly and promptly follow up! We need to address his questions
 							and provide any additional information he may need. Thanks Team!
 						</Text>
@@ -70,7 +94,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 							AWL Carpentry & Developments Ltd
 						</Text>
 					</Section>
-					<EmailFooter />
+					<EmailFooter themesOptionsContent={themesOptionsContent} />
 				</Container>
 			</Body>
 		</Html>

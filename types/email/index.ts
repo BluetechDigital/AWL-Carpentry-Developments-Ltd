@@ -1,19 +1,16 @@
+import {IThemesOptionsContent} from "../context";
+
 export type IMailOptions = {
-	from: string;
 	to: string;
+	from: string;
 };
 
 export type IContactMessageFields = {
-	firstName: string;
-	lastName: string;
 	email: string;
-	subject: string;
 	message: string;
-};
-
-export type IGenerateEmailContent = {
-	text: string;
-	html: string;
+	subject: string;
+	lastName: string;
+	firstName: string;
 };
 
 /* Types Namespace - (EMAIL HEADER)
@@ -40,6 +37,9 @@ export namespace IEmailHeader {
 /* Types Namespace - (EMAIL FOOTER)
 Global Email Footer (IEmailFooter) */
 export namespace IEmailFooter {
+	export type IEmailFooter = {
+		themesOptionsContent?: IThemesOptionsContent;
+	};
 	export type ILink = {
 		color: string;
 		textDecoration: string;
@@ -65,14 +65,18 @@ export namespace IEmailFooter {
 }
 
 /* Types Namespace - (CUSTOMER)
-Customer Enquiry Confirmation Email (ICECE) */
+Customer Enquiry Confirmation Email */
 export namespace ICustomerEmail {
 	export type ICustomerConfirmationEmail = {
 		email?: string;
+		message?: string;
 		subject?: string;
 		lastName?: string;
 		firstName?: string;
 		updatedDate?: Date;
+		phoneNumber?: number;
+		selectedServices?: string;
+		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {
 		fontFamily: string;
@@ -138,7 +142,7 @@ export namespace ICustomerEmail {
 }
 
 /* Types Namespace - (BUSINESS)
-Business Customer Enquiry Confirmation Email (IBCECE) */
+Business Customer Enquiry Confirmation Email */
 export namespace IBusinessEmail {
 	export type IBusinessConfirmationEmail = {
 		email?: string;
@@ -147,6 +151,9 @@ export namespace IBusinessEmail {
 		lastName?: string;
 		firstName?: string;
 		updatedDate?: Date;
+		phoneNumber?: number;
+		selectedServices?: string;
+		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {
 		fontFamily: string;

@@ -21,11 +21,11 @@ import {
 	getLocationsSublinks,
 	getOurServicesSublinks,
 } from "@/functions/graphql/Queries/GetAllMenuLinks";
-import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 import {
 	getAllBlogsContent,
 	getThreeBlogsContent,
 } from "@/functions/graphql/Queries/GetAllBlogs";
+import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 import {getAllTestimonialsContent} from "@/functions/graphql/Queries/GetAllTestimonials";
 
 // Components

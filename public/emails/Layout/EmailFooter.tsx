@@ -1,12 +1,11 @@
 // Imports
 import * as React from "react";
 import {IEmailFooter} from "@/types/email";
-import {useGlobalContext} from "@/context/global";
 import {Img, Row, Link, Text, Column, Section} from "@react-email/components";
 
-const EmailFooter: React.FC = () => {
-	const globalContext = useGlobalContext();
-
+const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
+	themesOptionsContent,
+}) => {
 	const websiteUrl: string = "awlcarpentrydevelopments.co.uk";
 	// const websiteUrl: string = process.env.SITE_URL
 	// 	? `${process.env.SITE_URL}`
@@ -34,10 +33,7 @@ const EmailFooter: React.FC = () => {
 				</Section>
 				<Row>
 					<Column align="right" style={{width: "33%", paddingRight: "8px"}}>
-						<Link
-							href={globalContext?.themesOptionsContent?.facebookLink}
-							style={link}
-						>
+						<Link href={themesOptionsContent?.facebookLink} style={link}>
 							<Img
 								style={{width: "100%", height: "35px"}}
 								src={`${imagesDirUrl}/facebook-round-white.svg`}
@@ -45,10 +41,7 @@ const EmailFooter: React.FC = () => {
 						</Link>
 					</Column>
 					<Column align="center" style={{width: "33%", paddingLeft: "8px"}}>
-						<Link
-							href={globalContext?.themesOptionsContent?.instagramLink}
-							style={link}
-						>
+						<Link href={themesOptionsContent?.instagramLink} style={link}>
 							<Img
 								style={{width: "100%", height: "35px"}}
 								src={`${imagesDirUrl}/instagram-round-white.svg`}
@@ -56,10 +49,7 @@ const EmailFooter: React.FC = () => {
 						</Link>
 					</Column>
 					<Column align="left" style={{width: "33%", paddingLeft: "8px"}}>
-						<Link
-							href={globalContext?.themesOptionsContent?.twitterLink}
-							style={link}
-						>
+						<Link href={themesOptionsContent?.twitterLink} style={link}>
 							<Img
 								style={{width: "100%", height: "35px"}}
 								src={`${imagesDirUrl}/twitter-round-white.svg`}
@@ -75,7 +65,7 @@ const EmailFooter: React.FC = () => {
 							textAlign: "center",
 						}}
 					>
-						{globalContext?.themesOptionsContent?.copyrightText}
+						{themesOptionsContent?.copyrightText}
 					</Text>
 				</Row>
 			</Section>

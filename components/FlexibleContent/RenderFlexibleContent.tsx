@@ -1,6 +1,7 @@
 // Imports
 import {FC} from "react";
 import {usePageContext} from "@/context/pages";
+import {useGlobalContext} from "@/context/global";
 import {IPostTypeFlexibleContent} from "@/types/context";
 
 // Components
@@ -25,11 +26,10 @@ import AboutContentImage from "../AboutContentImage";
 import TitleContentImage from "../TitleContentImage";
 import TestimonialsSlider from "../TestimonialsSlider";
 import FeaturedProjectsGrid from "../FeaturedProjectsGrid";
-// import CustomerEnquiryConfirmationEmail from "@/public/emails/CustomerEnquiryConfirmationEmail";
-// import BusinessCustomerEnquiryConfirmationEmail from "@/public/emails/BusinessCustomerEnquiryConfirmationEmail";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
+	const globalContext = useGlobalContext();
 	const FlexibleContent: IPostTypeFlexibleContent =
 		content?.postTypeFlexibleContent;
 
@@ -200,21 +200,6 @@ const RenderFlexibleContent: FC = () => {
 						) : item?.fieldGroupName === `${FlexibleContent}_ContactForm` ? (
 							<>
 								<ContactForm title={item?.title} paragraph={item?.paragraph} />
-								{/* <CustomerEnquiryConfirmationEmail
-									firstName={`Eric`}
-									lastName={`Harrington`}
-									updatedDate={item?.updatedDate}
-									email={`ericharrington@gmail.com`}
-									subject={`Kitchen Design & Installations`}
-								/>
-								<BusinessCustomerEnquiryConfirmationEmail
-									firstName={`Eric`}
-									lastName={`Harrington`}
-									updatedDate={item?.updatedDate}
-									email={`ericharrington@gmail.com`}
-									subject={`Kitchen Design & Installations`}
-									message={`Hello, I am interested in learning more about your kitchen design and installation services. Could you please provide me with more information about the process and pricing? Thank you.`}
-								/> */}
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Maintenance` ? (
 							<>

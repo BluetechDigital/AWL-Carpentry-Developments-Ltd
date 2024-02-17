@@ -2,11 +2,12 @@
 import nodemailer from "nodemailer";
 import {IMailOptions} from "@/types/email";
 
-const email: any = process.env.EMAIL_USER;
-const pass: any = process.env.EMAIL_PASS;
+const email: string | undefined = process.env.EMAIL_USER;
+const pass: string | undefined = process.env.EMAIL_PASS;
 
 export const transporter: any = nodemailer.createTransport({
-	host: "smtp.office365.com",
+	host: "gmail",
+	service: "gmail",
 	port: 587,
 	secure: false,
 	auth: {
@@ -19,6 +20,6 @@ export const transporter: any = nodemailer.createTransport({
 });
 
 export const mailOptions: IMailOptions = {
-	from: email,
-	to: email,
+	from: `${email}`,
+	to: `${email}`,
 };
