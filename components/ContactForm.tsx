@@ -11,11 +11,11 @@ import {
 import Link from "next/link";
 import {motion} from "framer-motion";
 import {useRouter} from "next/router";
-import React, {useState, FC, Fragment} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import {IContactForm} from "@/types/components";
 import {useGlobalContext} from "@/context/global";
 import {sendContactForm} from "@/lib/contactForm";
+import React, {useState, FC, Fragment} from "react";
 import {useFormik, Formik, Field, Form} from "formik";
 
 // Styling
@@ -572,6 +572,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 										placeholder="Pick a Service"
 										onBlur={formik?.handleBlur}
 										onChange={formik?.handleChange}
+										value={formik?.values?.selectedServices}
 										className="px-4 py-3 w-full text-darkGrey placeholder-darkGrey bg-white bg-opacity-90 outline-none border-[1px] border-darkGrey active:border-blue-darker focus:border-blue-darker focus:ring-[1px] focus:ring-blue-darker"
 									>
 										{globalContext?.servicesSublinks?.length > 0 ? (
