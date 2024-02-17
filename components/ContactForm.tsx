@@ -138,9 +138,9 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 				formik.handleSubmit();
 				setLoading(false);
 				setMessageSent(true);
-				// setTimeout(() => {
-				// 	router.reload();
-				// }, 3000);
+				setTimeout(() => {
+					router.reload();
+				}, 3000);
 			} catch (error) {
 				setErrorMessage(true);
 				throw new Error(
