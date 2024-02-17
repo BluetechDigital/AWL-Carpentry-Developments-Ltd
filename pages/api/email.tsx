@@ -71,9 +71,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 				html: businessEmailHtml,
 			};
 
-			console.log(customerEmail);
-			console.log(businessEmail);
-
 			await transporter.sendMail(customerEmail);
 			await transporter.sendMail(businessEmail);
 
