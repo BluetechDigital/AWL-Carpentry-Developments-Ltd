@@ -1,10 +1,9 @@
 import {IThemesOptionsContent} from "../context";
 
 export type IMailOptions = {
-	to: string;
 	from: string;
+	to: string;
 };
-
 export type IContactMessageFields = {
 	email: string;
 	message: string;

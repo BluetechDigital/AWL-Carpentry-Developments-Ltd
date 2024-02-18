@@ -1,7 +1,7 @@
 // Imports
 import {render} from "@react-email/components";
-import {transporter} from "@/config/nodemailer";
 import type {NextApiRequest, NextApiResponse} from "next";
+import {mailOptions, emailTransporter} from "@/config/nodemailer";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 
 // Components
@@ -57,7 +57,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* Customer Enquiry Confirmation Email */
 			const customerEmail = {
-				from: "toddowenmpeli02@gmail.com",
+				from: `${themesOptionsContent?.email}`,
 				to: `${data?.email}`,
 				subject: `AWL Carpentry Inquiry: ${data?.subject}`,
 				html: customerEmailHtml,
@@ -65,14 +65,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* Business Customer Enquiry Confirmation Email */
 			const businessEmail = {
-				from: "toddowenmpeli02@gmail.com",
+				from: `${themesOptionsContent?.email}`,
 				to: `${data?.email}`,
 				subject: `New Website Inquiry: ${data?.subject}`,
 				html: businessEmailHtml,
 			};
 
-			await transporter.sendMail(customerEmail);
-			await transporter.sendMail(businessEmail);
+			await emailTransporter.sendMail(mailOptions, customerEmail);
+			await emailTransporter.sendMail(mailOptions, businessEmail);
 
 			return res.status(200).json({
 				status: "success",

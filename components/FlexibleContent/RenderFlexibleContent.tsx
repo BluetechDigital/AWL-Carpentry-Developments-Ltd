@@ -29,7 +29,6 @@ import FeaturedProjectsGrid from "../FeaturedProjectsGrid";
 
 const RenderFlexibleContent: FC = () => {
 	const content = usePageContext();
-	const globalContext = useGlobalContext();
 	const FlexibleContent: IPostTypeFlexibleContent =
 		content?.postTypeFlexibleContent;
 
