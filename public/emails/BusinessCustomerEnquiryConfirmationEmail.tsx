@@ -26,6 +26,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 	firstName,
 	updatedDate,
 	phoneNumber,
+	imagesDirUrl,
 	selectedServices,
 	themesOptionsContent,
 }) => {
@@ -34,20 +35,14 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 		timeStyle: "medium",
 	}).format(updatedDate);
 
-	const imagesDirUrl: string =
-		"https://vzt.nmy.mybluehost.me/.website_a8dc575f/wp-content/uploads/2024/02";
-	// const imagesDirUrl: string = process.env.IMAGE_DIR_URL
-	// 	? `${process.env.IMAGE_DIR_URL}`
-	// 	: "";
-
 	return (
 		<Html>
 			<Head />
-			<Preview>New Website Inquiry: {`${subject}`}</Preview>
+			<Preview>New Website Inquiry: {`${selectedServices}`}</Preview>
 			<Body style={main}>
 				<Container style={container}>
 					<EmailHeader
-						imagesDirPath={`${imagesDirUrl}/AWL-Carpentry-Developments-Ltd-Email-Header-1.png`}
+						imagesDirUrl={`${imagesDirUrl}/AWL-Carpentry-Developments-Ltd-Email-Header-1.png`}
 					/>
 					<Section style={content}>
 						<Text style={introParagraph}>Hello Team,</Text>
@@ -73,7 +68,7 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 								{phoneNumber}
 							</Link>
 							<br />
-							<strong>Our Services:</strong> {selectedServices} Services
+							<strong>Services Inquired:</strong> {selectedServices} Services
 						</Text>
 						<Text style={paragraph}>
 							<strong>Subject:</strong> {subject}
@@ -94,7 +89,10 @@ export const BusinessCustomerEnquiryConfirmationEmail: React.FC<
 							AWL Carpentry & Developments Ltd
 						</Text>
 					</Section>
-					<EmailFooter themesOptionsContent={themesOptionsContent} />
+					<EmailFooter
+						imagesDirUrl={imagesDirUrl}
+						themesOptionsContent={themesOptionsContent}
+					/>
 				</Container>
 			</Body>
 		</Html>
@@ -107,35 +105,37 @@ const fontFamily: string = "PlusJakartaSans,Helvetica,Arial,sans-serif";
 
 const main: IBusinessEmail.IMain = {
 	fontFamily,
+	padding: "0px",
 	backgroundColor: "#ffffff",
 };
 const introParagraph: IBusinessEmail.IIntroParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "600",
-	padding: "0.25rem 1.5rem",
+	padding: "0.25rem 0.5rem",
+
 	paddingTop: "1.5rem",
 };
 const detailsParagraph: IBusinessEmail.IDetailsParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "600",
-	padding: "0.25rem 1.5rem",
+	padding: "0.25rem 0.5rem",
 };
 const paragraph: IBusinessEmail.IParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "400",
-	padding: "0.25rem 1.5rem",
+	padding: "0.25rem 0.5rem",
 };
 const container: IBusinessEmail.IContainer = {
 	maxWidth: "580px",
-	margin: "30px auto",
+	margin: "0px auto",
 	marginBottom: "0px",
 	backgroundColor: "#ffffff",
 };
 const content: IBusinessEmail.IContent = {
-	padding: "10px 20px",
+	padding: "10px",
 };
 const link: IBusinessEmail.ILink = {
 	color: "#20ce88",

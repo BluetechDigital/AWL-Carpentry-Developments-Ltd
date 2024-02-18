@@ -59,7 +59,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 
 		if (!values?.phoneNumber) {
 			errors.phoneNumber = "Required*";
-		} else if (values?.phoneNumber.length <= 0) {
+		} else if (values?.phoneNumber.length < 1) {
 			errors.phoneNumber = "Please inform us about the topic.";
 		}
 

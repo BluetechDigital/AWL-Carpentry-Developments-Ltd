@@ -1,7 +1,6 @@
 // Imports
 import {FC} from "react";
 import {usePageContext} from "@/context/pages";
-import {useGlobalContext} from "@/context/global";
 import {IPostTypeFlexibleContent} from "@/types/context";
 
 // Components

@@ -4,30 +4,22 @@ import {IEmailFooter} from "@/types/email";
 import {Img, Row, Link, Text, Column, Section} from "@react-email/components";
 
 const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
+	imagesDirUrl,
 	themesOptionsContent,
 }) => {
-	const websiteUrl: string = "awlcarpentrydevelopments.co.uk";
-	// const websiteUrl: string = process.env.SITE_URL
-	// 	? `${process.env.SITE_URL}`
-	// 	: "";
-
-	const imagesDirUrl: string =
-		"https://vzt.nmy.mybluehost.me/.website_a8dc575f/wp-content/uploads/2024/02";
-	// const imagesDirUrl: string = process.env.IMAGE_DIR_URL
-	// 	? `${process.env.IMAGE_DIR_URL}`
-	// 	: "";
+	console.log(imagesDirUrl);
 	return (
 		<>
 			<Section style={{border: "5px solid", borderColor: "#116dff"}}></Section>
 			<Section style={footer}>
 				<Section style={footerLogoSection}>
-					<Link href={`https://${websiteUrl}`}>
+					<Link href={`https://awlcarpentrydevelopments.co.uk`}>
 						<Img
-							src={`${imagesDirUrl}/awl-carpentry-developments-logo-white.svg`}
-							width="105"
-							height="105"
+							width="105px"
+							height="105px"
 							style={footerLogo}
-							alt="AWL Carpentry Developments Ltd Logo"
+							alt="AWL Carpentry Developments Ltd Logo White"
+							src={`${imagesDirUrl}/awl-carpentry-developments-logo-white.png`}
 						/>
 					</Link>
 				</Section>
@@ -35,24 +27,30 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 					<Column align="right" style={{width: "33%", paddingRight: "8px"}}>
 						<Link href={themesOptionsContent?.facebookLink} style={link}>
 							<Img
-								style={{width: "100%", height: "35px"}}
-								src={`${imagesDirUrl}/facebook-round-white.svg`}
+								width="100%"
+								height="35px"
+								style={{width: "35px", height: "35px"}}
+								src={`${imagesDirUrl}/facebook-round-white.png`}
 							/>
 						</Link>
 					</Column>
 					<Column align="center" style={{width: "33%", paddingLeft: "8px"}}>
 						<Link href={themesOptionsContent?.instagramLink} style={link}>
 							<Img
-								style={{width: "100%", height: "35px"}}
-								src={`${imagesDirUrl}/instagram-round-white.svg`}
+								width="100%"
+								height="35px"
+								style={{width: "35px", height: "35px"}}
+								src={`${imagesDirUrl}/instagram-round-white.png`}
 							/>
 						</Link>
 					</Column>
 					<Column align="left" style={{width: "33%", paddingLeft: "8px"}}>
 						<Link href={themesOptionsContent?.twitterLink} style={link}>
 							<Img
-								style={{width: "100%", height: "35px"}}
-								src={`${imagesDirUrl}/twitter-round-white.svg`}
+								width="100%"
+								height="35px"
+								style={{width: "35px", height: "35px"}}
+								src={`${imagesDirUrl}/twitter-round-white.png`}
 							/>
 						</Link>
 					</Column>
@@ -63,6 +61,8 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 							color: "#fafafa",
 							fontSize: "0.8rem",
 							textAlign: "center",
+							lineHeight: "1.15rem",
+							padding: "0.25rem 0.5rem",
 						}}
 					>
 						{themesOptionsContent?.copyrightText}
@@ -90,13 +90,12 @@ const footer: IEmailFooter.IFooter = {
 const footerLogoSection: IEmailFooter.IFooterLogoSection = {
 	width: "100%",
 	padding: "0px",
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
 	backgroundColor: "#001640",
 };
 
 const footerLogo: IEmailFooter.IFooterLogo = {
 	width: "100%",
 	height: "125px",
+	margin: "0 auto",
+	maxWidth: "185px",
 };

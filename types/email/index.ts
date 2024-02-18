@@ -1,22 +1,28 @@
 import {IThemesOptionsContent} from "../context";
 
-export type IMailOptions = {
+/* Customer Enquiry 
+Confirmation Email */
+export type ICustomerEmail = {
 	from: string;
 	to: string;
-};
-export type IContactMessageFields = {
-	email: string;
-	message: string;
 	subject: string;
-	lastName: string;
-	firstName: string;
+	html: string;
+};
+
+/* Business Customer 
+Enquiry Confirmation Email */
+export type IBusinessEmail = {
+	from: string;
+	to: string;
+	subject: string;
+	html: string;
 };
 
 /* Types Namespace - (EMAIL HEADER)
 Global Email Header (IEmailHeader) */
 export namespace IEmailHeader {
 	export type IEmailHeader = {
-		imagesDirPath: string;
+		imagesDirUrl?: string;
 	};
 	export type IImageSection = {
 		width: string;
@@ -37,6 +43,7 @@ export namespace IEmailHeader {
 Global Email Footer (IEmailFooter) */
 export namespace IEmailFooter {
 	export type IEmailFooter = {
+		imagesDirUrl?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type ILink = {
@@ -52,14 +59,13 @@ export namespace IEmailFooter {
 	export type IFooterLogoSection = {
 		width: string;
 		padding: string;
-		display: string;
-		alignItems: string;
-		justifyContent: string;
 		backgroundColor: string;
 	};
 	export type IFooterLogo = {
 		width: string;
 		height: string;
+		margin: string;
+		maxWidth: string;
 	};
 }
 
@@ -74,10 +80,12 @@ export namespace ICustomerEmail {
 		firstName?: string;
 		updatedDate?: Date;
 		phoneNumber?: number;
+		imagesDirUrl?: string;
 		selectedServices?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {
+		padding: string;
 		fontFamily: string;
 		backgroundColor: string;
 	};
@@ -151,10 +159,12 @@ export namespace IBusinessEmail {
 		firstName?: string;
 		updatedDate?: Date;
 		phoneNumber?: number;
+		imagesDirUrl?: string;
 		selectedServices?: string;
 		themesOptionsContent?: IThemesOptionsContent;
 	};
 	export type IMain = {
+		padding: string;
 		fontFamily: string;
 		backgroundColor: string;
 	};

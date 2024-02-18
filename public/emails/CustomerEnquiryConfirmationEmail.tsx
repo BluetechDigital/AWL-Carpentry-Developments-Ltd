@@ -25,6 +25,7 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 	firstName,
 	updatedDate,
 	phoneNumber,
+	imagesDirUrl,
 	selectedServices,
 	themesOptionsContent,
 }) => {
@@ -32,17 +33,6 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 		dateStyle: "medium",
 		timeStyle: "medium",
 	}).format(updatedDate);
-
-	const websiteUrl: string = "awlcarpentrydevelopments.co.uk";
-	// const websiteUrl: string = process.env.SITE_URL
-	// 	? `${process.env.SITE_URL}`
-	// 	: "";
-
-	const imagesDirUrl: string =
-		"https://vzt.nmy.mybluehost.me/.website_a8dc575f/wp-content/uploads/2024/02";
-	// const imagesDirUrl: string = process.env.IMAGE_DIR_URL
-	// 	? `${process.env.IMAGE_DIR_URL}`
-	// 	: "";
 
 	return (
 		<>
@@ -54,12 +44,10 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 				<Body style={main}>
 					<Container style={container}>
 						<EmailHeader
-							imagesDirPath={`${imagesDirUrl}/AWL-Carpentry-Developments-Ltd-Email-Header.png`}
+							imagesDirUrl={`${imagesDirUrl}/AWL-Carpentry-Developments-Ltd-Email-Header.png`}
 						/>
 						<Section style={content}>
-							<Text style={introParagraph}>
-								Hi {firstName} {lastName},
-							</Text>
+							<Text style={introParagraph}>Hi {firstName},</Text>
 							<Text style={paragraph}>
 								Thank you for reaching out to AWL Carpentry & Developments Ltd
 								regarding {subject} and our {selectedServices} services. We have
@@ -138,12 +126,18 @@ export const CustomerEnquiryConfirmationEmail: React.FC<
 								</Link>
 								<br />
 								Website:{" "}
-								<Link href={`https://${websiteUrl}`} style={link}>
-									{websiteUrl}
+								<Link
+									style={link}
+									href={`https://awlcarpentrydevelopments.co.uk`}
+								>
+									awlcarpentrydevelopments.co.uk
 								</Link>
 							</Text>
 						</Section>
-						<EmailFooter themesOptionsContent={themesOptionsContent} />
+						<EmailFooter
+							imagesDirUrl={imagesDirUrl}
+							themesOptionsContent={themesOptionsContent}
+						/>
 					</Container>
 				</Body>
 			</Html>
@@ -157,29 +151,30 @@ const fontFamily: string = "PlusJakartaSans,Helvetica,Arial,sans-serif";
 
 const main: ICustomerEmail.IMain = {
 	fontFamily,
+	padding: "0px",
 	backgroundColor: "#ffffff",
 };
 const introParagraph: ICustomerEmail.IIntroParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "600",
-	padding: "0.25rem 1.5rem",
+	padding: "0.25rem 0.5rem",
 	paddingTop: "1.5rem",
 };
 const paragraph: ICustomerEmail.IParagraph = {
 	lineHeight: 1.5,
 	fontSize: 14,
 	fontWeight: "400",
-	padding: "0.25rem 1.5rem",
+	padding: "0.25rem 0.5rem",
 };
 const container: ICustomerEmail.IContainer = {
 	maxWidth: "580px",
-	margin: "30px auto",
+	margin: "0px auto",
 	marginBottom: "0px",
 	backgroundColor: "#ffffff",
 };
 const content: ICustomerEmail.IContent = {
-	padding: "10px 20px",
+	padding: "10px",
 };
 const link: ICustomerEmail.ILink = {
 	color: "#20ce88",

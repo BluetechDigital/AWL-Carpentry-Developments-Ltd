@@ -1,7 +1,8 @@
 // Imports
 import {render} from "@react-email/components";
+import {emailTransporter} from "@/config/nodemailer";
 import type {NextApiRequest, NextApiResponse} from "next";
-import {mailOptions, emailTransporter} from "@/config/nodemailer";
+import {IBusinessEmail, ICustomerEmail} from "@/types/email";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 
 // Components
@@ -14,13 +15,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 		// If any of these values are undefined
 		if (
-			!data?.firstName ||
-			!data?.lastName ||
 			!data?.email ||
-			!data?.phoneNumber ||
-			!data?.selectedServices ||
+			!data?.message ||
 			!data?.subject ||
-			!data?.message
+			!data?.lastName ||
+			!data?.firstName ||
+			!data?.phoneNumber ||
+			!data?.selectedServices
 		) {
 			return res.status(400).json({
 				status: "error",
@@ -29,50 +30,58 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 		}
 
 		try {
+			const imagesDirUrl: any = process.env.IMAGE_DIR_URL;
 			const themesOptionsContent: any = await getThemesOptionsContent();
 
-			const customerEmailHtml = render(
+			/* Render React Customer Enquiry 
+			Confirmation Email Component*/
+			const customerEmailHtml: string = render(
 				<CustomerEnquiryConfirmationEmail
-					firstName={`${data?.firstName}`}
-					lastName={`${data?.lastName}`}
 					email={`${data?.email}`}
+					imagesDirUrl={imagesDirUrl}
 					subject={`${data?.subject}`}
+					lastName={`${data?.lastName}`}
 					phoneNumber={data?.phoneNumber}
+					firstName={`${data?.firstName}`}
 					themesOptionsContent={themesOptionsContent}
 					selectedServices={`${data?.selectedServices}`}
 				/>
 			);
-			const businessEmailHtml = render(
+
+			/* Render React Business Customer 
+			Enquiry Confirmation Email Component*/
+			const businessEmailHtml: string = render(
 				<BusinessCustomerEnquiryConfirmationEmail
-					firstName={`${data?.firstName}`}
-					lastName={`${data?.lastName}`}
 					email={`${data?.email}`}
+					imagesDirUrl={imagesDirUrl}
 					subject={`${data?.subject}`}
 					message={`${data?.message}`}
+					lastName={`${data?.lastName}`}
 					phoneNumber={data?.phoneNumber}
+					firstName={`${data?.firstName}`}
 					themesOptionsContent={themesOptionsContent}
 					selectedServices={`${data?.selectedServices}`}
 				/>
 			);
 
 			/* Customer Enquiry Confirmation Email */
-			const customerEmail = {
+			const customerEmail: ICustomerEmail = {
 				from: `${themesOptionsContent?.email}`,
 				to: `${data?.email}`,
-				subject: `AWL Carpentry Inquiry: ${data?.subject}`,
+				subject: `Thank You for Contacting AWL Carpentry & Developments Ltd`,
 				html: customerEmailHtml,
 			};
 
 			/* Business Customer Enquiry Confirmation Email */
-			const businessEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${data?.email}`,
+			const businessEmail: IBusinessEmail = {
+				from: `${data?.email}`,
+				to: `${themesOptionsContent?.email}`,
 				subject: `New Website Inquiry: ${data?.subject}`,
 				html: businessEmailHtml,
 			};
 
-			await emailTransporter.sendMail(mailOptions, customerEmail);
-			await emailTransporter.sendMail(mailOptions, businessEmail);
+			await emailTransporter.sendMail({...customerEmail});
+			await emailTransporter.sendMail({...businessEmail});
 
 			return res.status(200).json({
 				status: "success",

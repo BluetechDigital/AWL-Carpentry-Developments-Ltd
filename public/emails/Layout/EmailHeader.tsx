@@ -3,15 +3,15 @@ import * as React from "react";
 import {IEmailHeader} from "@/types/email";
 import {Img, Section} from "@react-email/components";
 
-const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirPath}) => {
+const EmailHeader: React.FC<IEmailHeader.IEmailHeader> = ({imagesDirUrl}) => {
 	return (
 		<>
 			<Section style={imageSection}>
 				<Img
-					src={imagesDirPath}
 					width="100%"
 					height="105"
 					style={logo}
+					src={imagesDirUrl}
 					alt="AWL Carpentry Developments Ltd Logo"
 				/>
 			</Section>
@@ -34,5 +34,5 @@ const imageSection: IEmailHeader.IImageSection = {
 const logo: IEmailHeader.ILogo = {
 	width: "100%",
 	height: "100%",
-	minHeight: "150px",
+	minHeight: "100px",
 };
