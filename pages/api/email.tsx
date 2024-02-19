@@ -74,7 +74,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* Business Customer Enquiry Confirmation Email */
 			const businessEmail: IBusinessEmail = {
-				from: `${data?.email}`,
+				from: `${themesOptionsContent?.email}`,
 				to: `${themesOptionsContent?.email}`,
 				subject: `New Website Inquiry: ${data?.subject}`,
 				html: businessEmailHtml,
