@@ -66,16 +66,20 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 			/* Customer Enquiry Confirmation Email */
 			const customerEmail: ICustomerEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${data?.email}`,
+				from: `hello@bluetech-digital.co.uk`,
+				to: `toddowenmpeli02@gmail.com`,
+				// from: `${themesOptionsContent?.email}`,
+				// to: `${data?.email}`,
 				subject: `Thank You for Contacting AWL Carpentry & Developments Ltd`,
 				html: customerEmailHtml,
 			};
 
 			/* Business Customer Enquiry Confirmation Email */
 			const businessEmail: IBusinessEmail = {
-				from: `${themesOptionsContent?.email}`,
-				to: `${themesOptionsContent?.email}`,
+				from: `hello@bluetech-digital.co.uk`,
+				to: `hello@bluetech-digital.co.uk`,
+				// from: `${themesOptionsContent?.email}`,
+				// to: `${themesOptionsContent?.email}`,
 				subject: `New Website Inquiry: ${data?.subject}`,
 				html: businessEmailHtml,
 			};
