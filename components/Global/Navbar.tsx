@@ -271,15 +271,8 @@ const Navbar: FC = () => {
 				</div>
 
 				{/* Hidden Tablet & Mobile  Side Menu */}
-				<div className="flex flex-col lg:hidden">
-					<button
-						type="button"
-						onClick={toggleMenu}
-						aria-label="toggle menu"
-						className={menuActive ? styles.navToggleOpen : styles.navToggle}
-					>
-						<SideMenu menuActive={menuActive} />
-					</button>
+				<div className={menuActive ? "flex flex-col lg:hidden" : "hidden"}>
+					<SideMenu menuActive={menuActive} setMenuActive={setMenuActive} />
 				</div>
 			</nav>
 		</>

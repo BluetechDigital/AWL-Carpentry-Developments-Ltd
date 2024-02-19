@@ -35,7 +35,6 @@
 		width: 83.333333%;
 		visibility: hidden;
 		transition: all 500ms ease-in-out;
-		clip-path: circle(30px at calc(100% - 45px) 45px);
 	}
 
 	.nav {
@@ -64,6 +63,7 @@
 	.navReveal {
 		visibility: visible;
 		clip-path: circle(100%);
+		transition: all 1s ease-in-out;
 	}
 
 	.navToggle {
@@ -137,13 +137,12 @@
 		right: 25px;
 		top: 20px;
 		padding: 0;
-		width: 45px;
+		width: 50px;
 		height: 45px;
 		border: none;
-		border-radius: 5px;
 		line-height: 0.6;
 		text-align: center;
-		background: $blue;
+		background: $aqua;
 		transition: all 1s ease-in-out;
 
 		span {
@@ -182,8 +181,8 @@
 		}
 
 		&:hover {
-			transition: all 0.2s ease-in-out;
 			background: $orange;
+			transition: all 0.2s ease-in-out;
 		}
 	}
 }

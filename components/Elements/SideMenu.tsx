@@ -10,13 +10,17 @@ import {fadeIn, initial, stagger, initialTwo} from "@/animations/animations";
 // Styling
 import styles from "@/styles/components/Navbar.module.scss";
 
-const SideMenu: FC<ISideMenu> = ({menuActive}) => {
+const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const globalContext = useGlobalContext();
 
 	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
 		useState(false);
 	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
 		useState(false);
+
+	const toggleMenu = () => {
+		setMenuActive(!menuActive);
+	};
 
 	// Hides or Display Our Services sublinks
 	const displayOurServicesSublinks = () => {
@@ -39,17 +43,28 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 						: `hidden ${styles.nav}`
 				}
 			>
-				<div className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-white">
-					<div className="flex flex-col items-center mb-8">
+				<div
+					className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-blue-darker border-solid border-l-8 border-blue-default bg-cover bg-center bg-no-repeat"
+					style={{
+						backgroundImage: `url("/svg/background/layered-peaks-haikei-blue-bluedarker-mobile.svg")`,
+					}}
+				>
+					<div className="flex items-center justify-between mb-8">
 						<Link className="mr-auto text-3xl font-bold leading-none" href="/">
 							<Image
 								width={500}
 								height={500}
-								alt="Awl Carpentry Developments Logo"
-								src="/svg/logo/BluetechDigital-Logo-color.svg"
-								className="object-contain object-center w-full h-[50px]"
+								alt="Awl Carpentry Developments Logo White"
+								className="object-contain object-center w-full h-[85px]"
+								src="/svg/logos/awl-carpentry-developments-logo-white.svg"
 							/>
 						</Link>
+						<button
+							type="button"
+							onClick={toggleMenu}
+							aria-label="toggle menu"
+							className={menuActive ? styles.navToggleOpen : styles.navToggle}
+						></button>
 					</div>
 					<div className="flex flex-col px-4 mt-4">
 						<motion.ul
@@ -64,12 +79,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										{item?.node?.label === "Our Services" ? (
 											<li
 												onClick={displayOurServicesSublinks}
-												className="border-b-[1px] border-orange-dark border-opacity-50 cursor-pointer"
+												className="border-b-[1px] border-aqua-default border-opacity-50 cursor-pointer"
 											>
 												<div className="py-4 flex flex-row justify-between items-center gap-2">
 													<Link
 														href={item?.node?.url}
-														className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-blue-two transition-all ease-in-out duration-500"
+														className="text-white text-tiny text-center tracking-[0.05rem] hover:text-aqua-two transition-all ease-in-out duration-500"
 													>
 														{item?.node?.label}
 													</Link>
@@ -77,8 +92,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 														width={550}
 														height={550}
 														alt="Black Arrow Icon"
-														src="/svg/navigation-menu-dropdown-arrow-black.svg"
-														className="w-[25px] h-[25px] object-contain object-center"
+														src="/svg/navigation-menu-dropdown-arrow-white.svg"
+														className={` w-[25px] h-[25px] object-contain object-center ${
+															ourServicesSublinksOpen
+																? "rotate-180"
+																: "rotate-0"
+														}`}
 													/>
 												</div>
 												{ourServicesSublinksOpen ? (
@@ -102,13 +121,14 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 																				<li
 																					className={`${
 																						keys < 1
-																							? "border-t-[1px] border-darkGrey border-opacity-50"
+																							? "border-t-[1px] border-aqua-default  border-opacity-50"
 																							: "border-t-[0px]"
-																					} hover:border-blue-two hover:bg-blue-two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white`}
+																					} hover:border-blue-two hover:bg-blue-two border-y-[1px] border-aqua-default border-opacity-50 text-white`}
 																				>
 																					<Link
+																						onClick={toggleMenu}
 																						href={`${item?.node?.url}`}
-																						className="block p-4 text-base font-semibold"
+																						className="block p-4 text-tiny"
 																					>
 																						{item?.node?.label}
 																					</Link>
@@ -124,53 +144,12 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 													</>
 												) : null}
 											</li>
-										) : item?.node?.url === "/news-insights" ? (
-											<li
-												onClick={displayNewsInsightsSublinks}
-												className="border-b-[1px] border-orange-dark border-opacity-50 cursor-pointer"
-											>
-												<div className="py-4 flex flex-row justify-between items-center gap-2">
-													<span className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem]hover:text-blue-two transition-all ease-in-out duration-500">
-														<Link
-															href="/career"
-															className="text-pureBlack text-base font-semibold text-center tracking-[0.05rem] hover:text-blue-two transition-all ease-in-out duration-500"
-														>
-															{item?.node?.label}
-														</Link>
-													</span>
-													<Image
-														width={550}
-														height={550}
-														alt="Black Arrow Icon"
-														src="/svg/navigation-menu-dropdown-arrow-black.svg"
-														className="w-[25px] h-[25px] object-contain object-center"
-													/>
-												</div>
-												{newsInsightsSublinksOpen ? (
-													<>
-														<ul
-															className={
-																styles.newsInsightsSublinks +
-																" py-4 w-full flex flex-col z-[999]"
-															}
-														>
-															<li className="hover:border-blue-two hover:bg-blue-two border-y-[1px] border-darkGrey border-opacity-50 text-pureBlack hover:text-white">
-																<Link
-																	href="/case-studies"
-																	className="block p-4 text-base font-semibold"
-																>
-																	Case Studies
-																</Link>
-															</li>
-														</ul>
-													</>
-												) : null}
-											</li>
 										) : (
-											<li className="border-b-[1px] border-orange-dark border-opacity-50">
+											<li className="border-b-[1px] border-aqua-default border-opacity-50">
 												<Link
+													onClick={toggleMenu}
 													href={`${item?.node?.url}`}
-													className="block py-4 text-base font-semibold text-pureBlack hover:text-blue-two"
+													className="block py-4 text-tiny text-white hover:text-aqua-two"
 												>
 													{item?.node?.label}
 												</Link>
@@ -191,7 +170,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 							viewport={{once: true}}
 							className="flex flex-col items-center justify-between gap-4"
 						>
-							<h4 className="mb-5 text-base font-semibold tracking-normal text-center uppercase md:text-left text-pureBlack">
+							<h4 className="mb-5 text-base tracking-normal text-center uppercase md:text-left text-white">
 								Contact Links
 							</h4>
 							<div className="flex items-center justify-center gap-4 text-center">
@@ -203,7 +182,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										height="100%"
 										className="w-5 h-5"
 										style={{
-											fill: "#f6ad37",
+											fill: "#ffffff",
 											fillRule: "evenodd",
 											clipRule: "evenodd",
 											strokeLinejoin: "round",
@@ -227,7 +206,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										height="100%"
 										className="w-5 h-5"
 										style={{
-											fill: "#f6ad37",
+											fill: "#ffffff",
 											fillRule: "evenodd",
 											clipRule: "evenodd",
 											strokeLinejoin: "round",
@@ -250,7 +229,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 									<svg
 										height="100%"
 										style={{
-											fill: "#f6ad37",
+											fill: "#ffffff",
 											fillRule: "evenodd",
 											clipRule: "evenodd",
 											strokeLinejoin: "round",
@@ -279,7 +258,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-two sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-aqua-default sm:mr-3">
 										<svg
 											width="20"
 											height="20"
@@ -297,7 +276,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-orange-two"
+										className="font-medium text-tiny tracking-wide text-white hover:text-aqua-default"
 										href={`mailto:${globalContext?.themesOptionsContent?.email}`}
 									>
 										{globalContext?.themesOptionsContent?.email}
@@ -313,7 +292,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 											: "hidden"
 									}
 								>
-									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-two sm:mr-3">
+									<div className="flex items-center justify-center w-8 h-8 rounded-full bg-aqua-default sm:mr-3">
 										<svg
 											width="20"
 											height="20"
@@ -331,7 +310,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive}) => {
 										</svg>
 									</div>
 									<Link
-										className="font-medium text-base tracking-wide text-pureBlack hover:text-orange-two"
+										className="font-medium text-tiny tracking-wide text-white hover:text-aqua-default"
 										href={`mailto:${globalContext?.themesOptionsContent?.emailTwo}`}
 									>
 										{globalContext?.themesOptionsContent?.emailTwo}
