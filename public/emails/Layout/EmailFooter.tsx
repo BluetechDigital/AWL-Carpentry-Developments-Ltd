@@ -95,7 +95,7 @@ const footerLogoSection: IEmailFooter.IFooterLogoSection = {
 
 const footerLogo: IEmailFooter.IFooterLogo = {
 	width: "100%",
-	height: "125px",
+	height: "85px",
 	margin: "0 auto",
-	maxWidth: "185px",
+	maxWidth: "125px",
 };
