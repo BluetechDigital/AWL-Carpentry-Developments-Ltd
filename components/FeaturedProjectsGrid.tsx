@@ -52,7 +52,7 @@ const FeaturedProjectsGrid: FC<IFeaturedProjectsGrid> = ({
 						contentType="FeaturedProjectsCard"
 						numberOfItemsRenderedPerPage={12}
 						contentArray={globalContext?.featuredProjects}
-						tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-cols-1 xl:grid-cols-2`}
+						tailwindStyling={`grid mb-32 px-4 lg:-m-4 gap-y-12 sm:gap-8 grid-cols-1 md:grid-cols-2`}
 					/>
 				</div>
 			</div>

@@ -26,7 +26,7 @@ const FeaturedProjectsCard: FC<IFeaturedProjectsCard> = ({
 	return (
 		<>
 			<div
-				className="w-full h-full flex items-center justify-center p-0 border-l-[5px] border-b-[5px] border-blue-darkerTwo"
+				className="w-full h-full flex flex-col xl:flex-row items-center justify-center p-0 border-l-[5px] border-b-[5px] border-blue-darkerTwo"
 				style={{
 					boxShadow: "28px 28px 2px -20px rgba(0,0,0,0.1)",
 				}}
