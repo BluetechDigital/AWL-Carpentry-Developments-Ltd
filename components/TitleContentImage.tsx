@@ -97,11 +97,11 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 								displayBackgroundIcon && displayBackgroundColor == "DarkBlue"
 									? "Off-site-Civil"
 									: displayBackgroundIcon && displayBackgroundColor == "Grey"
-									? "Infrastructure-design"
+									? "centimeter-geometric-measure"
 									: displayBackgroundIcon && displayBackgroundColor == "Blue"
 									? "carpentry-saw"
 									: displayBackgroundIcon && displayBackgroundColor == "White"
-									? "Design-Install"
+									? "carpentry-drill-drilling"
 									: "none"
 							}.svg")`,
 						}}
