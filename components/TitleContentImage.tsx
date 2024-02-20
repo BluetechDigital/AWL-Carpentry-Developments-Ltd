@@ -98,6 +98,8 @@ const TitleContentImage: FC<ITitleContentImage> = ({
 									? "Off-site-Civil"
 									: displayBackgroundIcon && displayBackgroundColor == "Grey"
 									? "Infrastructure-design"
+									: displayBackgroundIcon && displayBackgroundColor == "Blue"
+									? "carpentry-saw"
 									: displayBackgroundIcon && displayBackgroundColor == "White"
 									? "Design-Install"
 									: "none"

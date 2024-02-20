@@ -386,7 +386,7 @@ const Footer: FC = () => {
 					>
 						<Paragraph
 							content={globalContext?.themesOptionsContent?.copyrightText}
-							tailwindStyling="text-lightGrey text-sm text-center lg:text-left"
+							tailwindStyling="max-w-full lg:max-w-lg text-lightGrey text-sm text-center lg:text-left"
 						/>
 						<Link
 							className="lg:inline-block items-center justify-center px-1 text-lightGrey hover:text-aqua-default hover:underline"
