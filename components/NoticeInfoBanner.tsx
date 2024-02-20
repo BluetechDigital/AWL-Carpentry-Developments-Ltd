@@ -12,13 +12,13 @@ const NoticeInfoBanner: FC = () => {
 			<div
 				className={
 					globalContext?.themesOptionsContent?.displayNoticeBanner
-						? "w-full z-[999] p-2 bg-blue-twoDarker"
+						? "w-full z-[999] p-1 bg-orange-default"
 						: "hidden"
 				}
 			>
 				<Paragraph
 					content={globalContext?.themesOptionsContent?.noticeBannerTextarea}
-					tailwindStyling="w-full font-semibold lg:max-w-[50rem] mx-auto text-white text-center text-base"
+					tailwindStyling="w-full lg:max-w-[50rem] mx-auto text-white text-center text-sm sm:text-base"
 				/>
 			</div>
 		</>

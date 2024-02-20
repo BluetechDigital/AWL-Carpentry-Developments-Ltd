@@ -18,6 +18,7 @@ import styles from "./../../styles/components/Navbar.module.scss";
 
 // Components
 import SideMenu from "../Elements/SideMenu";
+import NoticeInfoBanner from "../NoticeInfoBanner";
 import Paragraph from "@/components/Elements/Paragraph";
 import SubMegaMenuLinks from "../Elements/SubMegaMenuLinks";
 
@@ -55,6 +56,7 @@ const Navbar: FC = () => {
 	return (
 		<>
 			<nav className={styles.navbar + ` z-[999] h-fit w-full fixed`}>
+				<NoticeInfoBanner />
 				<div className="flex p-0 bg-white">
 					<div className="container mx-auto bg-white w-full lg:w-[40%]">
 						<Link href="/">
@@ -168,7 +170,16 @@ const Navbar: FC = () => {
 								type="button"
 								onClick={toggleMenu}
 								aria-label="toggle menu"
-								className={menuActive ? styles.navToggleOpen : styles.navToggle}
+								className={
+									menuActive
+										? styles.navToggleOpen
+										: styles.navToggle +
+										  ` ${
+												globalContext?.themesOptionsContent?.displayNoticeBanner
+													? "top-[62.5px]"
+													: "top-[20px]"
+										  }`
+								}
 							>
 								<span aria-hidden="true"></span>
 							</button>
