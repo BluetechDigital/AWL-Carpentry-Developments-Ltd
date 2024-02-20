@@ -26,8 +26,12 @@ const OurServices: FC<IOurServices> = ({
 		<>
 			<div
 				className={
-					styles.ourServices + " relative py-12 sm:py-16 px-4 bg-white"
+					styles.ourServices +
+					" relative py-12 sm:py-16 px-4 bg-white bg-cover bg-center bg-no-repeat"
 				}
+				style={{
+					backgroundImage: `url("/svg/background/polygon-scatter-haikei-lightgrey-two.svg")`,
+				}}
 			>
 				<div className="container relative m-auto flex flex-col items-center gap-6">
 					<motion.div
