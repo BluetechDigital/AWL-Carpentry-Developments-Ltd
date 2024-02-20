@@ -13,7 +13,7 @@ import styles from "@/styles/components/Navbar.module.scss";
 const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 	const globalContext = useGlobalContext();
 
-	const [newsInsightsSublinksOpen, setNewsInsightsSublinksOpen]: any =
+	const [locationsSublinksOpen, setLocationsSublinksOpen]: any =
 		useState(false);
 	const [ourServicesSublinksOpen, setOurServicesSublinksOpen]: any =
 		useState(false);
@@ -24,24 +24,20 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 
 	// Hides or Display Our Services sublinks
 	const displayOurServicesSublinks = () => {
-		setNewsInsightsSublinksOpen(false);
+		setLocationsSublinksOpen(false);
 		setOurServicesSublinksOpen(!ourServicesSublinksOpen);
 	};
 
-	// Hides or Display News & Insights Sublinks
-	const displayNewsInsightsSublinks = () => {
+	// Hides or Display Locations Sublinks
+	const displayLocationsSublinks = () => {
 		setOurServicesSublinksOpen(false);
-		setNewsInsightsSublinksOpen(!newsInsightsSublinksOpen);
+		setLocationsSublinksOpen(!locationsSublinksOpen);
 	};
 
 	return (
 		<>
 			<nav
-				className={
-					menuActive
-						? `${styles.navReveal} ${styles.nav}`
-						: `hidden ${styles.nav}`
-				}
+				className={` ${styles.nav} ${menuActive ? styles.navReveal : "hidden"}`}
 			>
 				<div
 					className="relative flex flex-col w-full h-full px-6 py-6 overflow-x-hidden overflow-y-auto bg-blue-darker border-solid border-l-8 border-blue-default bg-cover bg-center bg-no-repeat"
@@ -64,7 +60,9 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							onClick={toggleMenu}
 							aria-label="toggle menu"
 							className={menuActive ? styles.navToggleOpen : styles.navToggle}
-						></button>
+						>
+							<span />
+						</button>
 					</div>
 					<div className="flex flex-col px-4 mt-4">
 						<motion.ul
@@ -76,7 +74,7 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							{globalContext?.mobileLinks.length > 0 ? (
 								globalContext?.mobileLinks.map((item: any, keys: number) => (
 									<Fragment key={keys}>
-										{item?.node?.label === "Our Services" ? (
+										{item?.node?.url === "/services" ? (
 											<li
 												onClick={displayOurServicesSublinks}
 												className="border-b-[1px] border-aqua-default border-opacity-50 cursor-pointer"
@@ -160,6 +158,67 @@ const SideMenu: FC<ISideMenu> = ({menuActive, setMenuActive}) => {
 							) : (
 								<></>
 							)}
+							<li
+								onClick={displayLocationsSublinks}
+								className="border-b-[1px] border-aqua-default border-opacity-50 cursor-pointer"
+							>
+								<div className="py-4 flex flex-row justify-between items-center gap-2">
+									<span className="text-white text-tiny text-center tracking-[0.05rem] hover:text-aqua-two transition-all ease-in-out duration-500">
+										Locations
+									</span>
+									<Image
+										width={550}
+										height={550}
+										alt="Black Arrow Icon"
+										src="/svg/navigation-menu-dropdown-arrow-white.svg"
+										className={` w-[25px] h-[25px] object-contain object-center ${
+											locationsSublinksOpen ? "rotate-180" : "rotate-0"
+										}`}
+									/>
+								</div>
+								{locationsSublinksOpen ? (
+									<>
+										<motion.ul
+											initial={initial}
+											variants={stagger}
+											whileInView="animate"
+											viewport={{once: true}}
+											className={
+												styles.locationsLinks + ` flex flex-col my-4 z-[999]`
+											}
+										>
+											{/* Menu Link*/}
+											{globalContext?.locationsLinks?.length > 0 ? (
+												globalContext?.locationsLinks?.map(
+													(item: any, keys: any) => (
+														<Fragment key={keys}>
+															<Link href={`${item?.node?.url}`}>
+																<li
+																	className={`${
+																		keys < 1
+																			? "border-t-[1px] border-aqua-default  border-opacity-50"
+																			: "border-t-[0px]"
+																	} hover:border-blue-two hover:bg-blue-two border-y-[1px] border-aqua-default border-opacity-50 text-white`}
+																>
+																	<Link
+																		onClick={toggleMenu}
+																		href={`${item?.node?.url}`}
+																		className="block p-4 text-tiny"
+																	>
+																		{item?.node?.label}
+																	</Link>
+																</li>
+															</Link>
+														</Fragment>
+													)
+												)
+											) : (
+												<></>
+											)}
+										</motion.ul>
+									</>
+								) : null}
+							</li>
 						</motion.ul>
 					</div>
 					<div className="mt-20">
