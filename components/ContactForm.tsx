@@ -577,7 +577,7 @@ const ContactForm: FC<IContactForm> = ({title, paragraph}) => {
 									>
 										{globalContext?.servicesSublinks?.length > 0 ? (
 											globalContext?.servicesSublinks?.map(
-												(item: any, keys: any) => (
+												(item: any, keys: number) => (
 													<Fragment key={keys}>
 														<option value={item?.node?.label}>
 															{item?.node?.label}

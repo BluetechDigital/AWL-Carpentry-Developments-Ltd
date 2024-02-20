@@ -9,6 +9,19 @@ export type ICTA = {
 		target: string;
 	};
 };
+export type IFaq = {
+	title: string;
+	subtitle: string;
+	paragraph: string;
+	faqGrid: [
+		{
+			card: {
+				title: string;
+				paragraph: string;
+			};
+		}
+	];
+};
 export type IHero = {
 	title: string;
 	paragraph: string;

@@ -261,6 +261,18 @@ export const getAllFlexibleContentComponents = async (
 												subtitle
 												paragraph
 											}
+											... on ${postTypeFlexibleContent}_Faq {
+            									fieldGroupName
+            									title
+            									subtitle
+            									paragraph
+            									faqGrid {
+            										card {
+            											title
+            											paragraph
+            										}
+            									}
+            								}
 											... on ${postTypeFlexibleContent}_FaqTwo {
 												fieldGroupName
 												title

@@ -36,7 +36,7 @@ const TestimonialsSlider: FC = () => {
 							className="mySwiper"
 						>
 							{globalContext?.testimonials?.length > 0 ? (
-								globalContext?.testimonials?.map((item: any, keys: any) => (
+								globalContext?.testimonials?.map((item: any, keys: number) => (
 									<Fragment key={keys}>
 										<SwiperSlide>
 											<div

@@ -84,7 +84,7 @@ const Hero: FC<IHero> = ({
 				<div className="relative flex flex-row py-0 justify-start items-center lg:justify-between">
 					<ul className="hidden md:grid grid-cols-4 w-full lg:w-[70%] xl:w-[60%] 2xl:w-[55%] absolute mb-[130px] lg:mb-[-30px] 2xl:mb-[0px] right-0 flex-row items-center justify-end">
 						{servicesLinks?.length > 0 ? (
-							servicesLinks?.map((item: any, keys: any) => (
+							servicesLinks?.map((item: any, keys: number) => (
 								<Fragment key={keys}>
 									<motion.li
 										custom={keys}

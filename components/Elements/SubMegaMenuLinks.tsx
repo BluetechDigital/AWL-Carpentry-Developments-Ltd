@@ -45,20 +45,22 @@ const SubMegaMenuLinks: FC = () => {
 						>
 							{/* Menu Link*/}
 							{globalContext?.servicesSublinks?.length > 0 ? (
-								globalContext?.servicesSublinks?.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										<Link href={`${item?.node?.url}`}>
-											<li className="w-full group-scoped">
-												<Link
-													href={`${item?.node?.url}`}
-													className="block px-4 font-medium text-tiny text-white hover:text-aqua-default"
-												>
-													{item?.node?.label}
-												</Link>
-											</li>
-										</Link>
-									</Fragment>
-								))
+								globalContext?.servicesSublinks?.map(
+									(item: any, keys: number) => (
+										<Fragment key={keys}>
+											<Link href={`${item?.node?.url}`}>
+												<li className="w-full group-scoped">
+													<Link
+														href={`${item?.node?.url}`}
+														className="block px-4 font-medium text-tiny text-white hover:text-aqua-default"
+													>
+														{item?.node?.label}
+													</Link>
+												</li>
+											</Link>
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}
@@ -85,20 +87,22 @@ const SubMegaMenuLinks: FC = () => {
 						>
 							{/* Menu Link*/}
 							{globalContext?.locationsLinks?.length > 0 ? (
-								globalContext?.locationsLinks?.map((item: any, keys: any) => (
-									<Fragment key={keys}>
-										<Link href={`${item?.node?.url}`}>
-											<li className="w-full">
-												<Link
-													href={`${item?.node?.url}`}
-													className="block px-4 font-medium text-tiny text-white hover:text-orange-two"
-												>
-													{item?.node?.label}
-												</Link>
-											</li>
-										</Link>
-									</Fragment>
-								))
+								globalContext?.locationsLinks?.map(
+									(item: any, keys: number) => (
+										<Fragment key={keys}>
+											<Link href={`${item?.node?.url}`}>
+												<li className="w-full">
+													<Link
+														href={`${item?.node?.url}`}
+														className="block px-4 font-medium text-tiny text-white hover:text-orange-two"
+													>
+														{item?.node?.label}
+													</Link>
+												</li>
+											</Link>
+										</Fragment>
+									)
+								)
 							) : (
 								<></>
 							)}

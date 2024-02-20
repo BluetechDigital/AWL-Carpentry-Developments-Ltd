@@ -60,7 +60,7 @@ const Pagination: FC<IPagination> = ({
 				className={`${tailwindStyling}`}
 			>
 				{currentContent?.length > 0 ? (
-					currentContent?.map((item: any, keys: any) => (
+					currentContent?.map((item: any, keys: number) => (
 						<Fragment key={keys}>
 							{contentType === `Gallery` ? (
 								<>

@@ -186,7 +186,7 @@ const Navbar: FC = () => {
 							<ul className="flex lg:items-center">
 								{globalContext?.navbarMenuLinks?.length > 0 ? (
 									globalContext?.navbarMenuLinks?.map(
-										(item: any, keys: any) => (
+										(item: any, keys: number) => (
 											<Fragment key={keys}>
 												{item?.node?.url === "/services" ? (
 													<motion.li

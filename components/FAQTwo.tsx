@@ -69,7 +69,7 @@ const FAQTwo: FC<IFAQTwo> = ({
 							}`}
 						>
 							{faqContent?.length > 0 ? (
-								faqContent.map((item: any, keys: any) => (
+								faqContent.map((item: any, keys: number) => (
 									<Fragment key={keys}>
 										<FAQCard
 											index={keys}

@@ -5,6 +5,7 @@ import {IPostTypeFlexibleContent} from "@/types/context";
 
 // Components
 import CTA from "../CTA";
+import Faq from "../Faq";
 import Hero from "../Hero";
 import Blogs from "../Blogs";
 import FAQTwo from "../FAQTwo";
@@ -33,7 +34,7 @@ const RenderFlexibleContent: FC = () => {
 	return (
 		<>
 			{content?.content?.length > 0 ? (
-				content?.content?.map((item: any, keys: any) => (
+				content?.content?.map((item: any, keys: number) => (
 					<section key={keys}>
 						{item?.fieldGroupName === `${FlexibleContent}_Hero` ? (
 							<>
@@ -169,7 +170,14 @@ const RenderFlexibleContent: FC = () => {
 								/>
 							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_Faq` ? (
-							<></>
+							<>
+								<Faq
+									title={item?.title}
+									faqGrid={item?.faqGrid}
+									subtitle={item?.subtitle}
+									paragraph={item?.paragraph}
+								/>
+							</>
 						) : item?.fieldGroupName === `${FlexibleContent}_FaqTwo` ? (
 							<>
 								<FAQTwo

@@ -60,7 +60,7 @@ const OurClients: FC<IOurClients> = ({
 							} lg:items-center lg:justify-between py-12`}
 						>
 							{imageGrid?.length > 0 ? (
-								imageGrid.map((item: any, keys: any) => (
+								imageGrid.map((item: any, keys: number) => (
 									<Fragment key={keys}>
 										<div>
 											<Image
