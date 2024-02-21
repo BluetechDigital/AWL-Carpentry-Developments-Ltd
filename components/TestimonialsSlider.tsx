@@ -8,7 +8,7 @@ import {initial, fadeInUp} from "../animations/animations";
 // Swiper.js Slider
 import "swiper/css";
 import "swiper/css/navigation";
-import {Navigation} from "swiper/modules";
+import {Autoplay, Navigation} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 
 // Styling
@@ -32,7 +32,13 @@ const TestimonialsSlider: FC = () => {
 					<div className="flex items-center">
 						<Swiper
 							navigation={true}
-							modules={[Navigation]}
+							spaceBetween={30}
+							centeredSlides={true}
+							modules={[Autoplay, Navigation]}
+							autoplay={{
+								delay: 3000,
+								disableOnInteraction: false,
+							}}
 							className="mySwiper"
 						>
 							{globalContext?.testimonials?.length > 0 ? (
