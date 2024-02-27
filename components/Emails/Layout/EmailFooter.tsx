@@ -7,7 +7,6 @@ const EmailFooter: React.FC<IEmailFooter.IEmailFooter> = ({
 	imagesDirUrl,
 	themesOptionsContent,
 }) => {
-	console.log(imagesDirUrl);
 	return (
 		<>
 			<Section style={{border: "5px solid", borderColor: "#116dff"}}></Section>

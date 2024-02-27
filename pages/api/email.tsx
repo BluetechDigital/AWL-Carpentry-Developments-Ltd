@@ -6,8 +6,8 @@ import {IBusinessEmail, ICustomerEmail} from "@/types/email";
 import {getThemesOptionsContent} from "@/functions/graphql/Queries/GetAllThemesOptions";
 
 // Components
-import CustomerEnquiryConfirmationEmail from "@/public/emails/CustomerEnquiryConfirmationEmail";
-import BusinessCustomerEnquiryConfirmationEmail from "@/public/emails/BusinessCustomerEnquiryConfirmationEmail";
+import CustomerEnquiryConfirmationEmail from "@/components/Emails/CustomerEnquiryConfirmationEmail";
+import BusinessCustomerEnquiryConfirmationEmail from "@/components/Emails/BusinessCustomerEnquiryConfirmationEmail";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === "POST") {
